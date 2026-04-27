@@ -10,11 +10,9 @@
         :root { --bg: #09090b; --surface: #18181b; --text: #f4f4f5; --subtext: #a1a1aa; --accent1: #00f2fe; --accent2: #4facfe; --neon: rgba(0, 242, 254, 0.5); }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
         h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
-        
-        /* Hero Section */
         header { 
             position: relative;
-            background: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.95)), url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=1920&auto=format&fit=crop') center/cover;
+            background: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.95)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=1920&auto=format&fit=crop') center/cover;
             padding: 120px 20px; 
             text-align: center; 
             border-bottom: 2px solid #00f2fe;
@@ -22,24 +20,19 @@
         }
         h1 { margin: 0; font-size: 4em; font-weight: 900; letter-spacing: 2px; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         p.subtitle { font-size: 1.2em; color: var(--subtext); max-width: 600px; margin: 20px auto; line-height: 1.6; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
-        
-        /* Trust Badges */
         .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 40px; color: var(--text); font-size: 0.85em; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
         .badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
         .badge svg { color: var(--accent1); }
-
         main { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         h2.section-title { font-size: 2.2em; font-weight: 800; border-left: 4px solid var(--accent1); padding-left: 15px; margin-bottom: 40px; letter-spacing: 1px; }
-        
-        /* Grid Layout */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+        .card { background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; display: block; text-decoration: none; }
         .card:hover { transform: translateY(-5px); border-color: var(--accent1); box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15); }
-        .card-img { height: 220px; background: url('https://images.unsplash.com/photo-1603481546238-48724041592d?q=80&w=600&auto=format&fit=crop') center/cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .card-img { height: 220px; background: url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=600&auto=format&fit=crop') center/cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .card-content { padding: 25px; }
-        a { color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.2em; line-height: 1.4; display: block; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; transition: color 0.2s; }
-        a:hover { color: var(--accent1); }
-        p.card-desc { color: var(--subtext); line-height: 1.6; margin: 0; font-size: 0.95em; }
+        h3 { color: var(--text); margin-top: 0; font-weight: 800; font-size: 1.2em; line-height: 1.4; transition: color 0.2s; }
+        .card:hover h3 { color: var(--accent1); }
+        p.card-desc { color: var(--subtext); line-height: 1.6; margin: 0; font-size: 0.95em; font-family: 'Inter', sans-serif; text-transform: none; }
     </style>
 </head>
 <body>
@@ -54,13 +47,13 @@
     <main>
         <h2 class="section-title">LATEST LOADOUTS</h2>
         <div class="grid">
-            <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop');"></div>
+            <a href="articles/ultimate-ergonomic-desk-setup.html" class="card">
+                <div class="card-img"></div>
                 <div class="card-content">
-                    <a href="articles/ultimate-ergonomic-desk-setup.html">THE ULTIMATE WFH & GAMING DESK SETUP FOR 2026</a>
-                    <p class="card-desc">An in-depth look at the top-performing standing desks, ergonomic chairs, and ultra-wide monitors tailored for hardcore productivity and marathon gaming sessions.</p>
+                    <h3>SECRETLAB MAGNUS PRO VS AUTONOMOUS SMARTDESK (2026 ANALYSIS)</h3>
+                    <p class="card-desc">We tear down the spec sheets, wobble-tests, and cable management systems to find the absolute best motorized desk for your battlestation.</p>
                 </div>
-            </div>
+            </a>
         </div>
     </main>
 </body>
