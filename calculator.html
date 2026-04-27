@@ -25,7 +25,14 @@
     </style>
 </head>
 <body>
-    <header><a href="index.html">← BACK TO HQ</a></header>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 20px;">
+    <a href="/index.html" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: 1px;">SMARTDESK<span style="color: var(--accent1);">DOJO</span></a>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="/index.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Home</a>
+        <a href="/calculator.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Calculator</a>
+        <a href="/about.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">About Dojo</a>
+    </div>
+</nav>
     <main>
         <h1>Ergonomic Calculator</h1>
         <p>Enter your height to calculate your mathematically optimal battlestation dimensions.</p>
@@ -75,5 +82,11 @@
             document.getElementById('resultsPanel').style.display = 'block';
         }
     </script>
+<footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
+    <p style="color: var(--subtext); font-size: 0.9em; max-width: 800px; margin: 0 auto 20px; line-height: 1.6;">
+        <strong>Affiliate Disclosure:</strong> SmartDeskDojo.com is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate, we earn from qualifying purchases. We also participate in other affiliate programs and are compensated for referring traffic and business to these companies.
+    </p>
+    <p style="color: var(--subtext); font-size: 0.85em; margin: 0;">&copy; 2026 SmartDeskDojo. Built for the Grind.</p>
+</footer>
 </body>
 </html>
