@@ -3,60 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartDeskDojo - Premium Office & Ergonomic Gear</title>
-    <meta name="description" content="Data-driven reviews and guides for building the ultimate ergonomic workspace. Discover the best standing desks, chairs, and monitors.">
-    <link rel="canonical" href="https://smartdeskdojo.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <title>SmartDeskDojo - Ultimate WFH & Gaming Setups</title>
+    <meta name="description" content="Build the ultimate battlestation. Data-driven gear reviews for WFH professionals, developers, and gamers.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #2563eb; --dark: #0f172a; --slate: #64748b; --light: #f8fafc; }
-        body { font-family: 'Inter', sans-serif; background: var(--light); color: var(--dark); margin: 0; padding: 0; }
-        /* Hero Section with Unsplash Background */
+        :root { --bg: #09090b; --surface: #18181b; --text: #f4f4f5; --subtext: #a1a1aa; --accent1: #00f2fe; --accent2: #4facfe; --neon: rgba(0, 242, 254, 0.5); }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        
+        /* Hero Section */
         header { 
             position: relative;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.95)), url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1920&q=80') center/cover;
-            padding: 100px 20px; 
+            background: linear-gradient(rgba(9, 9, 11, 0.85), rgba(9, 9, 11, 0.95)), url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=1920&auto=format&fit=crop') center/cover;
+            padding: 120px 20px; 
             text-align: center; 
-            color: white; 
-            border-bottom: 5px solid var(--primary);
+            border-bottom: 2px solid #00f2fe;
+            box-shadow: 0 4px 30px var(--neon);
         }
-        h1 { margin: 0; font-size: 3.5em; font-weight: 800; letter-spacing: -1px; }
-        p.subtitle { font-size: 1.3em; color: #cbd5e1; max-width: 600px; margin: 20px auto; line-height: 1.6; }
+        h1 { margin: 0; font-size: 4em; font-weight: 900; letter-spacing: 2px; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.subtitle { font-size: 1.2em; color: var(--subtext); max-width: 600px; margin: 20px auto; line-height: 1.6; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
+        
         /* Trust Badges */
-        .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 40px; color: #94a3b8; font-size: 0.9em; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
-        .badge { display: flex; align-items: center; gap: 8px; }
+        .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 40px; color: var(--text); font-size: 0.85em; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
+        .badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
+        .badge svg { color: var(--accent1); }
+
         main { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
-        h2.section-title { font-size: 2em; font-weight: 800; border-left: 5px solid var(--primary); padding-left: 15px; margin-bottom: 40px; }
-        /* Grid Layout for Articles */
+        h2.section-title { font-size: 2.2em; font-weight: 800; border-left: 4px solid var(--accent1); padding-left: 15px; margin-bottom: 40px; letter-spacing: 1px; }
+        
+        /* Grid Layout */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); border: 1px solid #e2e8f0; transition: transform 0.3s, box-shadow 0.3s; }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-        .card-img { height: 200px; background: url('https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80') center/cover; }
+        .card { background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent1); box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15); }
+        .card-img { height: 220px; background: url('https://images.unsplash.com/photo-1603481546238-48724041592d?q=80&w=600&auto=format&fit=crop') center/cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .card-content { padding: 25px; }
-        a { color: var(--dark); text-decoration: none; font-weight: 700; font-size: 1.3em; line-height: 1.4; display: block; margin-bottom: 15px; }
-        a:hover { color: var(--primary); }
-        p.card-desc { color: var(--slate); line-height: 1.6; margin: 0; font-size: 0.95em; }
+        a { color: var(--text); text-decoration: none; font-weight: 800; font-size: 1.2em; line-height: 1.4; display: block; margin-bottom: 15px; font-family: 'Montserrat', sans-serif; transition: color 0.2s; }
+        a:hover { color: var(--accent1); }
+        p.card-desc { color: var(--subtext); line-height: 1.6; margin: 0; font-size: 0.95em; }
     </style>
 </head>
 <body>
     <header>
         <h1>SmartDeskDojo</h1>
-        <p class="subtitle">Data-driven reviews, deep-dive comparisons, and expert guides for building the ultimate ergonomic workspace.</p>
+        <p class="subtitle">BUILD YOUR ULTIMATE BATTLESTATION. EXPERT GEAR REVIEWS FOR WFH PROS, DEVS, & GAMERS.</p>
         <div class="trust-badges">
-            <div class="badge"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Independent Research</div>
-            <div class="badge"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> Data Driven</div>
+            <div class="badge"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> UNBIASED TESTS</div>
+            <div class="badge"><svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> DATA DRIVEN</div>
         </div>
     </header>
     <main>
-        <h2 class="section-title">Latest Equipment Reviews</h2>
+        <h2 class="section-title">LATEST LOADOUTS</h2>
         <div class="grid">
             <div class="card">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1588600878108-578307a3cc9d?auto=format&fit=crop&w=600&q=80');"></div>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?q=80&w=800&auto=format&fit=crop');"></div>
                 <div class="card-content">
-                    <a href="articles/ultimate-ergonomic-desk-setup.html">The Ultimate Ergonomic Desk Setup Guide for 2026</a>
-                    <p class="card-desc">An in-depth look at the top-performing standing desks, ergonomic chairs, and monitors tailored for peak performance.</p>
+                    <a href="articles/ultimate-ergonomic-desk-setup.html">THE ULTIMATE WFH & GAMING DESK SETUP FOR 2026</a>
+                    <p class="card-desc">An in-depth look at the top-performing standing desks, ergonomic chairs, and ultra-wide monitors tailored for hardcore productivity and marathon gaming sessions.</p>
                 </div>
             </div>
-            <!-- Future cards go here -->
         </div>
     </main>
 </body>
