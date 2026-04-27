@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ergonomic Desk & Monitor Calculator - SmartDeskDojo</title>
+    <meta name="description" content="Calculate your perfect desk height, chair height, and monitor distance to eliminate back pain and eye strain.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #09090b; --surface: #18181b; --text: #f4f4f5; --accent1: #00f2fe; --accent2: #4facfe; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.6; }
+        header { background: var(--surface); padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        header a { color: #a1a1aa; text-decoration: none; font-weight: 700; letter-spacing: 1px; }
+        main { max-width: 600px; margin: 50px auto; padding: 40px; background: var(--surface); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); }
+        h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2em; text-transform: uppercase; margin-top: 0; }
+        .input-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; color: #a1a1aa; }
+        input { width: 100%; padding: 12px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 6px; font-size: 1.1em; font-family: 'Inter', sans-serif; }
+        input:focus { outline: none; border-color: var(--accent1); }
+        .btn { width: 100%; padding: 15px; background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: black; border: none; font-weight: 800; font-family: 'Montserrat', sans-serif; font-size: 1.1em; text-transform: uppercase; border-radius: 6px; cursor: pointer; margin-top: 10px; }
+        .btn:hover { opacity: 0.9; }
+        .results { margin-top: 30px; padding: 20px; background: rgba(0,242,254,0.05); border-left: 4px solid var(--accent1); display: none; }
+        .result-item { margin-bottom: 15px; }
+        .result-value { font-family: 'Montserrat', sans-serif; font-size: 1.8em; font-weight: 800; color: var(--accent1); display: block; }
+    </style>
+</head>
+<body>
+    <header><a href="index.html">← BACK TO HQ</a></header>
+    <main>
+        <h1>Ergonomic Calculator</h1>
+        <p>Enter your height to calculate your mathematically optimal battlestation dimensions.</p>
+        
+        <div class="input-group">
+            <label>Your Height (Inches)</label>
+            <input type="number" id="heightInput" placeholder="e.g. 70 for 5'10">
+        </div>
+        
+        <button class="btn" onclick="calculate()">Calculate Loadout</button>
+        
+        <div class="results" id="resultsPanel">
+            <div class="result-item">
+                <label>Optimal Chair Height</label>
+                <span class="result-value" id="chairRes">--</span>
+            </div>
+            <div class="result-item">
+                <label>Optimal Seated Desk Height</label>
+                <span class="result-value" id="deskSeatedRes">--</span>
+            </div>
+            <div class="result-item">
+                <label>Optimal Standing Desk Height</label>
+                <span class="result-value" id="deskStandRes">--</span>
+            </div>
+             <div class="result-item">
+                <label>Monitor Distance</label>
+                <span class="result-value" id="monitorRes">--</span>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function calculate() {
+            const h = document.getElementById('heightInput').value;
+            if(!h || h < 40 || h > 90) return alert("Please enter a valid height in inches.");
+            
+            // Standard ergonomic ratios
+            const chair = (h * 0.25).toFixed(1);
+            const deskSeated = (h * 0.40).toFixed(1);
+            const deskStand = (h * 0.62).toFixed(1);
+            
+            document.getElementById('chairRes').innerText = chair + '" from floor';
+            document.getElementById('deskSeatedRes').innerText = deskSeated + '" from floor';
+            document.getElementById('deskStandRes').innerText = deskStand + '" from floor';
+            document.getElementById('monitorRes').innerText = '20" - 30" (Arm\'s length)';
+            
+            document.getElementById('resultsPanel').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
