@@ -42,6 +42,30 @@
         
         .manifesto-box { background: rgba(0, 242, 254, 0.05); padding: 30px; border-radius: 8px; border: 1px solid rgba(0, 242, 254, 0.1); margin: 40px 0; }
         .manifesto-box h3 { color: var(--accent1); margin-top: 0; }
+    
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 768px) {
+            nav { padding: 15px 15px !important; justify-content: center !important; }
+            nav > a:first-child { font-size: 1.1em !important; margin-bottom: 10px; width: 100%; justify-content: center; }
+            nav > a:first-child img { height: 32px !important; }
+            nav > div { width: 100%; justify-content: center; gap: 15px !important; }
+            header { padding: 60px 15px !important; }
+            h1.hero-title, h1 { font-size: 2.2em !important; line-height: 1.2 !important; }
+            h2.section-title { font-size: 1.6em !important; }
+            p.subtitle, p.desc { font-size: 1em !important; }
+            .trust-badges { gap: 10px !important; flex-wrap: wrap; }
+            .badge { padding: 6px 12px !important; font-size: 0.75em !important; }
+            main { padding: 0 15px !important; margin: 30px auto !important; }
+            .calc-promo { padding: 25px 15px !important; }
+            .author-box { flex-direction: column; text-align: center; }
+            .pros-cons { flex-direction: column; }
+            th, td { padding: 12px 10px !important; font-size: 0.85em; }
+            .btn-table { padding: 8px 12px !important; font-size: 0.8em !important; }
+        }
+        @media (max-width: 480px) {
+            nav > a:first-child span { font-size: 0.9em !important; }
+            h1.hero-title { font-size: 1.8em !important; }
+        }
     </style>
 </head>
 <body>

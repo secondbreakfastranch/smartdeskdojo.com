@@ -39,6 +39,30 @@
         .card p { font-size: 0.95em; color: var(--subtext); margin-bottom: 20px; line-height: 1.5; }
         .btn-sm { display: inline-block; background: transparent; border: 2px solid var(--accent1); color: white; padding: 12px 20px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 0.9em; transition: background 0.2s; margin-top: auto; }
         .btn-sm:hover { background: rgba(0, 242, 254, 0.1); }
+    
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 768px) {
+            nav { padding: 15px 15px !important; justify-content: center !important; }
+            nav > a:first-child { font-size: 1.1em !important; margin-bottom: 10px; width: 100%; justify-content: center; }
+            nav > a:first-child img { height: 32px !important; }
+            nav > div { width: 100%; justify-content: center; gap: 15px !important; }
+            header { padding: 60px 15px !important; }
+            h1.hero-title, h1 { font-size: 2.2em !important; line-height: 1.2 !important; }
+            h2.section-title { font-size: 1.6em !important; }
+            p.subtitle, p.desc { font-size: 1em !important; }
+            .trust-badges { gap: 10px !important; flex-wrap: wrap; }
+            .badge { padding: 6px 12px !important; font-size: 0.75em !important; }
+            main { padding: 0 15px !important; margin: 30px auto !important; }
+            .calc-promo { padding: 25px 15px !important; }
+            .author-box { flex-direction: column; text-align: center; }
+            .pros-cons { flex-direction: column; }
+            th, td { padding: 12px 10px !important; font-size: 0.85em; }
+            .btn-table { padding: 8px 12px !important; font-size: 0.8em !important; }
+        }
+        @media (max-width: 480px) {
+            nav > a:first-child span { font-size: 0.9em !important; }
+            h1.hero-title { font-size: 1.8em !important; }
+        }
     </style>
 </head>
 <body>
