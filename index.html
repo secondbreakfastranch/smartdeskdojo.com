@@ -19,24 +19,20 @@
             border-bottom: 2px solid #00f2fe;
             box-shadow: 0 4px 30px var(--neon);
         }
-        h1.hero-title { margin: 0; font-size: 4em; font-weight: 900; letter-spacing: 2px; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p.subtitle { font-size: 1.2em; color: var(--subtext); max-width: 600px; margin: 20px auto; line-height: 1.6; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
+        h1.hero-title { margin: 0; font-size: 3.5em; font-weight: 900; letter-spacing: 2px; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.subtitle { font-size: 1.2em; color: var(--subtext); max-width: 700px; margin: 20px auto; line-height: 1.6; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; }
         .trust-badges { display: flex; justify-content: center; gap: 30px; margin-top: 40px; color: var(--text); font-size: 0.85em; font-family: 'Montserrat', sans-serif; font-weight: 700; letter-spacing: 1px; flex-wrap: wrap; }
-        .badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); cursor: pointer; }
+        .badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 8px 16px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); backdrop-filter: blur(5px); }
         .badge svg { color: var(--accent1); }
         main { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
         h2.section-title { font-size: 2.2em; font-weight: 800; border-left: 4px solid var(--accent1); padding-left: 15px; margin-bottom: 30px; letter-spacing: 1px; }
         
-        .table-wrapper { overflow-x: auto; margin-bottom: 60px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        table { width: 100%; border-collapse: collapse; background: var(--surface); min-width: 600px; }
-        th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        th { background: rgba(0, 242, 254, 0.05); color: var(--accent1); font-weight: 800; letter-spacing: 1px; }
-        td { color: var(--subtext); }
-        td.highlight { color: var(--text); font-weight: 700; font-family: 'Montserrat', sans-serif; }
-        .btn-table { display: inline-block; background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: #000; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: 800; font-size: 0.9em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; transition: transform 0.2s; white-space: nowrap; }
-        .btn-table:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        /* Calculator Promo */
+        .calc-promo { background: rgba(0, 242, 254, 0.05); border: 1px solid rgba(0, 242, 254, 0.3); border-radius: 12px; padding: 40px; text-align: center; margin-bottom: 60px; box-shadow: 0 10px 30px rgba(0, 242, 254, 0.1); }
+        .calc-promo h2 { margin-top: 0; color: var(--accent1); font-size: 2em; }
+        .calc-promo p { font-size: 1.1em; color: var(--subtext); max-width: 700px; margin: 0 auto 25px; line-height: 1.6; }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
         .card { background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s ease; display: block; text-decoration: none; }
         .card:hover { transform: translateY(-5px); border-color: var(--accent1); box-shadow: 0 10px 30px rgba(0, 242, 254, 0.15); }
         .card-img { height: 220px; background-position: center; background-size: cover; border-bottom: 1px solid rgba(255,255,255,0.1); }
@@ -44,11 +40,24 @@
         h3 { color: var(--text); margin-top: 0; font-weight: 800; font-size: 1.2em; line-height: 1.4; transition: color 0.2s; }
         .card:hover h3 { color: var(--accent1); }
         p.card-desc { color: var(--subtext); line-height: 1.6; margin: 0; font-size: 0.95em; font-family: 'Inter', sans-serif; text-transform: none; }
+
+        .table-wrapper { overflow-x: auto; margin-bottom: 60px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: var(--surface); }
+        table { width: 100%; border-collapse: collapse; min-width: 600px; }
+        th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { background: rgba(0, 242, 254, 0.05); color: var(--accent1); font-weight: 800; letter-spacing: 1px; }
+        td { color: var(--subtext); }
+        td.highlight { color: var(--text); font-weight: 700; font-family: 'Montserrat', sans-serif; }
+        
+        .btn-table { display: inline-block; background: linear-gradient(90deg, var(--accent1), var(--accent2)); color: #000; padding: 12px 24px; text-decoration: none; border-radius: 4px; font-weight: 800; font-size: 0.95em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; transition: transform 0.2s; white-space: nowrap; }
+        .btn-table:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(0, 242, 254, 0.4); }
     </style>
 </head>
 <body>
     <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 20px;">
-    <a href="/index.html" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: 1px;">SMARTDESK<span style="color: var(--accent1);">DOJO</span></a>
+    <a href="/index.html" style="display: flex; align-items: center; gap: 15px; font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: 1px;">
+        <img src="/logo.png" alt="SmartDeskDojo Logo" style="height: 40px; border-radius: 8px;" onerror="this.style.display='none'">
+        <span>SMARTDESK<span style="color: var(--accent1);">DOJO</span></span>
+    </a>
     <div style="display: flex; gap: 20px; flex-wrap: wrap;">
         <a href="/index.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Home</a>
         <a href="/calculator.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Calculator</a>
@@ -56,15 +65,35 @@
     </div>
 </nav>
     <header>
-        <h1 class="hero-title">BATTLESTATION HQ</h1>
-        <p class="subtitle">EXPERT GEAR REVIEWS FOR WFH PROS, DEVS, & GAMERS.</p>
+        <h1 class="hero-title">SMARTDESK<span style="color: var(--text);">DOJO</span></h1>
+        <p class="subtitle">BATTLESTATION HQ: EXPERT GEAR REVIEWS FOR WFH PROS, DEVS, & GAMERS.</p>
         <div class="trust-badges">
             <div class="badge" tabindex="0" aria-label="Independent Research"><svg width="18" height="18" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> UNBIASED TESTS</div>
             <div class="badge" tabindex="0" aria-label="Data Driven"><svg width="18" height="18" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> DATA DRIVEN</div>
         </div>
     </header>
     <main>
-        <h2 class="section-title">TOP SMART DESKS (2026)</h2>
+        <!-- Elevated Calculator CTA -->
+        <div class="calc-promo">
+            <h2>DIAL IN YOUR OPTIMAL LOADOUT</h2>
+            <p>A $1,000 chair is useless if your desk is three inches too high. Use the <strong>Battlestation Ergonomic Calculator</strong> to find your mathematically perfect chair, desk, and monitor distance. Stop guessing; start building.</p>
+            <a href="/calculator.html" class="btn-table" style="font-size: 1.1em; padding: 15px 30px;">LAUNCH CALCULATOR</a>
+        </div>
+
+        <h2 class="section-title">LATEST INTEL</h2>
+        <div class="grid">
+            <a href="/articles/ultimate-ergonomic-desk-setup.html" class="card" aria-label="Read Secretlab Magnus Pro vs Autonomous SmartDesk review">
+                <div class="card-img" role="img" aria-label="Article thumbnail image" style="background-image: url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=600&auto=format&fit=crop');"></div>
+                <div class="card-content">
+                    <h3>SECRETLAB MAGNUS PRO VS AUTONOMOUS SMARTDESK</h3>
+                    <p class="card-desc">We tear down the spec sheets, wobble-tests, and cable management systems to find the absolute best motorized desk for your battlestation.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- Demoted Comparison Table -->
+        <h2 class="section-title">CURRENT META: TRUSTED HARDWARE</h2>
+        <p style="color: var(--subtext); margin-bottom: 20px;">If you don't have time to read our deep-dives, here is the current hardware meta based on our internal stress-testing.</p>
         <div class="table-wrapper">
             <table>
                 <tr>
@@ -85,31 +114,7 @@
                     <td>Value to Performance</td>
                     <td style="text-align: center;"><a href="https://www.amazon.com/s?k=autonomous+smartdesk+core&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored" aria-label="Check Autonomous SmartDesk Core on Amazon">Check Price</a></td>
                 </tr>
-                <tr>
-                    <td class="highlight">Corsair Platform:6</td>
-                    <td>Creator / Streamer</td>
-                    <td>Maximum Modularity</td>
-                    <td style="text-align: center;"><a href="https://www.amazon.com/s?k=corsair+platform+6+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored" aria-label="Check Corsair Platform:6 on Amazon">Check Price</a></td>
-                </tr>
             </table>
-        </div>
-
-        <h2 class="section-title">LATEST INTEL</h2>
-        <div class="grid">
-            <a href="/articles/ultimate-ergonomic-desk-setup.html" class="card" aria-label="Read Secretlab Magnus Pro vs Autonomous SmartDesk review">
-                <div class="card-img" role="img" aria-label="Article thumbnail image" style="background-image: url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="card-content">
-                    <h3>SECRETLAB MAGNUS PRO VS AUTONOMOUS SMARTDESK</h3>
-                    <p class="card-desc">We tear down the spec sheets, wobble-tests, and cable management systems to find the absolute best motorized desk for your battlestation.</p>
-                </div>
-            </a>
-            <a href="/calculator.html" class="card" aria-label="Use the Ergonomic Desk Calculator">
-                <div class="card-img" role="img" aria-label="Calculator thumbnail image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="card-content">
-                    <h3>ERGONOMIC DESK CALCULATOR</h3>
-                    <p class="card-desc">Calculate your mathematically perfect desk height and monitor distance to eliminate fatigue.</p>
-                </div>
-            </a>
         </div>
     </main>
     <footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
