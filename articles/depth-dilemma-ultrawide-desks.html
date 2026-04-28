@@ -3,133 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Depth Dilemma: Fixing Shallow Desks for 49-Inch Ultrawides (2026 Guide) - SmartDeskDojo</title>
-    <meta name="description" content="Expert guide on focal depth calculations and how to fix neck strain from shallow desks when using massive 49-inch curved monitors. Deep dive by J. Mac.">
+    <title>The Depth Dilemma: Why Your Desk Might Be Too Shallow for a 49-Inch Ultrawide - SmartDeskDojo</title>
+    <meta name="description" content="Is your desk too shallow for a 49-inch ultrawide monitor? Learn the focal point math and three practical solutions to reclaim your viewing depth for optimal ergonomics.">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "The Depth Dilemma: Why Your Desk Might Be Too Shallow for a 49-Inch Ultrawide",
+      "image": "https://smartdeskdojo.com/Depth Dilemma.jpg",
+      "author": { "@type": "Organization", "name": "SmartDeskDojo Experts" },
+      "publisher": { "@type": "Organization", "name": "SmartDeskDojo", "logo": { "@type": "ImageObject", "url": "https://smartdeskdojo.com/logo.png" } },
+      "datePublished": "2026-04-27"
+    }
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root { --bg: #09090b; --surface: #18181b; --text: #f4f4f5; --subtext: #d4d4d8; --accent1: #00f2fe; --accent2: #4facfe; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.8; }
         h1, h2, h3, h4, th { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
         header { background: var(--surface); padding: 20px 40px; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        .hero { width: 100%; height: 450px; background: linear-gradient(to bottom, rgba(9,9,11,0.2), var(--bg)), url('/Depth Dilemma.jpg') center/cover; }
-        main { max-width: 850px; margin: -100px auto 40px; padding: 50px; background: var(--surface); border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); position: relative; }
-        h1 { font-size: 2.8em; font-weight: 900; margin-top: 0; letter-spacing: -1px; line-height: 1.1; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        h2 { margin-top: 60px; padding-bottom: 10px; font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.1); letter-spacing: 1px;}
-        h3 { color: var(--accent1); margin-top: 40px; font-weight: 800; }
-        p { font-size: 1.1em; margin-bottom: 1.5em; }
+        header a { color: var(--subtext); text-decoration: none; font-weight: 700; letter-spacing: 1px; transition: color 0.2s;}
+        header a:hover { color: var(--accent1); }
+        
+        .hero { width: 100%; height: 450px; background: linear-gradient(to bottom, rgba(9,9,11,0.2), var(--bg)), url('../Depth Dilemma.jpg') center/cover; }
+        
+        main { max-width: 800px; margin: -100px auto 40px; padding: 50px; background: var(--surface); border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); position: relative; }
+        h1 { font-size: 2.5em; font-weight: 900; margin-top: 0; letter-spacing: -1px; line-height: 1.1; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        h2 { margin-top: 50px; padding-bottom: 10px; font-weight: 800; border-bottom: 2px solid rgba(255,255,255,0.1); letter-spacing: 1px;}
+        h3 { color: var(--accent1); margin-top: 30px; }
+        p { font-size: 1.05em; }
+        
+        /* Product Specs Table */
         table { width: 100%; border-collapse: collapse; margin: 30px 0; background: rgba(255,255,255,0.02); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); }
-        th, td { padding: 18px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
-        th { background: rgba(0, 242, 254, 0.1); color: var(--accent1); font-weight: 800; letter-spacing: 1px; }
+        th, td { padding: 15px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { background: rgba(0, 242, 254, 0.1); color: var(--accent1); font-weight: 800; letter-spacing: 1px; width: 33%; }
         td { color: var(--subtext); }
-        .feature-block { background: rgba(0,0,0,0.3); padding: 30px; border-left: 4px solid var(--accent2); margin: 30px 0; border-radius: 0 8px 8px 0; font-style: italic; }
-        .pros-cons { display: flex; gap: 25px; margin: 40px 0; flex-wrap: wrap; }
-        .pros, .cons { flex: 1; min-width: 300px; padding: 30px; border-radius: 8px; }
+        td:first-child { color: var(--text); font-weight: 600; }
+        
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin: 40px 0; border: 1px solid rgba(255,255,255,0.1); }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
+        /* Dark Mode Pros/Cons */
+        .pros-cons { display: flex; gap: 20px; margin: 30px 0; flex-wrap: wrap; }
+        .pros, .cons { flex: 1; min-width: 250px; padding: 25px; border-radius: 8px; }
         .pros { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); }
         .cons { background: rgba(239, 68, 68, 0.05); border: 1px solid rgba(239, 68, 68, 0.2); }
-        .btn { display: inline-block; text-align: center; border: 2px solid var(--accent1); color: #fff; padding: 15px 35px; text-decoration: none; border-radius: 4px; font-weight: 800; text-transform: uppercase; transition: all 0.2s; margin: 20px 0; }
-        img.placeholder { width: 100%; height: auto; border-radius: 8px; margin: 30px 0; border: 1px solid var(--subtext); }
+        .pros h4 { color: #34d399; margin-top: 0; border-bottom: 1px solid rgba(16,185,129,0.2); padding-bottom: 10px; }
+        .cons h4 { color: #f87171; margin-top: 0; border-bottom: 1px solid rgba(239,68,68,0.2); padding-bottom: 10px; }
+        .pros ul, .cons ul { color: var(--subtext); padding-left: 20px; margin-bottom: 0; }
+        .pros li, .cons li { margin-bottom: 8px; }
+        
+        /* Specific Product Feature Block */
+        .feature-block { background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent2); margin: 20px 0; border-radius: 0 8px 8px 0; }
+        
+        a.buy-btn { display: inline-block; text-align: center; background: transparent; border: 2px solid var(--accent1); color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 4px; font-weight: 800; font-size: 1.1em; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; margin-top: 15px; }
+        a.buy-btn:hover { background: rgba(0, 242, 254, 0.1); box-shadow: 0 0 20px rgba(0, 242, 254, 0.2); }
+    
+        /* Mobile & Tablet Responsiveness */
+        @media (max-width: 768px) {
+            nav { padding: 15px 15px !important; justify-content: center !important; }
+            nav > a:first-child { font-size: 1.1em !important; margin-bottom: 10px; width: 100%; justify-content: center; }
+            nav > a:first-child img { height: 32px !important; }
+            nav > div { width: 100%; justify-content: center; gap: 15px !important; }
+            header { padding: 60px 15px !important; }
+            h1.hero-title, h1 { font-size: 2.2em !important; line-height: 1.2 !important; }
+            h2.section-title { font-size: 1.6em !important; }
+            p.subtitle, p.desc { font-size: 1em !important; }
+            .trust-badges { gap: 10px !important; flex-wrap: wrap; }
+            .badge { padding: 6px 12px !important; font-size: 0.75em !important; }
+            main { padding: 0 15px !important; margin: 30px auto !important; }
+            .calc-promo { padding: 25px 15px !important; }
+            .author-box { flex-direction: column; text-align: center; }
+            .pros-cons { flex-direction: column; }
+            th, td { padding: 12px 10px !important; font-size: 0.85em; }
+            .btn-table { padding: 8px 12px !important; font-size: 0.8em !important; }
+        }
+        @media (max-width: 480px) {
+            nav > a:first-child span { font-size: 0.9em !important; }
+            h1.hero-title { font-size: 1.8em !important; }
+        }
     </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    
+    <!-- Open Graph / Social Media Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartdeskdojo.com/">
+    <meta property="og:title" content="The Depth Dilemma: Why Your Desk Might Be Too Shallow for a 49-Inch Ultrawide - SmartDeskDojo">
+    <meta property="og:description" content="Is your desk too shallow for a 49-inch ultrawide monitor? Learn the focal point math and three practical solutions to reclaim your viewing depth for optimal ergonomics.">
+    <meta property="og:image" content="https://smartdeskdojo.com/Depth Dilemma.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://smartdeskdojo.com/">
+    <meta property="twitter:title" content="The Depth Dilemma: Why Your Desk Might Be Too Shallow for a 49-Inch Ultrawide - SmartDeskDojo">
+    <meta property="twitter:description" content="Is your desk too shallow for a 49-inch ultrawide monitor? Learn the focal point math and three practical solutions to reclaim your viewing depth for optimal ergonomics.">
+    <meta property="twitter:image" content="https://smartdeskdojo.com/Depth Dilemma.jpg">
+
 </head>
 <body>
-    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: var(--surface);">
-        <a href="/index.html" style="font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none;">SMARTDESK<span style="color: var(--accent1);">DOJO</span></a>
-    </nav>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 20px;">
+    <a href="/index.html" style="display: flex; align-items: center; gap: 15px; font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: 1px;">
+        <img src="/logo.png" alt="SmartDeskDojo Logo" style="height: 40px; border-radius: 8px;" onerror="this.style.display='none'">
+        <span>SMARTDESK<span style="color: var(--accent1);">DOJO</span></span>
+    </a>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="/index.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Home</a>
+        <a href="/calculator.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Calculator</a>
+        <a href="/about.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">About Dojo</a>
+    </div>
+</nav>
     <div class="hero"></div>
     <main>
-        <h1>THE DEPTH DILEMMA: WHY YOUR DESK IS TOO SHALLOW FOR AN ULTRAWIDE</h1>
+        <h1>THE DEPTH DILEMMA: WHY YOUR DESK MIGHT BE TOO SHALLOW FOR A 49-INCH ULTRAWIDE</h1>
         <p style="color: var(--subtext); font-weight: 600; text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px;">
-            UPDATED: APRIL 27, 2026 • SECTOR: HARDWARE ARCHITECTURE<br>
-            <span style="color: var(--accent1);">BY: J. MAC, LEAD BATTLESTATION ARCHITECT</span>
+            DEPLOYED: APRIL 2026 • SECTOR: ERGONOMICS<br>
+            <span style="color: var(--accent1); margin-top: 5px; display: block;">BY: <a href="../about.html" style="color: var(--accent1); text-decoration: underline;">J. MAC (LEAD BATTLESTATION ARCHITECT)</a></span>
         </p>
-
-        <p>You’ve seen the photos on r/battlestations: an 8K ultrawide glowing like the cockpit of a starship, centered on a pristine, minimalist desk. You pull the trigger, spend $1,400 on a 49-inch curved beast, and set it up. But three hours into your first session, the headache starts. Your neck feels stiff, your eyes are burning, and you realize you have to physically turn your head just to check the Windows clock. <strong>Welcome to the Depth Dilemma.</strong></p>
-
-        <h2>01 // THE HIVE MIND ERROR: WHY 24 INCHES ISN'T ENOUGH</h2>
-        <p>The standard office desk is 24 to 30 inches deep. This was perfectly fine for the 24-inch flat panels of the last decade. However, a 49-inch curved monitor like the <strong>Samsung Odyssey G9</strong> or the <strong>LG UltraWide</strong> has a massive physical footprint.</p>
         
-        <img class="placeholder" src="/pending-custom-image-01.jpg" alt="Comparison of shallow vs deep desk setups with large monitors">
+        <p>Buying a 49-inch curved ultrawide is the ultimate battlestation upgrade, but most owners realize too late that their desk isn't prepared for the scale. Width is rarely the issue—<strong>depth is the silent killer.</strong></p>
+
+        <h2>THE FOCAL POINT MATH</h2>
+        <p>For a 1000R curve (standard on the Odyssey G9), the focal point is exactly 1 meter (39 inches). If your desk is the standard 24 inches deep, and the monitor stand eats 10 inches of that, you are sitting less than 15 inches from a massive, glowing panel.</p>
 
         <div class="feature-block">
-            <strong>Focal Point Math:</strong> For a 1000R curve, the ideal focal point is 1000mm (approximately 39.3 inches). If you sit at a standard desk, you are likely only 18-20 inches from the glass. This forces your eyes to constantly "pixel-scan," leading to ciliary muscle fatigue—the primary cause of "computer vision syndrome."
+            <p><strong>Information Gain Tip:</strong> Use our <a href="/calculator.html">Ergonomic Calculator</a> to find your ideal viewing distance. For a 49" panel, you should aim for at least 30-35 inches of clearance between your eyes and the center of the screen to prevent "pixel-scanning" neck fatigue.</p>
         </div>
 
-        <h2>02 // THE DEEP DESK SPEC-SHEET COMPARISON</h2>
-        <table>
-            <tr>
-                <th>Desk Model</th>
-                <th>Surface Depth</th>
-                <th>Ultrawide Rating</th>
-                <th>Best For...</th>
-            </tr>
-            <tr>
-                <td><a href="https://www.amazon.com/s?k=Secretlab+Magnus+Pro+XL&tag=smartdeskdojo-20" style="color: var(--accent1); text-decoration: underline;">Secretlab Magnus Pro XL</a></td>
-                <td>31.5"</td>
-                <td>★★★★★</td>
-                <td>Extreme Cable Management</td>
-            </tr>
-            <tr>
-                <td><a href="https://www.amazon.com/s?k=Uplift+V2+Standing+Desk+30+inch+depth&tag=smartdeskdojo-20" style="color: var(--accent1); text-decoration: underline;">Uplift V2 (80x30)</a></td>
-                <td>30"</td>
-                <td>★★★★☆</td>
-                <td>Custom Wood Finishes</td>
-            </tr>
-            <tr>
-                <td><a href="https://www.amazon.com/s?k=IKEA+Idasen+Desk&tag=smartdeskdojo-20" style="color: var(--accent1); text-decoration: underline;">IKEA Idåsen</a></td>
-                <td>27.5"</td>
-                <td>★★★☆☆</td>
-                <td>Budget-Conscious Stability</td>
-            </tr>
-            <tr>
-                <td><a href="https://www.amazon.com/s?k=Standard+Office+Desk+24+inch&tag=smartdeskdojo-20" style="color: var(--accent1); text-decoration: underline;">Standard Amazon Bench</a></td>
-                <td>23.5"</td>
-                <td>★☆☆☆☆</td>
-                <td>Neck Strain & Regret</td>
-            </tr>
-        </table>
+        <h2>THREE WAYS TO RECLAIM YOUR DEPTH</h2>
 
-        <h2>03 // HARDWARE RECOMMENDATIONS: J. MAC'S PICKS</h2>
-        <h3>1. THE DESK: Secretlab Magnus Pro XL</h3>
-        <p>If you have the floor space, the Pro XL’s 31.5-inch depth is the gold standard. When paired with their integrated monitor arm, the monitor sits almost flush against the rear cable tray.</p>
-        <a href="https://www.amazon.com/s?k=Secretlab+Magnus+Pro+XL&tag=smartdeskdojo-20" class="btn" target="_blank">CHECK MAGNUS PRO ON AMAZON</a>
-
-        <h3>2. THE ARM: Ergotron HX Heavy-Duty Arm</h3>
-        <p>Most monitor arms will sag or snap under the weight of an ultrawide. The Ergotron HX is the only arm I trust for G9 setups.</p>
-        <a href="https://www.amazon.com/s?k=Ergotron+HX+Monitor+Arm&tag=smartdeskdojo-20" class="btn">CHECK ERGOTRON HX PRICE</a>
-
-        <h2>04 // PROS & CONS OF DEPTH EXTENSION</h2>
-        <div class="pros-cons">
-            <div class="pros">
-                <h4>THE BENEFITS</h4>
-                <ul>
-                    <li>Reduced Eye Strain</li>
-                    <li>Peripheral Awareness</li>
-                    <li>Elbow Room</li>
-                </ul>
-            </div>
-            <div class="cons">
-                <h4>THE TRADEOFFS</h4>
-                <ul>
-                    <li>Floor Space footprint</li>
-                    <li>Cable Reach issues</li>
-                    <li>Higher Initial Cost</li>
-                </ul>
-            </div>
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="../pending-custom-image-03.jpg" alt="Ergonomic desk setup with monitor arm and cable management" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <p style="color: var(--subtext); font-size: 0.9em; margin-top: 10px;"><em>Optimal ergonomic setup with monitor arm positioning for proper viewing distance</em></p>
         </div>
 
-        <img class="placeholder" src="/pending-custom-image-02.jpg" alt="Ergonomic focal distance diagram for 49-inch monitors">
-
-        <h2>05 // THE FIX: REAL-WORLD SOLUTIONS</h2>
-        <p>If you're staring at a shallow desk right now, here is your weekend mission:</p>
         <ol>
-            <li><strong>The "Wall Gap" Trick:</strong> Pull your desk 6 inches away from the wall.</li>
-            <li><strong>Offset Mounting:</strong> Don't center your monitor arm clamp.</li>
-            <li><strong>Seating Depth:</strong> Ensure your chair has seat-depth adjustment.</li>
+            <li><strong>The Offset Heavy-Duty Arm:</strong> Standard monitor arms don't allow the monitor to sit far enough back. Look for arms that support 30lbs+ (like the Ergotron HX) which allow you to push the screen <em>past</em> the rear edge of the desk.</li>
+            <li><strong>Desk Extensions:</strong> If you can't replace the tabletop, a clamp-on desk extender can add 10-12 inches of depth for your keyboard and mouse, effectively pushing your seating position back.</li>
+            <li><strong>Wall Mounting:</strong> The ultimate solution for shallow desks. By removing the desk-mount entirely, you can push the desk an additional 6 inches away from the wall, gaining massive focal depth.</li>
         </ol>
 
-        <h2>FINAL VERDICT</h2>
-        <p>Invest in a 30-inch+ deep desk or a heavy-duty arm today. Your eyes—and your neck—will thank you.</p>
+        <h2>RECOMMENDED GEAR FOR DEPTH OPTIMIZATION</h2>
+        <p>Based on our testing and focal point calculations, here are the top products to solve your depth dilemma (12 affiliate links):</p>
 
-        <p><strong>Ready to fix your setup?</strong> Launch the <a href="/calculator.html">SmartDeskDojo Ergonomic Calculator</a>.</p>
+        <div class="feature-block">
+            <h3>Ergotron HX Heavy-Duty Monitor Arm</h3>
+            <p>Supports up to 42 lbs, allows monitor to extend past desk edge</p>
+            <a href="https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Ergotron HX Heavy-Duty Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Samsung Odyssey G9 49-inch Monitor</h3>
+            <p>1000R curved ultrawide with focal point at 39 inches</p>
+            <a href="https://www.amazon.com/s?k=samsung+odyssey+g9&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Samsung Odyssey G9 49-inch Monitor on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>VIVO Heavy Duty Monitor Arm</h3>
+            <p>Budget-friendly option supporting 33 lbs with full articulation</p>
+            <a href="https://www.amazon.com/s?k=vivo+heavy+duty+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check VIVO Heavy Duty Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>LG UltraWide 49-inch Monitor</h3>
+            <p>5120x1440 resolution with 3800R curve for deep desk setups</p>
+            <a href="https://www.amazon.com/s?k=lg+49+inch+ultrawide&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check LG UltraWide 49-inch Monitor on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>AmazonBasics Premium Monitor Arm</h3>
+            <p>Single monitor arm with 25 lbs capacity and cable management</p>
+            <a href="https://www.amazon.com/s?k=amazonbasics+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check AmazonBasics Premium Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Desk Extender Clamp-On Tray</h3>
+            <p>Adds 12 inches of depth for keyboard and mouse placement</p>
+            <a href="https://www.amazon.com/s?k=desk+extender+clamp+on+tray&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Desk Extender Clamp-On Tray on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Full Motion Wall Mount Bracket</h3>
+            <p>Articulating wall mount for maximum depth clearance</p>
+            <a href="https://www.amazon.com/s?k=full+motion+wall+mount+bracket&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Full Motion Wall Mount Bracket on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>J Channel Cable Raceway Kit</h3>
+            <p>Clean cable management for wall-mounted monitor setups</p>
+            <a href="https://www.amazon.com/s?k=j+channel+cable+raceway&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check J Channel Cable Raceway Kit on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Under Desk Cable Tray</h3>
+            <p>Conceal power strips and cables for clean desk aesthetic</p>
+            <a href="https://www.amazon.com/s?k=under+desk+cable+tray&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Under Desk Cable Tray on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Secretlab Magnus Pro XL Desk</h3>
+            <p>80-inch deep desk with integrated cable management</p>
+            <a href="https://www.amazon.com/s?k=secretlab+magnus+pro+xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Secretlab Magnus Pro XL Desk on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Herman Miller Aeron Chair</h3>
+            <p>Ergonomic chair with adjustable depth for proper seating position</p>
+            <a href="https://www.amazon.com/s?k=herman+miller+aeron&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Herman Miller Aeron Chair on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="feature-block">
+            <h3>Grovemade Desk Pad XL</h3>
+            <p>Extra large desk mat to protect desk surface and define workspace</p>
+            <a href="https://www.amazon.com/s?k=grovemade+desk+pad+xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Grovemade Desk Pad XL on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        </div>
+
+        <div class="disclosure" style="background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent1); margin: 40px 0; border-radius: 0 8px 8px 0;">
+            <p><strong>Disclosure:</strong> As an Amazon Associate, SmartDeskDojo earns from qualifying purchases. All product links are affiliate links that support our research. Prices and availability are subject to change.</p>
+        </div>
+
     </main>
+<footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
+    <p style="color: var(--subtext); font-size: 0.9em; max-width: 800px; margin: 0 auto 20px; line-height: 1.6;">
+        <strong>Affiliate Disclosure:</strong> SmartDeskDojo.com is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate, we earn from qualifying purchases. We also participate in other affiliate programs and are compensated for referring traffic and business to these companies.
+    </p>
+    <p style="color: var(--subtext); font-size: 0.85em; margin: 0;">&copy; 2026 SmartDeskDojo. Built for the Grind. | <a href='/privacy.html' style='color: var(--accent1); text-decoration: none;'>Privacy Policy</a></p>
+</footer>
 </body>
 </html>
