@@ -53,11 +53,28 @@
         .pros ul, .cons ul { color: var(--subtext); padding-left: 20px; margin-bottom: 0; }
         .pros li, .cons li { margin-bottom: 8px; }
         
-        /* Specific Product Feature Block */
-        .feature-block { background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent2); margin: 20px 0; border-radius: 0 8px 8px 0; }
+        /* Primary Product Card — featured recommendation */
+        .product-card { background: linear-gradient(135deg, rgba(0,242,254,0.06), rgba(79,172,254,0.03)); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; padding: 28px; margin: 25px 0; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+        .product-card .product-info { flex: 1; min-width: 250px; }
+        .product-card .product-label { display: inline-block; background: var(--accent1); color: #000; padding: 3px 10px; border-radius: 3px; font-size: 0.7em; font-weight: 800; letter-spacing: 1px; margin-bottom: 10px; font-family: 'Montserrat', sans-serif; }
+        .product-card h3 { margin: 0 0 8px 0; color: var(--text); font-size: 1.3em; }
+        .product-card p { margin: 0 0 5px 0; color: var(--subtext); font-size: 0.95em; }
+        .product-card .product-specs { font-size: 0.85em; color: var(--subtext); opacity: 0.7; margin-top: 6px; }
+        
+        /* Compact product mention — inline alternatives */
+        .alt-product { background: rgba(255,255,255,0.02); border-left: 2px solid rgba(255,255,255,0.1); padding: 12px 18px; margin: 12px 0; border-radius: 0 6px 6px 0; font-size: 0.95em; color: var(--subtext); }
+        .alt-product strong { color: var(--text); }
+        .alt-product a { color: var(--accent2); text-decoration: none; font-weight: 600; }
+        .alt-product a:hover { text-decoration: underline; }
+        
+        /* Calculator / Info callout */
+        .callout-block { background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent2); margin: 20px 0; border-radius: 0 8px 8px 0; }
+        .callout-block a { color: var(--accent1); font-weight: 600; }
         
         a.buy-btn { display: inline-block; text-align: center; background: transparent; border: 2px solid var(--accent1); color: #fff; padding: 15px 30px; text-decoration: none; border-radius: 4px; font-weight: 800; font-size: 1.1em; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; text-transform: uppercase; transition: all 0.2s; margin-top: 15px; }
         a.buy-btn:hover { background: rgba(0, 242, 254, 0.1); box-shadow: 0 0 20px rgba(0, 242, 254, 0.2); }
+        a.buy-btn-sm { display: inline-block; background: transparent; border: 1px solid rgba(255,255,255,0.2); color: var(--subtext); padding: 8px 16px; text-decoration: none; border-radius: 3px; font-weight: 700; font-size: 0.82em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; transition: all 0.2s; }
+        a.buy-btn-sm:hover { border-color: var(--accent2); color: var(--accent2); background: rgba(79,172,254,0.05); }
     
         /* Mobile & Tablet Responsiveness */
         @media (max-width: 768px) {
@@ -77,6 +94,7 @@
             .pros-cons { flex-direction: column; }
             th, td { padding: 12px 10px !important; font-size: 0.85em; }
             .btn-table { padding: 8px 12px !important; font-size: 0.8em !important; }
+            .product-card { flex-direction: column; text-align: center; }
         }
         @media (max-width: 480px) {
             nav > a:first-child span { font-size: 0.9em !important; }
@@ -117,114 +135,141 @@
     <main>
         <h1>THE DEPTH DILEMMA: WHY YOUR DESK MIGHT BE TOO SHALLOW FOR A 49-INCH ULTRAWIDE</h1>
         <p style="color: var(--subtext); font-weight: 600; text-transform: uppercase; font-size: 0.85em; letter-spacing: 1px;">
-            DEPLOYED: APRIL 2026 • SECTOR: ERGONOMICS<br>
+            DEPLOYED: APRIL 2026 &bull; SECTOR: ERGONOMICS<br>
             <span style="color: var(--accent1); margin-top: 5px; display: block;">BY: <a href="../about.html" style="color: var(--accent1); text-decoration: underline;">J. MAC (LEAD BATTLESTATION ARCHITECT)</a></span>
         </p>
         
-        <p>Buying a 49-inch curved ultrawide is the ultimate battlestation upgrade, but most owners realize too late that their desk isn't prepared for the scale. Width is rarely the issue—<strong>depth is the silent killer.</strong></p>
+        <p>You unbox a 49-inch curved ultrawide, clear your desk, and slide it into position. Then it hits you: <strong>you are sitting way too close.</strong> The panel dominates your entire field of view, your neck is on a swivel tracking HUD elements in the corners, and somewhere in the back of your mind you can feel your optometrist drafting a sternly worded letter.</p>
+
+        <p>Width is rarely the problem&mdash;most desks comfortably span 48 to 60 inches. <strong>Depth is the silent killer.</strong> The standard office desk is 24 inches deep. Subtract 10 inches for the monitor's stand, and your eyes are less than 15 inches from a 4K furnace. This is not ergonomics. This is a tanning bed with a graphics card.</p>
 
         <h2>THE FOCAL POINT MATH</h2>
-        <p>For a 1000R curve (standard on the Odyssey G9), the focal point is exactly 1 meter (39 inches). If your desk is the standard 24 inches deep, and the monitor stand eats 10 inches of that, you are sitting less than 15 inches from a massive, glowing panel.</p>
+        <p>For a 1000R curve&mdash;the standard on the Samsung Odyssey G9 and most premium 49-inch panels&mdash;the focal point is exactly <strong>1 meter (39 inches)</strong> from the center of the screen. That's the distance at which every pixel on the curve hits your retina at the same angle, eliminating the "pixel-scanning" neck fatigue that plagues shallow-desk setups.</p>
 
-        <div class="feature-block">
-            <p><strong>Information Gain Tip:</strong> Use our <a href="/calculator.html">Ergonomic Calculator</a> to find your ideal viewing distance. For a 49" panel, you should aim for at least 30-35 inches of clearance between your eyes and the center of the screen to prevent "pixel-scanning" neck fatigue.</p>
+        <p>On a 24-inch deep desk with a factory stand, your eyes land at roughly 14-16 inches. You are literally <em>half</em> the recommended distance. This is why ultrawide owners develop the telltale head-bob: constantly panning left and right because the screen exceeds their peripheral vision.</p>
+
+        <div class="callout-block">
+            <p><strong>Dial It In:</strong> Use our <a href="/calculator.html">Battlestation Ergonomic Calculator</a> to compute your exact ideal viewing distance based on your panel size, curve radius, and desk depth. Stop guessing&mdash;the math doesn't lie.</p>
         </div>
-
-        <h2>THREE WAYS TO RECLAIM YOUR DEPTH</h2>
-
-        <div style="text-align: center; margin: 40px 0;">
-            <img src="../pending-custom-image-03.jpg" alt="Ergonomic desk setup with monitor arm and cable management" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
-            <p style="color: var(--subtext); font-size: 0.9em; margin-top: 10px;"><em>Optimal ergonomic setup with monitor arm positioning for proper viewing distance</em></p>
-        </div>
-
-        <ol>
-            <li><strong>The Offset Heavy-Duty Arm:</strong> Standard monitor arms don't allow the monitor to sit far enough back. Look for arms that support 30lbs+ (like the Ergotron HX) which allow you to push the screen <em>past</em> the rear edge of the desk.</li>
-            <li><strong>Desk Extensions:</strong> If you can't replace the tabletop, a clamp-on desk extender can add 10-12 inches of depth for your keyboard and mouse, effectively pushing your seating position back.</li>
-            <li><strong>Wall Mounting:</strong> The ultimate solution for shallow desks. By removing the desk-mount entirely, you can push the desk an additional 6 inches away from the wall, gaining massive focal depth.</li>
-        </ol>
 
         <div style="text-align: center; margin: 40px 0;">
             <img src="../pending-custom-image-02.jpg" alt="49-inch ultrawide monitor on deep desk with proper focal distance setup" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
-            <p style="color: var(--subtext); font-size: 0.9em; margin-top: 10px;"><em>A properly configured deep desk setup demonstrating the ideal focal distance for a 49-inch ultrawide panel</em></p>
+            <p style="color: var(--subtext); font-size: 0.9em; margin-top: 10px;"><em>A properly configured deep-desk setup hitting the 39-inch focal sweet spot for a 1000R ultrawide panel</em></p>
         </div>
 
-        <h2>RECOMMENDED GEAR FOR DEPTH OPTIMIZATION</h2>
-        <p>Based on our testing and focal point calculations, here are the top products to solve your depth dilemma (12 affiliate links):</p>
+        <h2>THREE WAYS TO RECLAIM YOUR DEPTH</h2>
+        <p>You have three paths, ranging from a simple arm swap to a full wall-mounted rebuild. Each approach solves the focal-length problem at a different budget tier. Pick the one that matches your setup&mdash;or stack them.</p>
 
-        <div class="feature-block">
-            <h3>Ergotron HX Heavy-Duty Monitor Arm</h3>
-            <p>Supports up to 42 lbs, allows monitor to extend past desk edge</p>
-            <a href="https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Ergotron HX Heavy-Duty Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <!-- ====== SOLUTION 1: MONITOR ARM ====== -->
+        <h3>1. THE HEAVY-DUTY MONITOR ARM</h3>
+        <p>The most surgical fix: replace the factory stand with an arm that lets you push the monitor <em>past</em> the rear edge of the desk. Most standard arms top out at 20 lbs and won't clear a 49-inch panel's footprint. You need something rated for 30+ lbs with extended rearward reach.</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">TOP PICK</span>
+                <h3>Ergotron HX Heavy-Duty Monitor Arm</h3>
+                <p>Rated for 42 lbs with 13 inches of rearward extension. The gold standard for 49-inch ultrawide mounting&mdash;lets you push the screen completely past the desk edge.</p>
+                <p class="product-specs">Weight capacity: 42 lbs &bull; Extension: 23.5" total &bull; VESA: 100x100/75x75</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Ergotron HX Heavy-Duty Monitor Arm on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>Samsung Odyssey G9 49-inch Monitor</h3>
-            <p>1000R curved ultrawide with focal point at 39 inches</p>
-            <a href="https://www.amazon.com/s?k=samsung+odyssey+g9&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Samsung Odyssey G9 49-inch Monitor on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <div class="alt-product">
+            <strong>Budget Alternative:</strong> The <a href="https://www.amazon.com/s?k=vivo+heavy+duty+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check VIVO Heavy Duty Monitor Arm on Amazon (Opens in a new tab)">VIVO Heavy Duty Arm</a> supports 33 lbs with full articulation at roughly half the cost. Slightly less rearward reach but solid for most setups.
         </div>
 
-        <div class="feature-block">
-            <h3>VIVO Heavy Duty Monitor Arm</h3>
-            <p>Budget-friendly option supporting 33 lbs with full articulation</p>
-            <a href="https://www.amazon.com/s?k=vivo+heavy+duty+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check VIVO Heavy Duty Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <div class="alt-product">
+            <strong>Mid-Range Pick:</strong> The <a href="https://www.amazon.com/s?k=amazonbasics+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check AmazonBasics Premium Monitor Arm on Amazon (Opens in a new tab)">AmazonBasics Premium Arm</a> handles 25 lbs with integrated cable channels. Best for 34-38 inch ultrawides or lighter 49-inch panels without the heavy factory stand.
         </div>
 
-        <div class="feature-block">
-            <h3>LG UltraWide 49-inch Monitor</h3>
-            <p>5120x1440 resolution with 3800R curve for deep desk setups</p>
-            <a href="https://www.amazon.com/s?k=lg+49+inch+ultrawide&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check LG UltraWide 49-inch Monitor on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <!-- ====== SOLUTION 2: DESK EXTENSION ====== -->
+        <h3>2. THE DESK EXTENSION</h3>
+        <p>If you cannot replace the desk itself&mdash;rental office, company-issued furniture, or simply a tabletop you love&mdash;a clamp-on desk extender adds 10-12 inches of depth for your keyboard and mouse tray. This pushes your seating position back by the same amount, effectively buying you the focal distance without touching the monitor or its stand.</p>
+        <p>It's not elegant, but it's <em>effective</em>. Combined with a monitor arm from Solution 1, you can reclaim nearly two feet of viewing distance without a single wall anchor.</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">RECOMMENDED</span>
+                <h3>Desk Extender Clamp-On Tray</h3>
+                <p>Clamp-on extension adds up to 12 inches of depth for your keyboard and mouse. No drilling required&mdash;attaches to any desk up to 2 inches thick.</p>
+                <p class="product-specs">Depth added: 10-12" &bull; Mount: C-clamp &bull; Material: Engineered wood / steel bracket</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=desk+extender+clamp+on+tray&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Desk Extender Clamp-On Tray on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>AmazonBasics Premium Monitor Arm</h3>
-            <p>Single monitor arm with 25 lbs capacity and cable management</p>
-            <a href="https://www.amazon.com/s?k=amazonbasics+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check AmazonBasics Premium Monitor Arm on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <!-- ====== SOLUTION 3: WALL MOUNT ====== -->
+        <h3>3. WALL MOUNTING</h3>
+        <p>The nuclear option. Remove the desk-mounted stand entirely, bolt an articulating bracket to the wall, and push the entire desk an additional 6 inches away from the wall. You gain depth on <em>both</em> sides of the equation: the monitor floats independently, and the desk moves back into the room.</p>
+        <p>This is the cleanest solution visually&mdash;zero footprint on the desk surface&mdash;but demands a stud-finder, a drill, and a willingness to commit. The payoff is unmatched: your entire desktop becomes usable real estate, and the focal distance becomes whatever you want it to be.</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">TOP PICK</span>
+                <h3>Full Motion Wall Mount Bracket</h3>
+                <p>Articulating wall mount with 26 inches of extension and full tilt/swivel. Positions the monitor exactly where you need it without consuming a single square inch of desk surface.</p>
+                <p class="product-specs">Extension: 26" &bull; Weight: 44 lbs &bull; VESA: up to 400x400 &bull; Stud spacing: 16-24"</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=full+motion+wall+mount+bracket&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Full Motion Wall Mount Bracket on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>Desk Extender Clamp-On Tray</h3>
-            <p>Adds 12 inches of depth for keyboard and mouse placement</p>
-            <a href="https://www.amazon.com/s?k=desk+extender+clamp+on+tray&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Desk Extender Clamp-On Tray on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <div class="alt-product">
+            <strong>Don't Forget Cable Management:</strong> A wall-mounted monitor means dangling cables. Pair it with a <a href="https://www.amazon.com/s?k=j+channel+cable+raceway&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check J Channel Cable Raceway Kit on Amazon (Opens in a new tab)">J Channel Cable Raceway</a> for the wall run and an <a href="https://www.amazon.com/s?k=under+desk+cable+tray&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check Under Desk Cable Tray on Amazon (Opens in a new tab)">Under-Desk Cable Tray</a> for the power strip. Clean cables make the floating-monitor illusion work.
         </div>
 
-        <div class="feature-block">
-            <h3>Full Motion Wall Mount Bracket</h3>
-            <p>Articulating wall mount for maximum depth clearance</p>
-            <a href="https://www.amazon.com/s?k=full+motion+wall+mount+bracket&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Full Motion Wall Mount Bracket on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="../pending-custom-image-03.jpg" alt="Ergonomic desk setup with monitor arm and cable management" style="max-width: 100%; height: auto; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+            <p style="color: var(--subtext); font-size: 0.9em; margin-top: 10px;"><em>A fully realized ergonomic setup: monitor arm for depth, cable management for cleanliness, and proper seating position</em></p>
         </div>
 
-        <div class="feature-block">
-            <h3>J Channel Cable Raceway Kit</h3>
-            <p>Clean cable management for wall-mounted monitor setups</p>
-            <a href="https://www.amazon.com/s?k=j+channel+cable+raceway&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check J Channel Cable Raceway Kit on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <!-- ====== COMPLETE SETUP ====== -->
+        <h2>BEYOND DEPTH: COMPLETING THE BATTLESTATION</h2>
+        <p>Once you have solved the focal-length problem, a few complementary pieces elevate the entire setup from "fixed the depth issue" to "this is the best desk I have ever sat at."</p>
+
+        <h3>THE DISPLAY</h3>
+        <p>If you are reading this <em>before</em> buying the monitor, two 49-inch panels dominate the market:</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">BEST IN CLASS</span>
+                <h3>Samsung Odyssey G9 49" (1000R)</h3>
+                <p>The reference design. 5120x1440 at 240Hz with a 1000R curve that demands&mdash;and rewards&mdash;a properly deep desk. Once your depth is dialed in, this panel is peerless.</p>
+                <p class="product-specs">Resolution: 5120x1440 &bull; Refresh: 240Hz &bull; Curve: 1000R &bull; Focal point: 39"</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=samsung+odyssey+g9&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Samsung Odyssey G9 49-inch Monitor on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>Under Desk Cable Tray</h3>
-            <p>Conceal power strips and cables for clean desk aesthetic</p>
-            <a href="https://www.amazon.com/s?k=under+desk+cable+tray&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Under Desk Cable Tray on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <div class="alt-product">
+            <strong>Gentler Curve Alternative:</strong> The <a href="https://www.amazon.com/s?k=lg+49+inch+ultrawide&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check LG UltraWide 49-inch Monitor on Amazon (Opens in a new tab)">LG UltraWide 49"</a> uses a milder 3800R curve&mdash;more forgiving on shallower desks and better suited for productivity-heavy workflows where uniform brightness matters more than gaming immersion.
         </div>
 
-        <div class="feature-block">
-            <h3>Secretlab Magnus Pro XL Desk</h3>
-            <p>80-inch deep desk with integrated cable management</p>
-            <a href="https://www.amazon.com/s?k=secretlab+magnus+pro+xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Secretlab Magnus Pro XL Desk on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <h3>THE FOUNDATION</h3>
+        <p>If your depth dilemma revealed that your current desk is simply too small across every dimension, skip the extenders and go straight to a proper deep-desk platform.</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">ULTIMATE PLATFORM</span>
+                <h3>Secretlab Magnus Pro XL</h3>
+                <p>80 inches wide by 31.5 inches deep with an integrated power column and full-length magnetic cable tray. Built for the weight and depth demands of a full ultrawide battlestation.</p>
+                <p class="product-specs">Dimensions: 80" x 31.5" &bull; Load: 264 lbs &bull; Height range: 25.6"-49.2" &bull; Integrated power</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=secretlab+magnus+pro+xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Secretlab Magnus Pro XL Desk on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>Herman Miller Aeron Chair</h3>
-            <p>Ergonomic chair with adjustable depth for proper seating position</p>
-            <a href="https://www.amazon.com/s?k=herman+miller+aeron&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Herman Miller Aeron Chair on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
+        <h3>THE THRONE</h3>
+        <p>Depth is a chain: desk depth dictates monitor distance, which dictates chair position. If you have pushed your seating position back to hit the 39-inch focal point, your chair needs to support that position with proper lumbar alignment and seat-pan depth adjustment.</p>
+
+        <div class="product-card">
+            <div class="product-info">
+                <span class="product-label">ERGONOMIC STANDARD</span>
+                <h3>Herman Miller Aeron Chair</h3>
+                <p>The Aeron's adjustable seat depth and PostureFit SL lumbar support let you dial in exactly the seating position your new focal distance demands. Expensive, but amortized over the years you will spend sitting in it.</p>
+                <p class="product-specs">Size options: A/B/C &bull; Seat depth: adjustable &bull; Lumbar: PostureFit SL &bull; Warranty: 12 years</p>
+            </div>
+            <a href="https://www.amazon.com/s?k=herman+miller+aeron&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Herman Miller Aeron Chair on Amazon (Opens in a new tab)">CHECK PRICE</a>
         </div>
 
-        <div class="feature-block">
-            <h3>Grovemade Desk Pad XL</h3>
-            <p>Extra large desk mat to protect desk surface and define workspace</p>
-            <a href="https://www.amazon.com/s?k=grovemade+desk+pad+xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Grovemade Desk Pad XL on Amazon (Opens in a new tab)">VIEW ON AMAZON</a>
-        </div>
-
-        <div class="disclosure" style="background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent1); margin: 40px 0; border-radius: 0 8px 8px 0;">
-            <p><strong>Disclosure:</strong> As an Amazon Associate, SmartDeskDojo earns from qualifying purchases. All product links are affiliate links that support our research. Prices and availability are subject to change.</p>
+        <div class="alt-product">
+            <strong>Surface Protection:</strong> A <a href="https://www.amazon.com/s?k=grovemade+desk+pad+xl&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" aria-label="Check Grovemade Desk Pad XL on Amazon (Opens in a new tab)">Grovemade Desk Pad XL</a> defines your workspace zone and protects the desk surface from keyboard abrasion and mouse tracking wear. Small investment, large aesthetic return.
         </div>
 
     </main>
