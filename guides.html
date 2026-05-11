@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Battlestation Setup Guides — SmartDeskDojo</title>
+    <meta name="description" content="Step-by-step battlestation setup guides: cable management, ergonomic calibration, desk depth optimization, and workstation configuration for WFH pros and gamers.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg: #09090b; --surface: #18181b; --text: #f4f4f5; --subtext: #d4d4d8; --accent1: #00f2fe; --accent2: #4facfe; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 0; line-height: 1.8; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; text-transform: uppercase; }
+        main { max-width: 900px; margin: 50px auto 40px; padding: 50px; background: var(--surface); border-radius: 12px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05); }
+        h1 { font-size: 2.2em; font-weight: 900; background: -webkit-linear-gradient(0deg, var(--accent1), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 0 0 10px 0; }
+        .guide-card { display: flex; gap: 25px; align-items: start; padding: 30px; margin: 25px 0; background: rgba(255,255,255,0.02); border-radius: 8px; border: 1px solid rgba(255,255,255,0.06); transition: border-color 0.2s; }
+        .guide-card:hover { border-color: rgba(79,172,254,0.2); }
+        .guide-card img { width: 200px; height: 120px; object-fit: cover; border-radius: 6px; flex-shrink: 0; }
+        .guide-card h3 { margin: 0 0 8px 0; font-size: 1.2em; }
+        .guide-card h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+        .guide-card h3 a:hover { color: var(--accent2); }
+        .guide-card p { color: var(--subtext); margin: 0; font-size: 0.95em; }
+        .guide-card .meta { font-size: 0.8em; color: var(--accent2); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        .tool-card { background: rgba(0,242,254,0.05); border: 1px solid rgba(0,242,254,0.15); }
+        footer { background: var(--surface); padding: 30px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; }
+        footer p { color: var(--subtext); font-size: 0.85em; }
+        @media (max-width: 768px) {
+            nav { padding: 15px 15px !important; justify-content: center !important; }
+            nav > a:first-child { font-size: 1.1em !important; margin-bottom: 10px; width: 100%; justify-content: center; }
+            nav > a:first-child img { height: 32px !important; }
+            nav > div { width: 100%; justify-content: center; gap: 15px !important; }
+            main { padding: 25px 15px !important; margin: 20px auto !important; }
+            .guide-card { flex-direction: column; }
+            .guide-card img { width: 100%; height: auto; }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/logo.png">
+    <link rel="apple-touch-icon" href="/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://smartdeskdojo.com/guides.html">
+    <meta property="og:title" content="Battlestation Setup Guides — SmartDeskDojo">
+    <meta property="og:description" content="Step-by-step battlestation setup guides: cable management, ergonomic calibration, desk depth optimization, and workstation configuration.">
+    <meta property="twitter:card" content="summary_large_image">
+</head>
+<body>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; background: var(--surface); border-bottom: 1px solid rgba(255,255,255,0.05); flex-wrap: wrap; gap: 20px;">
+    <a href="/index.html" style="display: flex; align-items: center; gap: 15px; font-family: 'Montserrat', sans-serif; font-size: 1.5em; font-weight: 900; color: var(--text); text-decoration: none; letter-spacing: 1px;">
+        <img src="/logo.png" alt="SmartDeskDojo Logo" style="height: 40px; border-radius: 8px;" onerror="this.style.display='none'">
+        <span>SMARTDESK<span style="color: var(--accent1);">DOJO</span></span>
+    </a>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+        <a href="/index.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Home</a>
+        <a href="/reviews.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Reviews</a>
+        <a href="/guides.html" style="color: var(--accent2); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Guides</a>
+        <a href="/calculator.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">Calculator</a>
+        <a href="/about.html" style="color: var(--subtext); text-decoration: none; font-weight: 600; font-size: 0.9em; text-transform: uppercase; transition: color 0.2s;">About</a>
+    </div>
+</nav>
+    <main>
+        <h1>BATTLESTATION SETUP GUIDES</h1>
+        <p style="color: var(--subtext); font-size: 1.1em; margin-bottom: 30px;">From ergonomic calibration to cable management, these guides walk you through building a battlestation that works as hard as you do.</p>
+
+        <div class="guide-card tool-card">
+            <img src="/logo.png" alt="Ergonomic Calculator" loading="lazy" style="object-fit: contain; background: #27272a;">
+            <div>
+                <div class="meta">INTERACTIVE TOOL</div>
+                <h3><a href="/calculator.html">Battlestation Ergonomic Calculator</a></h3>
+                <p>Input your height and desk dimensions to get mathematically precise chair height, desk height, and monitor distance. Stop guessing — let physics dial in your setup.</p>
+            </div>
+        </div>
+
+        <div class="guide-card">
+            <img src="/depth-ultrawide-setup.jpg" alt="Ultrawide desk depth optimization guide" loading="lazy">
+            <div>
+                <div class="meta">ERGONOMICS · APRIL 2026</div>
+                <h3><a href="/articles/depth-dilemma-ultrawide-desks.html">The Depth Dilemma: Optimizing Desk Depth for Ultrawide Monitors</a></h3>
+                <p>Why standard 24-inch desks fail 49-inch ultrawides, and how to reclaim focal distance with monitor arms and deep workstation profiles.</p>
+            </div>
+        </div>
+
+        <div class="guide-card">
+            <img src="/standing-desk-hero.jpg" alt="Standing desk setup guide" loading="lazy">
+            <div>
+                <div class="meta">ERGONOMICS · MAY 2026</div>
+                <h3><a href="/articles/standing-desk-revolution-2026.html">Standing Desk Setup: From Sitting to Active Workstation</a></h3>
+                <p>The data behind the standing desk revolution, plus how to transition from sitting to a sit-stand-stand routine without wrecking your feet or focus.</p>
+            </div>
+        </div>
+
+        <div class="guide-card">
+            <img src="/walking-pad-hero.jpg" alt="Walking pad workstation setup guide" loading="lazy">
+            <div>
+                <div class="meta">ACTIVE WORKSTATION · MAY 2026</div>
+                <h3><a href="/articles/active-workstation-walking-pads-2026.html">The Complete Active Workstation: Walking Pad Setup & 30-30-30 Routine</a></h3>
+                <p>How to pair a walking pad with your standing desk, calibrate desk height for treadmill use, and follow the 30-30-30 routine for all-day metabolic advantage.</p>
+            </div>
+        </div>
+
+        <div class="guide-card" style="opacity: 0.5; border-style: dashed;">
+            <div style="width: 200px; height: 120px; background: #27272a; border-radius: 6px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--subtext); font-size: 0.8em; text-transform: uppercase;">Coming May 12</div>
+            <div>
+                <div class="meta" style="color: var(--subtext);">CABLE MANAGEMENT · COMING SOON</div>
+                <h3 style="color: var(--subtext);">Standing Desk Cable Management: The Complete Wire-Free Guide</h3>
+                <p style="color: var(--subtext);">Tiered product guide from $5 zip ties to $150 fully enclosed systems. How to hide every cable under your standing desk — with slack math for the full height range.</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p><strong>Affiliate Disclosure:</strong> SmartDeskDojo.com is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate, we earn from qualifying purchases.</p>
+        <p>&copy; 2026 SmartDeskDojo. Built for the Grind. | <a href='/privacy.html' style='color: var(--accent1); text-decoration: none;'>Privacy Policy</a></p>
+    </footer>
+</body>
+</html>

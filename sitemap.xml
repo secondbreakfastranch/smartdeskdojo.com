@@ -7,6 +7,18 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://smartdeskdojo.com/reviews.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://smartdeskdojo.com/guides.html</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://smartdeskdojo.com/articles/best-ergonomic-chairs-under-500-2026.html</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
