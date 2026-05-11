@@ -1,137 +1,138 @@
 # J.A.R.V.I.S. Weekly Intelligence Sweep
-**Week of:** Monday, May 5 – Thursday, May 8, 2026
-**Sweep Executed:** Sunday, May 3, 2026 11:00 PM
+**Week of:** Monday, May 12 – Thursday, May 15, 2026
+**Sweep Executed:** Saturday, May 10, 2026 9:15 PM (Manual — preempting Sunday 11PM cron)
 **Status:** ✅ READY FOR PUBLISH
 
 ---
 
 ## RECONNAISSANCE SUMMARY
 
-### Reddit Heat Map (r/battlestations, r/StandingDesks, r/Ergonomics, r/WFH, r/desksetup)
-- **🔥 Under-desk treadmills / walking pads:** Surging across r/BuyItForLife, r/StandingDesksLife, r/runninglifestyle. Users asking "which walking pad actually lasts?" daily. Wirecutter, WIRED, Forbes, Runner's World all refreshed 2026 guides in the last 60 days.
-- **🔥 Budget ergonomic chairs under $500:** r/Ergonomics, r/WFH, r/homeoffice all have active multi-thread discussions. Sihoo M57, Desky Coilflex, used Steelcase Leap V2, Secretlab Titan Evo, Autonomous ErgoChair dominating conversation.
-- **🟡 Cable management for sit-stand desks:** "One visible cable" aesthetic trending on YouTube and blogs. Fluidstance, Oakywood, Uplift all publishing 2026 guides. Under-$75 solution sets highly searched.
-- **🟡 Monitor arms replacing stands:** Strong trend but partially covered by our Depth Dilemma article (April 30). Secondary angle exists.
-- **🟢 Desk mats/deskpads:** Steady but low-urgency. Felt + leather options popular (Deltahub, Grovemade alternatives).
+### Reddit Heat Map (r/battlestations, r/StandingDesks, r/Ergonomics, r/WFH, r/homeoffice, r/desksetup, r/CableManagement, r/mechanicalkeyboards, r/buildapc)
+- **🔥 Cable management for standing desks:** r/CableManagement, r/StandingDesk, r/desksetup flooded with "how do I hide these cables?" posts. A May 2026 post on r/StandingDesk titled "What standing desk has the best cable management?" actively trending. Standing-desk-specific angle (cables must flex 15-20" through height range) is underserved.
+- **🔥 Monitor light bars:** Approximately 70% of r/battlestations 2026 setup posts include a monitor light bar. BenQ ScreenBar Halo 2 launched early 2026 with tri-zone backlight. Xiaomi Mi and Quntis are budget challengers. High comparison-search volume.
+- **🟡 Monitor arms (standalone):** Strong demand but heavily competitive (Wirecutter, PCWorld, WIRED). Secondary angle to our Depth Dilemma article.
+- **🟡 Mechanical keyboards:** Very high demand but saturated market. Low differentiation potential.
+- **🟢 Desk mats / deskpads:** Steady but low-urgency category.
+- **🟢 PC cases for desk setups:** Existing strong coverage from GamersNexus, PC Gamer.
 
 ### Tech News Pulse
-- Herman Miller rumored tech-integrated desk series (ongoing watch)
-- "Warm minimalism + biophilic design" dominating Pinterest/TikTok desk setup aesthetic
-- 58% of knowledge workers now hybrid/remote — permanent WFH investment cycle continues
-- Standing desk market: $9.1B (2026), 5.8% CAGR through 2035
+- BenQ ScreenBar Halo 2 launched early 2026 — tri-zone backlight + presence detection creating review cycle
+- "Wire-free battlestation" aesthetic dominating r/battlestations upvote patterns
+- Uplift FlexMount + Magnetic Cable Clips trending as premium cable management solution
+- BTOD published cable management guide May 1, 2026 — validates category demand
 
 ### Existing Site Coverage (Avoid Duplication)
-- ✅ Secretlab Magnus Pro vs Autonomous SmartDesk Core (April 26)
-- ✅ The Depth Dilemma: Ultrawide Desk Ergonomics (April 30)
-- ✅ The $9.1B Standing Desk Revolution (May 1 — Thursday publish)
-- ❌ No chair content yet
-- ❌ No walking pad / active workstation content yet
-- ❌ No standalone cable management article
+- ✅ Secretlab Magnus Pro vs Autonomous SmartDesk Core (desk comparison)
+- ✅ The Depth Dilemma: Ultrawide Desk Ergonomics (monitor distance/depth)
+- ✅ The $9.1B Standing Desk Revolution (market trend + top 3 desks)
+- ✅ The Complete Active Workstation: Walking Pads & Under-Desk Treadmills
+- ✅ Best Ergonomic Chairs Under $500 (2026 Buyer's Guide)
+- ❌ No cable management content yet
+- ❌ No lighting content yet
+- ❌ No monitor arm standalone article (partially covered by Depth Dilemma)
+- ❌ No keyboard/audio/peripheral content yet
 
 ---
 
-## TOPIC 1 — MONDAY, MAY 5
+## TOPIC 1 — MONDAY, MAY 12
 
 ### Title:
-**"The Complete Active Workstation: Best Under-Desk Treadmills & Walking Pads for Your Standing Desk (2026)"**
+**"Standing Desk Cable Management: The Complete Guide to a Wire-Free Battlestation (2026)"**
 
 ### Why This Wins:
-- **Content gap:** Zero walking pad content on site. Standing desk article (May 1) is the perfect lead-in — readers who just bought a desk are now asking "what next?"
-- **Reddit demand:** r/BuyItForLife, r/StandingDesksLife, r/runninglifestyle all have active 2026 threads with high engagement. "Which walking pad actually lasts?" is an unanswered community question.
-- **Affiliate density:** Walking pads ($200–$500) + standing desks ($400–$800) + anti-fatigue mats ($30–$60) = $630–$1,360 average basket. Cross-sell potential is enormous.
-- **Viral hook:** "I walked 15,000 steps during my workday — here's how" is inherently shareable. Health + productivity angle.
-- **Seasonal timing:** Spring fitness momentum. People are buying walking pads for summer body prep.
+- **Content gap:** Zero cable management content on site. Natural cross-link from Standing Desk Revolution article — every desk buyer needs this.
+- **Reddit demand:** r/CableManagement, r/StandingDesk, r/desksetup all have active 2026 threads. "What standing desk has the best cable management?" is trending.
+- **Standing-desk-specific angle:** Generic cable guides exist, but none address the unique challenge of vertical movement. Cables must flex 15-20" through the height range without pulling. This is the differentiator.
+- **Affiliate pyramid:** Products at $5, $15, $50, $100, and $150+ price points. Every reader can buy something. BTOD's May 1, 2026 guide validates this tiered approach.
+- **Battlestation aesthetic:** "Wire-free" look drives Reddit engagement. Clean setups get significantly more upvotes.
 
 ### Content Structure:
-1. **The Sedentary Problem** — "Sitting 6+ hours = 19% higher mortality" stat. Standing alone isn't enough.
-2. **Walking Pad vs. Treadmill** — Key differences. Why walking pads exist.
-3. **The 2026 Lineup** (tiered product cards):
-   - 🏆 TOP PICK: Goplus 2-in-1 Under Desk Treadmill (~$300) — Wirecutter #1, 7.5 mph max, 265 lb capacity
-   - ⚡ BEST VALUE: WalkingPad C2 Mini Foldable (~$250) — WIRED pick, foldable, app tracking
-   - 💪 BEST INCLINE: Yagud Under-Desk Treadmill (~$280) — 8% incline, Forbes Vetted tested
-   - 🎯 BUDGET PICK: Sperax Walking Pad (~$180) — Amazon bestseller, quiet motor
-   - 🔋 PREMIUM: GoYouth 2-in-1 (~$350) — Wirecutter runner-up, Bluetooth speaker
-4. **How to Pair with Your Standing Desk** — Speed recommendations (1.5–2.5 mph for typing), desk height calibration
-5. **Essential Add-ons** — Anti-fatigue mat for standing breaks, cable management for treadmill cord, monitor arm for eye-level alignment
-6. **The 30-30-30 Routine** — 30 min walking, 30 min standing, 30 min sitting. Repeat.
+1. **Introduction:** "You bought the standing desk. Now your cables are a disaster." The standing desk cable challenge.
+2. **Why Standing Desk Cable Management Is Different:** Height adjustment travel, cable slack math, risks (pull-out, tripping, motor strain), the "one visible cable" aesthetic.
+3. **The Cable Management Product Tier List** (comparison table):
+   - Essential ($5-15): Zip ties, Velcro rolls, basic clips
+   - Starter Kit ($15-30): Amazon Basics Kit, EVEO J-Channel Kit
+   - Mid-Range ($50-100): Pamo Trays, Stand Desk Tray, Cable Matters
+   - Premium ($100-150): HumanScale NeatTech, Uplift FlexMount
+   - Ultimate ($150+): BTOD Cable Box, fully enclosed systems
+4. **Step-by-Step Installation Guide:** Audit → mount power strip → route through tray → bundle vertical drop with sleeve → leave slack loop for standing height. Calculator callout: desk height + cable slack.
+5. **Standing Desk Brand-Specific Solutions:** Uplift (FlexMount + Magnetic Clips), Secretlab Magnus (integrated tray), Autonomous (under-desk tray), Flexispot (clamp-on), IKEA (DIY-friendly).
+6. **Common Mistakes & Pro Tips:** Not enough slack, wall-mounted routing, forgetting future device changes.
 
 ### Primary Affiliate Targets:
 
 | Priority | Product | Price | Program | Why |
 |----------|---------|-------|---------|-----|
-| 🔴 HOT | Goplus 2-in-1 Under Desk Treadmill | ~$300 | Amazon Associates (4-6%) | Wirecutter #1. High volume. |
-| 🔴 HOT | WalkingPad C2 Mini Foldable | ~$250 | Amazon Associates (4-6%) | WIRED pick. Foldable = small space win. |
-| 🟡 WARM | Yagud Under-Desk Treadmill (8% Incline) | ~$280 | Walmart Affiliate | Forbes Vetted. Incline = differentiation. |
-| 🟡 WARM | Sperax Walking Pad | ~$180 | Amazon Associates (4-6%) | Budget entry point. High review count. |
-| 🟢 STEADY | GoYouth 2-in-1 Electric Treadmill | ~$350 | Amazon Associates (4-6%) | Wirecutter runner-up. Bluetooth speaker. |
-| 📌 CROSS-SELL | Uplift V3 Standing Desk | $600–$890 | Uplift Affiliate (4-8%) | Pair with walking pad. Proven seller. |
-| 📌 CROSS-SELL | FlexiSpot E7 Pro Standing Desk | $450–$650 | FlexiSpot (5-7%) | Budget desk + walking pad = complete bundle. |
-| 📌 CROSS-SELL | Anti-Fatigue Standing Mat | $30–$60 | Amazon Associates (4-6%) | Natural basket add-on. |
-| 📌 CROSS-SELL | Ergotron LX Monitor Arm | $150–$300 | Amazon Associates (3-4%) | Eye-level alignment while walking. |
+| 🔴 HOT | Amazon Basics Cable Management Kit | ~$15 | Amazon Associates (4-6%) | Entry-level volume. Universal. |
+| 🔴 HOT | EVEO Under-Desk J-Channel Kit | ~$25 | Amazon Associates (4-6%) | r/StandingDesk favorite. |
+| 🔴 HOT | Pamo Under-Desk Cable Trays (2-pack) | ~$50 | Amazon Associates (4-6%) | Mid-tier sweet spot. |
+| 🟡 WARM | Uplift FlexMount Cable Management | ~$69 | Uplift Affiliate (4-8%) | Premium brand cross-sell. |
+| 🟡 WARM | Uplift Magnetic Cable Clips | ~$19 | Uplift Affiliate (4-8%) | Add-on basket item. |
+| 🟡 WARM | Cable Matters Clamp-On Tray | ~$35 | Amazon Associates (4-6%) | Alternative mid-range option. |
+| 🟢 STEADY | Stand Desk Cable Tray (40-inch) | ~$100 | Amazon Associates (4-6%) | High-end complete solution. |
+| 📌 CROSS-SELL | Uplift V3 Standing Desk | $600-$890 | Uplift Affiliate (4-8%) | Pair with cable management. |
+| 📌 CROSS-SELL | Uplift Zipped Cable Sleeve | ~$10 | Uplift Affiliate (4-8%) | Impulse add-on. |
 
 ### Strategy Note:
-Lead with the health urgency ("sitting is the new smoking" + "standing isn't enough"). Position the walking pad as the logical upgrade from the standing desk they just read about. Bundle desk + walking pad + mat as the "Complete Active Workstation" — one-click upsell path.
+Position cable management as the "unsexy upgrade that makes your $900 desk look like a $3,000 setup." Lead with aspirational wire-free battlestation imagery. Cross-link heavily to the Standing Desk Revolution article. The tiered product ladder ensures a buy for every budget.
 
 ---
 
-## TOPIC 2 — THURSDAY, MAY 8
+## TOPIC 2 — THURSDAY, MAY 15
 
 ### Title:
-**"Best Ergonomic Office Chairs Under $500 in 2026: The Budget Buyer's Guide That Won't Break Your Back"**
+**"Best Monitor Light Bars 2026: BenQ ScreenBar Halo 2 vs Xiaomi Mi vs Quntis — We Compare All 3 Tiers"**
 
 ### Why This Wins:
-- **Content gap:** The site has ZERO chair content despite chairs being the #1 ergonomic purchase after a desk. This is a foundational pillar article.
-- **Reddit demand:** r/Ergonomics, r/WFH, r/homeoffice, r/remotework all have active multi-thread discussions. "Best chair under $500 for back pain" is a recurring top-level question.
-- **Affiliate value:** Chairs are higher-ticket than accessories ($200–$500 range), and Amazon Associates pays 4-6%. Used/refurbished market (Crandall) is an untapped angle.
-- **Buyer intent:** 46% of ergonomic buyers cite back pain. These are high-intent purchasers who convert.
-- **Complementary to desk content:** Desk + chair = the complete ergonomic setup. Natural internal linking opportunity.
+- **Content gap:** Zero lighting content on site. Opens a new content cluster (RGB strips, key lights, desk lamps).
+- **Ubiquitous in 2026:** ~70% of r/battlestations setup posts include a monitor light bar. This accessory has gone mainstream.
+- **Fresh product cycle:** BenQ ScreenBar Halo 2 launched early 2026 with tri-zone backlight + presence detection. Comparison searches surging.
+- **Eye strain = WFH pain point:** WFH audience primed for eye strain relief. Monitor light bar is a tangible, affordable upgrade ($40-$180) with immediate perceived benefit.
+- **Proven comparison format:** BenQ vs Xiaomi vs Quntis mirrors the Secretlab vs Autonomous format that works on the site.
 
 ### Content Structure:
-1. **Why Your Chair Matters More Than Your Desk** — Spine health data. "You spend 1,800+ hours/year in your chair."
-2. **What to Look For Under $500** — Adjustable lumbar, seat depth, mesh vs. foam, weight capacity, warranty
-3. **The 2026 Lineup** (tiered product cards):
-   - 🏆 TOP PICK: Sihoo M57 (~$250) — r/homeoffice favorite, 4D armrests, mesh back
-   - ⚡ BEST ERGONOMIC: Desky Coilflex (~$450) — r/Ergonomics pick, coil suspension
-   - 💪 BEST BIFL PATH: Used Steelcase Leap V2 (Crandall) (~$500) — r/BuyItForLife gold standard
-   - 🎯 BEST GAMING: Secretlab Titan Evo (~$450) — r/gamingchairs favorite, lumbar system
-   - 🔋 BEST MESH: Autonomous ErgoChair Pro (~$400) — Breathable, adjustable everything
-   - 💰 BUDGET PICK: Ticova Ergonomic Chair (~$180) — r/Ergonomics budget darling
-4. **New vs. Used: The $500 Sweet Spot Hack** — Crandall Office Furniture, Facebook Marketplace tips
-5. **Chair + Desk Pairing Guide** — Which chairs pair best with standing desks, depth considerations
+1. **Introduction:** "Your monitor is 4K. Your keyboard is mechanical. Why are you still squinting?"
+2. **Why Monitor Light Bars Beat Desk Lamps:** Asymmetrical optics (zero screen glare), space savings, eye strain science, color temperature for circadian rhythm, CRI >95.
+3. **The Comparison Table:**
+   - BenQ ScreenBar Halo 2 (~$179): Tri-zone backlight, presence detection, wireless puck, CRI >95
+   - Quntis Monitor Lamp (~$60): Ra98 CRI, wireless remote + touch, auto-dimming. Best value.
+   - Xiaomi Mi Light Bar (~$45): Ra95 CRI, 2.4GHz wireless dial, 25° magnetic rotation. Budget king.
+4. **Deep Dive Reviews:** Full pros/cons for each + honorable mentions (NEEWER Basics L10, KOOSTONE portable).
+5. **How to Choose:** Decision flowchart (Budget → Xiaomi, Value → Quntis, Premium → BenQ Halo 2). Curved vs flat monitor compatibility, webcam clearance, USB-A vs USB-C.
+6. **Setup Tips & Battlestation Integration:** 30-40° light throw angle, pairing with RGB backlighting, cable routing along monitor arm. Calculator tie-in: light bar placement relative to seated eye height.
 
 ### Primary Affiliate Targets:
 
 | Priority | Product | Price | Program | Why |
 |----------|---------|-------|---------|-----|
-| 🔴 HOT | Sihoo M57 Ergonomic Chair | ~$250 | Amazon Associates (4-6%) | Reddit cult favorite. High volume. |
-| 🔴 HOT | Desky Coilflex Ergonomic Chair | ~$450 | Desky Affiliate | r/Ergonomics trending pick. Coil = unique. |
-| 🟡 WARM | Secretlab Titan Evo (2026) | ~$450 | Secretlab Affiliate | Gaming-to-WFH crossover. Brand recognition. |
-| 🟡 WARM | Autonomous ErgoChair Pro | ~$400 | Autonomous Affiliate (3-5%) | Established brand. Mesh = summer win. |
-| 🟢 STEADY | Ticova Ergonomic Chair | ~$180 | Amazon Associates (4-6%) | Budget anchor. High review count. |
-| 🟢 STEADY | Crandall Remanufactured Steelcase Leap V2 | ~$500 | Crandall Affiliate (?) | Unique angle. BIFL credibility. |
-| 📌 CROSS-SELL | Standing Desk (Uplift V3 / FlexiSpot E7) | $450–$890 | Multiple | Complete ergonomic setup bundle. |
-| 📌 CROSS-SELL | Lumbar Support Cushion (Everlasting Comfort) | ~$30 | Amazon Associates (4-6%) | For readers not ready to buy a new chair. |
+| 🔴 HOT | BenQ ScreenBar Halo 2 | ~$179 | Amazon Associates (4-6%) | Premium anchor. New 2026 launch. |
+| 🔴 HOT | Quntis Computer Monitor Lamp | ~$60 | Amazon Associates (4-6%) | Value sweet spot. High review count. |
+| 🔴 HOT | Xiaomi Mi Computer Light Bar | ~$45 | Amazon Associates (4-6%) | Budget volume leader. |
+| 🟡 WARM | BenQ ScreenBar (original) | ~$109 | Amazon Associates (4-6%) | Mid-tier alternative. |
+| 🟢 STEADY | Quntis ScreenLinear Pro+ | ~$50 | Amazon Associates (4-6%) | Secondary budget option. |
+| 🟢 STEADY | NEEWER Basics L10 | ~$40 | Amazon Associates (4-6%) | Creator preset temps. |
+| 📌 CROSS-SELL | Govee RGBIC LED Strip Lights | $15-$30 | Amazon Associates (4-6%) | Ambient backlight pairing. |
 
 ### Strategy Note:
-The "used Steelcase Leap V2 from Crandall" angle is a differentiator — no other affiliate site pushes this path, and it builds massive trust ("we care about your budget, not just commissions"). Lead with back pain empathy. Position the $250–$500 chairs against the $1,800 Herman Miller Embody as the "90% of the comfort for 25% of the price" narrative.
+Position the BenQ Halo 2 as aspirational (tri-zone backlight is transformative for dark-room use), Quntis as the value champion (Ra98 CRI rivals BenQ at half price), Xiaomi as the budget king (solid aluminum under $50). Opens the lighting cluster for future content. Tease upcoming "Complete Battlestation Lighting Guide."
 
 ---
 
 ## GROK IMAGINE PROMPTS — MONDAY TOPIC THUMBNAIL
 
-### Prompt A — "The Walking Warrior" (Action / Lifestyle)
+### Prompt A — "Before & After: The Cable Apocalypse" (Split-Screen / Transformation)
 ```
-A young professional walking on a sleek under-desk treadmill beneath a warm walnut standing desk, mid-stride, laptop open with a glowing dashboard showing "12,847 steps" in neon cyan. Modern home office with floor-to-ceiling window, golden hour light streaming in, a small snake plant on the desk corner. The person looks focused, headphones on, coffee mug in hand. Under the desk: the treadmill belt is illuminated with a subtle blue LED glow. Style: warm minimalism, 8K photorealistic, vertical 2:3 composition, shallow depth of field focusing on the step counter display. No visible cables. Aspirational but achievable.
-```
-
-### Prompt B — "Before & After: The Sedentary Trap" (Split-Screen / Contrast)
-```
-Vertical 2:3 split-screen composition. LEFT HALF: dark, grey cubicle — a person slumped in a worn office chair, expression tired, harsh fluorescent overhead light, pizza box on the desk, clock shows 3:47 PM. RIGHT HALF: the same person, transformed — standing tall on a walking pad at a bamboo standing desk, bathed in warm natural light, monitor at eye level, expression energized and smiling, clock shows same 3:47 PM. A glowing cyan energy wave divides the two halves with the text "STEPS > SITTING" faintly visible in the transition. Style: dramatic editorial contrast, 8K photorealistic, motivational aesthetic. Text space at top for headline.
+Vertical 2:3 split-screen composition. LEFT HALF: a standing desk in chaos — tangled black cables hanging to the floor, visible power strip, USB wires snaking everywhere, a nightmare of spaghetti wiring under harsh fluorescent light. RIGHT HALF: the exact same desk transformed — zero visible cables, sleek black under-desk cable tray neatly holding everything, one clean braided cable sleeve dropping to the floor, warm ambient LED glow, ultrawide monitor on an arm, wireless mechanical keyboard on a felt desk mat. Dark moody battlestation aesthetic. A glowing cyan energy wave divides the two halves. Style: dramatic editorial contrast, 8K photorealistic, vertical 2:3. Text space at top for headline.
 ```
 
-### Prompt C — "The Clean Setup" (Product-Focused / Pinterest Aesthetic)
+### Prompt B — "The Underside View" (Technical / Product-Focused)
 ```
-Overhead flat-lay shot of a minimalist standing desk setup. Center: the desk surface in light bamboo wood. A WalkingPad C2 treadmill slides partially into frame from the bottom edge, its LED display glowing soft blue with "6,500 STEPS." On the desk: wireless mechanical keyboard, vertical mouse, small ceramic mug, single pothos plant trailing off the edge, and an anti-fatigue mat visible below. Everything arranged with intentional negative space. Soft morning light from an unseen window creates gentle shadows. Style: Pinterest flat-lay, 8K product photography, warm neutral palette (bamboo, cream, sage green). Clean, aspirational, no person. Text space at top 25%.
+Close-up underside view of a premium standing desk at maximum height, revealing immaculate cable management. Black metal cable tray mounted under the desk holding a surge protector and neatly coiled cables. Magnetic cable clips routing wires along the desk frame. J-channel raceway on the back edge. One braided cable sleeve descending cleanly to the floor. Warm ambient glow from above casting soft shadows. Shallow depth of field focusing on the organized tray. Dark workspace aesthetic. Product photography style, ultra-detailed, 8K. Clean, professional, aspirational. Text space at top 25%.
+```
+
+### Prompt C — "The Wireless Illusion" (Battlestation Glamour / Aspirational)
+```
+Wide shot of an immaculate dark-themed battlestation. A standing desk appears to float wirelessly — not a single cable visible anywhere. Ultrawide curved monitor on a sleek black arm, wireless mechanical keyboard with subtle cyan backlighting, large dark grey felt desk mat, BenQ ScreenBar casting warm light onto the desk surface, Govee RGB strip behind the desk creating a soft purple/blue halo on the wall. The floor underneath is completely clean — no cables, no power strip. A snake plant in a matte black pot on the desk corner. Cinematic lighting, moody atmosphere, high-end gaming/WFH hybrid aesthetic, photorealistic, 8K, vertical 2:3. Aspirational but achievable. Text space at top for headline.
 ```
 
 ---
@@ -140,12 +141,28 @@ Overhead flat-lay shot of a minimalist standing desk setup. Center: the desk sur
 
 | Day | Action | Article |
 |-----|--------|---------|
-| **Sunday (today)** | Strategy file saved | This document |
-| **Monday, May 5** | AutoPublisher builds & publishes | The Complete Active Workstation (Topic 1) |
-| **Wednesday, May 7** | Mid-week sweep refines Topic 2 | → `/research/midweek_strategy.md` |
-| **Thursday, May 8** | AutoPublisher builds & publishes | Ergonomic Chairs Under $500 (Topic 2) |
-| **Sunday, May 10** | Next weekly sweep | Fresh topics |
+| **Saturday (today)** | Strategy file saved | This document |
+| **Monday, May 12** | AutoPublisher builds & publishes | Standing Desk Cable Management (Topic 1) |
+| **Wednesday, May 13** | Mid-week sweep refines Topic 2 | → `/research/midweek_strategy.md` |
+| **Thursday, May 15** | AutoPublisher builds & publishes | Monitor Light Bars 2026 (Topic 2) |
+| **Sunday, May 17** | Next weekly sweep | Fresh topics |
 
 ---
 
-*Sources: Reddit (r/battlestations, r/StandingDesks, r/Ergonomics, r/WFH, r/BuyItForLife, r/homeoffice, r/desksetup), Wirecutter (April 2026), WIRED (April 2026), Forbes Vetted (March 2026), Runner's World (2026), Tom's Guide, CNET, Rackora Pro Blog, Hexcal Blog, Fluidstance Blog, Grand View Research.*
+## CONTENT CLUSTER STRATEGY
+
+These two articles open new clusters for future weeks:
+
+**Cable Management Cluster** (opens May 12):
+- Future: "Best Under-Desk Power Strips for Standing Desks"
+- Future: "Magnetic vs Adhesive Cable Clips: Which Lasts?"
+- Future: "Secretlab Magnus Cable Management Deep Dive"
+
+**Desk Lighting Cluster** (opens May 15):
+- Future: "Best RGB LED Strips for Battlestation Ambient Lighting"
+- Future: "Elgato Key Light vs Govee Desk Lamp for Video Calls"
+- Future: "Complete Battlestation Lighting Guide: Key, Bias, and Ambient"
+
+---
+
+*Sources: Reddit (r/battlestations, r/StandingDesks, r/Ergonomics, r/WFH, r/homeoffice, r/desksetup, r/CableManagement, r/mechanicalkeyboards, r/buildapc, r/DeskCableManagement), Wirecutter (NYT), PCWorld, PCMag, RTINGS, Tom's Hardware, PC Gamer, CNET, BTOD, WIRED, TechRadar, Eurogamer, GamersNexus, gagadget, Amazon, BenQ, Uplift Desk, Secretlab, Herman Miller.*
