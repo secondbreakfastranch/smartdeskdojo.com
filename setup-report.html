@@ -152,26 +152,42 @@
 
             <h2>YOUR RECOMMENDED HARDWARE</h2>
             <table>
-                <tr><th>Component</th><th>Best Match</th><th>Link</th></tr>
+                <tr><th>Component</th><th>Best Match</th><th style="text-align: center;">Buy</th><th>Guide</th></tr>
                 <tr>
                     <td style="color: var(--text); font-weight: 600;">Desk</td>
                     <td>${deskType}</td>
-                    <td><a href="/articles/standing-desk-revolution-2026.html">Full Desk Guide</a></td>
+                    <td style="text-align: center;"><a href="${parseFloat(deskStand) >= 45 ? 'https://www.amazon.com/s?k=uplift+v3+standing+desk&tag=smartdeskdojo-20' : 'https://www.amazon.com/s?k=flexispot+e7+pro+standing+desk&tag=smartdeskdojo-20'}" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/standing-desk-revolution-2026.html">Full Guide</a></td>
                 </tr>
                 <tr>
                     <td style="color: var(--text); font-weight: 600;">Chair</td>
                     <td>${chairType}</td>
-                    <td><a href="/articles/best-ergonomic-chairs-under-500-2026.html">Full Chair Guide</a></td>
+                    <td style="text-align: center;"><a href="${w >= 260 ? 'https://www.amazon.com/s?k=heavy+duty+ergonomic+office+chair+400+lbs&tag=smartdeskdojo-20' : 'https://www.amazon.com/s?k=haworth+breck+ergonomic+chair&tag=smartdeskdojo-20'}" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/best-ergonomic-chairs-under-500-2026.html">Full Guide</a></td>
                 </tr>
                 <tr>
                     <td style="color: var(--text); font-weight: 600;">Monitor Arm</td>
                     <td>${armType}</td>
-                    <td><a href="/articles/best-monitor-arms-2026.html">Full Arm Guide</a></td>
+                    <td style="text-align: center;"><a href="${parseFloat(deskStand) >= 45 ? 'https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20' : 'https://www.amazon.com/s?k=huanuo+dual+monitor+arm&tag=smartdeskdojo-20'}" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/best-monitor-arms-2026.html">Full Guide</a></td>
                 </tr>
                 <tr>
                     <td style="color: var(--text); font-weight: 600;">Cable Management</td>
                     <td>Steel under-desk tray + velcro ties</td>
-                    <td><a href="/articles/standing-desk-cable-management-guide-2026.html">Full Cable Guide</a></td>
+                    <td style="text-align: center;"><a href="https://www.amazon.com/s?k=under+desk+cable+tray+steel&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/standing-desk-cable-management-guide-2026.html">Full Guide</a></td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text); font-weight: 600;">Keyboard</td>
+                    <td>Royal Kludge C98 Magnetic</td>
+                    <td style="text-align: center;"><a href="https://www.amazon.com/s?k=royal+kludge+c98+magnetic+keyboard&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/hall-effect-keyboards-productivity-2026.html">Full Guide</a></td>
+                </tr>
+                <tr>
+                    <td style="color: var(--text); font-weight: 600;">Mouse</td>
+                    <td>Logitech MX Master 3S</td>
+                    <td style="text-align: center;"><a href="https://www.amazon.com/s?k=logitech+mx+master+3s&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" class="btn-outline" style="font-size: 0.8em; padding: 8px 16px;">Check Price</a></td>
+                    <td><a href="/articles/ai-mice-vs-traditional-productivity-2026.html">Full Guide</a></td>
                 </tr>
             </table>
 
