@@ -189,6 +189,12 @@
             
             recsHTML += "</div>";
             
+            recsHTML += "<div style='text-align: center; margin-top: 30px; padding: 25px; background: rgba(0,242,254,0.05); border: 1px solid rgba(0,242,254,0.25); border-radius: 10px;'>";
+            recsHTML += "<p style='color: var(--accent1); font-family: Montserrat, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px;'>Get Your Full Breakdown</p>";
+            recsHTML += "<p style='color: var(--subtext); font-size: 0.95em; margin: 0 0 15px;'>See your personalized cable slack math, monitor arm positioning, optimal chair specs, and desk depth requirements.</p>";
+            recsHTML += "<a href='/setup-report.html?h=" + h + "&w=" + w + "' class='btn-sm' style='font-size: 1em; padding: 14px 28px;'>View Your Setup Report</a>";
+            recsHTML += "</div>";
+            
             document.getElementById('gearRecs').innerHTML = recsHTML;
             document.getElementById('gearRecs').style.display = 'block';
         }
