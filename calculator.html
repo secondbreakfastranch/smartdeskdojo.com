@@ -261,17 +261,25 @@
             canvas.height = H;
             ctx.clearRect(0, 0, W, H);
             
-            ctx.fillStyle = '#09090b';
-            ctx.fillRect(0, 0, W, H);
-            
             const floorY = 400;
-            const personH = totalH;
-            const scale = 340 / personH;
-            const cxSit = 200, cxStand = 510;
+            const scale = 340 / totalH;
+            const cxSit = 210, cxStand = 510;
             
             function y(inches) { return floorY - (inches * scale); }
             
-            // --- FLOOR ---
+            const seatY = y(chairH);
+            const deskSY = y(deskSeatedH);
+            const deskY2 = y(deskStandH);
+            const deskX = cxSit + 28;
+            const deskW = 50;
+            const sDeskX = cxStand + 24;
+            const sDeskW = 50;
+            
+            // Background
+            ctx.fillStyle = '#09090b';
+            ctx.fillRect(0, 0, W, H);
+            
+            // Floor gradient
             const grad = ctx.createLinearGradient(0, floorY, 0, floorY + 8);
             grad.addColorStop(0, 'rgba(255,255,255,0.08)');
             grad.addColorStop(1, 'rgba(255,255,255,0)');
@@ -283,289 +291,72 @@
             ctx.moveTo(0, floorY);
             ctx.lineTo(W, floorY);
             ctx.stroke();
-            ctx.fillStyle = 'rgba(255,255,255,0.25)';
-            ctx.font = '9px Inter, sans-serif';
-            ctx.fillText('FLOOR', 12, floorY - 6);
             
-            // --- SEATED SIDE ---
-            const seatY = y(chairH);
-            const deskSY = y(deskSeatedH);
-            const headY = y(deskSeatedH + 14);
-            const neckY = y(deskSeatedH + 9);
-            const shoulderSY = y(deskSeatedH + 5.5);
-            const elbowSY = y(deskSeatedH - 0.5);
-            const hipSY = y(chairH + 4.5);
-            const kneeSY = y(chairH * 0.45);
-            const ankleSY = y(2.5);
+            // Load and draw images on top of background
+            const sitImg = new Image();
+            const standImg = new Image();
+            let loaded = 0;
             
-            // Chair base + casters
-            ctx.fillStyle = 'rgba(255,255,255,0.06)';
-            ctx.strokeStyle = 'rgba(255,255,255,0.18)';
-            ctx.lineWidth = 1.5;
-            ctx.beginPath();
-            ctx.moveTo(cxSit - 20, floorY - 2);
-            ctx.lineTo(cxSit, y(chairH * 0.15));
-            ctx.lineTo(cxSit + 20, floorY - 2);
-            ctx.stroke();
-            [cxSit - 18, cxSit + 18].forEach(x => {
-                ctx.beginPath();
-                ctx.arc(x, floorY - 2, 3, 0, Math.PI * 2);
-                ctx.fill();
-            });
-            
-            // Chair seat
-            ctx.fillStyle = 'rgba(79,172,254,0.12)';
-            ctx.strokeStyle = 'rgba(79,172,254,0.4)';
-            ctx.lineWidth = 2;
-            const rrect = (x, y, w, h, r) => {
-                ctx.beginPath();
-                ctx.moveTo(x + r, y);
-                ctx.lineTo(x + w - r, y);
-                ctx.arcTo(x + w, y, x + w, y + r, r);
-                ctx.lineTo(x + w, y + h - r);
-                ctx.arcTo(x + w, y + h, x + w - r, y + h, r);
-                ctx.lineTo(x + r, y + h);
-                ctx.arcTo(x, y + h, x, y + h - r, r);
-                ctx.lineTo(x, y + r);
-                ctx.arcTo(x, y, x + r, y, r);
-                ctx.closePath();
-            };
-            rrect(cxSit - 30, seatY - 5, 55, 10, 3);
-            ctx.fill();
-            ctx.stroke();
-            
-            // Chair backrest
-            ctx.fillStyle = 'rgba(79,172,254,0.08)';
-            ctx.strokeStyle = 'rgba(79,172,254,0.3)';
-            rrect(cxSit + 18, seatY - 52, 8, 52, 3);
-            ctx.fill();
-            ctx.stroke();
-            
-            // Seated Desk with legs
-            const deskX = cxSit + 32;
-            const deskW = 55;
-            ctx.fillStyle = 'rgba(79,172,254,0.1)';
-            ctx.strokeStyle = '#4facfe';
-            ctx.lineWidth = 2;
-            rrect(deskX, deskSY - 3, deskW, 8, 2);
-            ctx.fill();
-            ctx.stroke();
-            // Desk legs
-            ctx.strokeStyle = 'rgba(79,172,254,0.25)';
-            ctx.lineWidth = 1.5;
-            [deskX + 8, deskX + deskW - 10].forEach(lx => {
-                ctx.beginPath();
-                ctx.moveTo(lx, deskSY + 5);
-                ctx.lineTo(lx - 4, floorY + 1);
-                ctx.stroke();
-            });
-            
-            // Monitor on seated desk
-            ctx.fillStyle = 'rgba(255,255,255,0.08)';
-            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-            ctx.lineWidth = 1;
-            rrect(deskX + deskW - 14, deskSY - 32, 20, 14, 2);
-            ctx.fill();
-            ctx.stroke();
-            ctx.fillStyle = 'rgba(255,255,255,0.05)';
-            ctx.fillRect(deskX + deskW - 5, deskSY - 18, 3, 18);
-            
-            // Seated person
-            ctx.fillStyle = 'rgba(255,255,255,0.13)';
-            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-            ctx.lineWidth = 2;
-            // Head
-            ctx.beginPath();
-            ctx.arc(cxSit - 2, headY + 1, 9, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-            // Neck
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(cxSit - 1, neckY);
-            ctx.lineTo(cxSit - 1, shoulderSY);
-            ctx.stroke();
-            ctx.lineWidth = 2;
-            // Torso
-            ctx.beginPath();
-            ctx.moveTo(cxSit - 6, shoulderSY);
-            ctx.lineTo(cxSit - 4, shoulderSY + 4);
-            ctx.lineTo(cxSit + 1, hipSY - 1);
-            ctx.lineTo(cxSit + 6, shoulderSY + 1);
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
-            // Upper arm
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.moveTo(cxSit + 6, shoulderSY + 2);
-            ctx.lineTo(cxSit + 18, elbowSY + 1);
-            ctx.stroke();
-            // Forearm
-            ctx.beginPath();
-            ctx.moveTo(cxSit + 18, elbowSY + 1);
-            ctx.lineTo(deskX + 10, deskSY - 5);
-            ctx.stroke();
-            ctx.lineWidth = 2;
-            // Thigh
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(cxSit + 1, hipSY);
-            ctx.lineTo(cxSit + 14, kneeSY + 3);
-            ctx.stroke();
-            // Calf
-            ctx.beginPath();
-            ctx.moveTo(cxSit + 14, kneeSY + 3);
-            ctx.lineTo(cxSit + 10, ankleSY + 1);
-            ctx.stroke();
-            ctx.lineWidth = 2;
-            // Foot
-            ctx.fillStyle = 'rgba(255,255,255,0.15)';
-            rrect(cxSit + 6, ankleSY - 1, 12, 4, 2);
-            ctx.fill();
-            
-            // --- STANDING SIDE ---
-            const deskY2 = y(deskStandH);
-            const sHeadY = y(deskStandH + 13);
-            const sNeckY = y(deskStandH + 8);
-            const sShoulderY = y(deskStandH + 4.5);
-            const sElbowY = y(deskStandH - 1);
-            const sHipY = y(deskStandH - 14);
-            const sKneeY = y((deskStandH - 14) * 0.47);
-            const sAnkleY = y(2.5);
-            const sFootY = floorY;
-            
-            // Floor feet
-            ctx.fillStyle = 'rgba(255,255,255,0.15)';
-            rrect(cxStand - 12, sFootY - 3, 12, 4, 2);
-            rrect(cxStand + 2, sFootY - 3, 12, 4, 2);
-            ctx.fill();
-            
-            // Standing person body
-            ctx.fillStyle = 'rgba(255,255,255,0.13)';
-            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-            ctx.lineWidth = 2;
-            ctx.beginPath();
-            ctx.arc(cxStand, sHeadY, 9, 0, Math.PI * 2);
-            ctx.fill();
-            ctx.stroke();
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(cxStand, sNeckY);
-            ctx.lineTo(cxStand, sShoulderY);
-            ctx.stroke();
-            ctx.lineWidth = 2;
-            // Torso
-            ctx.beginPath();
-            ctx.moveTo(cxStand - 6, sShoulderY);
-            ctx.lineTo(cxStand - 4, sShoulderY + 6);
-            ctx.lineTo(cxStand, sHipY);
-            ctx.lineTo(cxStand + 4, sShoulderY + 6);
-            ctx.lineTo(cxStand + 6, sShoulderY);
-            ctx.closePath();
-            ctx.fill();
-            ctx.stroke();
-            // Upper arm
-            ctx.lineWidth = 3;
-            ctx.beginPath();
-            ctx.moveTo(cxStand + 6, sShoulderY + 2);
-            ctx.lineTo(cxStand + 20, sElbowY);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(cxStand + 20, sElbowY);
-            ctx.lineTo(cxStand + 34, deskY2 - 5);
-            ctx.stroke();
-            ctx.lineWidth = 2;
-            // Legs
-            ctx.lineWidth = 4;
-            ctx.beginPath();
-            ctx.moveTo(cxStand - 2, sHipY);
-            ctx.lineTo(cxStand - 6, sKneeY);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(cxStand + 2, sHipY);
-            ctx.lineTo(cxStand + 6, sKneeY);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(cxStand - 6, sKneeY);
-            ctx.lineTo(cxStand - 8, sAnkleY);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(cxStand + 6, sKneeY);
-            ctx.lineTo(cxStand + 8, sAnkleY);
-            ctx.stroke();
-            
-            // Standing Desk
-            const sDeskX = cxStand + 26;
-            const sDeskW = 55;
-            ctx.fillStyle = 'rgba(0,242,254,0.1)';
-            ctx.strokeStyle = '#00f2fe';
-            ctx.lineWidth = 2;
-            rrect(sDeskX, deskY2 - 3, sDeskW, 8, 2);
-            ctx.fill();
-            ctx.stroke();
-            ctx.strokeStyle = 'rgba(0,242,254,0.25)';
-            ctx.lineWidth = 1.5;
-            [sDeskX + 8, sDeskX + sDeskW - 10].forEach(lx => {
-                ctx.beginPath();
-                ctx.moveTo(lx, deskY2 + 5);
-                ctx.lineTo(lx - 4, floorY + 1);
-                ctx.stroke();
-            });
-            
-            // Monitor on standing desk
-            ctx.fillStyle = 'rgba(255,255,255,0.08)';
-            ctx.strokeStyle = 'rgba(255,255,255,0.15)';
-            ctx.lineWidth = 1;
-            rrect(sDeskX + sDeskW - 14, deskY2 - 32, 20, 14, 2);
-            ctx.fill();
-            ctx.stroke();
-            ctx.fillStyle = 'rgba(255,255,255,0.05)';
-            ctx.fillRect(sDeskX + sDeskW - 5, deskY2 - 18, 3, 18);
-            
-            // --- DIMENSION LINES WITH ARROWS ---
-            function dimLine(x, y1, y2, label, color, offset) {
-                const midY = (y1 + y2) / 2;
-                ctx.strokeStyle = color;
-                ctx.lineWidth = 1;
-                ctx.setLineDash([3, 3]);
-                ctx.beginPath();
-                ctx.moveTo(x, y1);
-                ctx.lineTo(x, y2);
-                ctx.stroke();
-                ctx.setLineDash([]);
-                // Arrowheads
-                ctx.fillStyle = color;
-                [y1, y2].forEach(ty => {
+            function drawAll() {
+                if (loaded < 2) return;
+                
+                // Seated image - positioned above floor, scaled to person height
+                const sitH = totalH * scale;
+                const sitW = sitH * (sitImg.width / sitImg.height);
+                ctx.drawImage(sitImg, cxSit - sitW / 2, floorY - sitH, sitW, sitH);
+                
+                // Standing image
+                const standH = totalH * scale * 1.05;
+                const standW = standH * (standImg.width / standImg.height);
+                ctx.drawImage(standImg, cxStand - standW / 2, floorY - standH, standW, standH);
+                
+                // --- DIMENSION LINES ---
+                function dimLine(x, y1, y2, label, color, offset) {
+                    const midY = (y1 + y2) / 2;
+                    ctx.strokeStyle = color;
+                    ctx.lineWidth = 1;
+                    ctx.setLineDash([3, 3]);
                     ctx.beginPath();
-                    ctx.moveTo(x, ty);
-                    ctx.lineTo(x - 4, ty - 6);
-                    ctx.lineTo(x + 4, ty - 6);
-                    ctx.closePath();
-                    ctx.fill();
-                });
-                // Label
-                ctx.fillStyle = color;
-                ctx.font = 'bold 10px Inter, sans-serif';
-                const lw = ctx.measureText(label).width;
-                ctx.fillText(label, offset ? x - lw - 8 : x + 8, midY + 4);
+                    ctx.moveTo(x, y1);
+                    ctx.lineTo(x, y2);
+                    ctx.stroke();
+                    ctx.setLineDash([]);
+                    ctx.fillStyle = color;
+                    [y1, y2].forEach(ty => {
+                        ctx.beginPath();
+                        ctx.moveTo(x, ty);
+                        ctx.lineTo(x - 4, ty - 6);
+                        ctx.lineTo(x + 4, ty - 6);
+                        ctx.closePath();
+                        ctx.fill();
+                    });
+                    ctx.fillStyle = color;
+                    ctx.font = 'bold 11px Inter, sans-serif';
+                    const lw = ctx.measureText(label).width;
+                    ctx.fillText(label, offset ? x - lw - 8 : x + 8, midY + 4);
+                }
+                
+                dimLine(cxSit - 60, floorY, seatY, chairH.toFixed(1) + '\"', 'rgba(255,255,255,0.5)', true);
+                dimLine(deskX + deskW + 35, floorY, deskSY, deskSeatedH.toFixed(1) + '\"', '#4facfe', false);
+                dimLine(sDeskX + sDeskW + 35, floorY, deskY2, deskStandH.toFixed(1) + '\"', '#00f2fe', false);
+                
+                // Labels
+                ctx.fillStyle = '#fff';
+                ctx.font = 'bold 14px Montserrat, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('YOUR ERGONOMIC BLUEPRINT', W/2, 26);
+                ctx.fillStyle = '#4facfe';
+                ctx.font = '11px Inter, sans-serif';
+                ctx.fillText('SEATED — ' + deskSeatedH.toFixed(1) + '\"', cxSit, floorY + 18);
+                ctx.fillStyle = '#00f2fe';
+                ctx.fillText('STANDING — ' + deskStandH.toFixed(1) + '\"', cxStand, floorY + 18);
+                ctx.textAlign = 'start';
             }
             
-            dimLine(cxSit - 55, floorY, seatY, chairH.toFixed(1) + '\"', 'rgba(255,255,255,0.4)', true);
-            dimLine(deskX + deskW + 40, floorY, deskSY, deskSeatedH.toFixed(1) + '\"', '#4facfe', false);
-            dimLine(sDeskX + sDeskW + 40, floorY, deskY2, deskStandH.toFixed(1) + '\"', '#00f2fe', false);
-            
-            // --- LABELS ---
-            ctx.fillStyle = '#fff';
-            ctx.font = 'bold 13px Montserrat, sans-serif';
-            ctx.textAlign = 'center';
-            ctx.fillText('YOUR ERGONOMIC BLUEPRINT', W/2, 24);
-            ctx.fillStyle = '#4facfe';
-            ctx.font = '10px Inter, sans-serif';
-            ctx.fillText('SEATED', cxSit, floorY + 16);
-            ctx.fillStyle = '#00f2fe';
-            ctx.fillText('STANDING', cxStand, floorY + 16);
-            ctx.textAlign = 'start';
+            sitImg.onload = function() { loaded++; drawAll(); };
+            standImg.onload = function() { loaded++; drawAll(); };
+            sitImg.src = 'https://www.image2url.com/r2/default/images/1779671743396-daa1854b-6412-4fb4-96c6-eb8d37e308cd.jpg';
+            standImg.src = 'https://www.image2url.com/r2/default/images/1779671779277-0d272d31-7f64-4c5d-8540-a4ce6f8bb7a9.jpg';
         }
     </script>
 </body>
