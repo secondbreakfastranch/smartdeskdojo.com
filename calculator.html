@@ -134,6 +134,10 @@
             </div>
         </div>
         
+        <div id="diagramContainer" style="display: none; margin: 30px 0; background: var(--bg); border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); padding: 10px; overflow-x: auto;">
+            <canvas id="ergoCanvas" width="700" height="420" style="display: block; max-width: 100%; height: auto;"></canvas>
+        </div>
+        
         <div class="recs-container" id="gearRecs" aria-live="polite">
             <!-- JS Injection -->
         </div>
@@ -163,6 +167,8 @@
             document.getElementById('monitorRes').innerText = '20" - 30"';
             
             document.getElementById('resultsPanel').style.display = 'block';
+            document.getElementById('diagramContainer').style.display = 'block';
+            drawDiagram(parseFloat(chair), parseFloat(deskSeated), parseFloat(deskStand), h);
             
             // Advanced Biometric Affiliate Logic
             let recsHTML = "<h3>REQUIRED HARDWARE TOLERANCES</h3><div class='grid'>";
@@ -246,6 +252,201 @@
             
             document.getElementById('gearRecs').innerHTML = recsHTML;
             document.getElementById('gearRecs').style.display = 'block';
+        }
+        
+        function drawDiagram(chairH, deskSeatedH, deskStandH, totalH) {
+            const canvas = document.getElementById('ergoCanvas');
+            const ctx = canvas.getContext('2d');
+            const W = 700, H = 420;
+            ctx.clearRect(0, 0, W, H);
+            
+            // Background
+            ctx.fillStyle = '#09090b';
+            ctx.fillRect(0, 0, W, H);
+            
+            // Scale: map real inches to pixels. Floor at y=390, person height maps to y range.
+            const floorY = 390;
+            const personIn = totalH;
+            const scale = 330 / personIn; // person fills most of the height
+            const cx = 220; // center X for seated person
+            const cxStand = 480; // center X for standing person
+            
+            // --- FLOOR ---
+            ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(20, floorY);
+            ctx.lineTo(W - 20, floorY);
+            ctx.stroke();
+            ctx.fillStyle = 'rgba(255,255,255,0.3)';
+            ctx.font = '10px Inter, sans-serif';
+            ctx.fillText('FLOOR', 20, floorY - 4);
+            
+            // Helper: convert inch height to canvas Y
+            function y(inches) { return floorY - (inches * scale); }
+            
+            // --- SEATED PERSON (left side) ---
+            const eyeY = y(deskSeatedH + 8);
+            const headTop = y(deskSeatedH + 16);
+            const shoulderY = y(deskSeatedH + 6);
+            const hipY = y(chairH + 6);
+            const kneeY = y(chairH * 0.55);
+            const footY = floorY - 2;
+            
+            // Chair
+            ctx.fillStyle = 'rgba(0,242,254,0.08)';
+            ctx.strokeStyle = 'rgba(0,242,254,0.3)';
+            ctx.lineWidth = 2;
+            const seatY = y(chairH);
+            ctx.fillRect(cx - 28, seatY - 4, 56, 8);
+            ctx.strokeRect(cx - 28, seatY - 4, 56, 8);
+            // Chair back
+            ctx.fillStyle = 'rgba(0,242,254,0.05)';
+            ctx.fillRect(cx + 20, seatY - 50, 6, 54);
+            
+            // Person body (seated)
+            ctx.fillStyle = 'rgba(255,255,255,0.12)';
+            ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+            ctx.lineWidth = 2;
+            // Head
+            ctx.beginPath();
+            ctx.arc(cx, headTop, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            // Torso
+            ctx.beginPath();
+            ctx.moveTo(cx, shoulderY);
+            ctx.lineTo(cx, hipY);
+            ctx.stroke();
+            // Upper leg
+            ctx.beginPath();
+            ctx.moveTo(cx, hipY);
+            ctx.lineTo(cx + 18, kneeY);
+            ctx.stroke();
+            // Lower leg
+            ctx.beginPath();
+            ctx.moveTo(cx + 18, kneeY);
+            ctx.lineTo(cx + 8, footY);
+            ctx.stroke();
+            // Arm to desk
+            ctx.beginPath();
+            ctx.moveTo(cx - 2, shoulderY);
+            ctx.lineTo(cx + 30, y(deskSeatedH));
+            ctx.stroke();
+            
+            // Seated Desk
+            const deskX = cx + 20;
+            const deskW = 60;
+            const deskSY = y(deskSeatedH);
+            ctx.fillStyle = 'rgba(79,172,254,0.15)';
+            ctx.strokeStyle = '#4facfe';
+            ctx.lineWidth = 2;
+            ctx.fillRect(deskX, deskSY, deskW, 6);
+            ctx.strokeRect(deskX, deskSY, deskW, 6);
+            ctx.fillStyle = '#4facfe';
+            ctx.font = 'bold 11px Montserrat, sans-serif';
+            ctx.fillText('SITTING', deskX + deskW + 6, deskSY + 4);
+            
+            // Monitor on desk
+            ctx.fillStyle = 'rgba(255,255,255,0.1)';
+            ctx.fillRect(deskX + deskW - 8, deskSY - 28, 4, 28);
+            ctx.fillRect(deskX + deskW - 22, deskSY - 32, 18, 14);
+            
+            // --- STANDING PERSON (right side) ---
+            const sEyeY = y(deskStandH + 6);
+            const sHeadTop = y(deskStandH + 14);
+            const sShoulderY = y(deskStandH + 4);
+            const sHipY = y(deskStandH - 12);
+            const sKneeY = y((deskStandH - 12) * 0.5);
+            
+            // Person body (standing)
+            ctx.fillStyle = 'rgba(255,255,255,0.12)';
+            ctx.strokeStyle = 'rgba(255,255,255,0.25)';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.arc(cxStand, sHeadTop, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(cxStand, sShoulderY);
+            ctx.lineTo(cxStand, sHipY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(cxStand, sHipY);
+            ctx.lineTo(cxStand - 6, sKneeY);
+            ctx.moveTo(cxStand, sHipY);
+            ctx.lineTo(cxStand + 6, sKneeY);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(cxStand - 6, sKneeY);
+            ctx.lineTo(cxStand - 8, footY);
+            ctx.moveTo(cxStand + 6, sKneeY);
+            ctx.lineTo(cxStand + 8, footY);
+            ctx.stroke();
+            // Arms
+            ctx.beginPath();
+            ctx.moveTo(cxStand - 2, sShoulderY);
+            ctx.lineTo(cxStand + 30, y(deskStandH));
+            ctx.stroke();
+            
+            // Standing Desk
+            const sDeskX = cxStand + 20;
+            const sDeskW = 60;
+            const deskY2 = y(deskStandH);
+            ctx.fillStyle = 'rgba(0,242,254,0.15)';
+            ctx.strokeStyle = '#00f2fe';
+            ctx.lineWidth = 2;
+            ctx.fillRect(sDeskX, deskY2, sDeskW, 6);
+            ctx.strokeRect(sDeskX, deskY2, sDeskW, 6);
+            ctx.fillStyle = '#00f2fe';
+            ctx.fillText('STANDING', sDeskX + sDeskW + 6, deskY2 + 4);
+            
+            // --- DIMENSION LINES ---
+            // Chair height
+            ctx.strokeStyle = 'rgba(255,255,255,0.2)';
+            ctx.lineWidth = 1;
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(cx - 50, floorY);
+            ctx.lineTo(cx - 50, seatY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#fff';
+            ctx.font = '11px Inter, sans-serif';
+            ctx.fillText(chairH.toFixed(1) + '\"', cx - 48, (floorY + seatY) / 2);
+            
+            // Seated desk height
+            ctx.strokeStyle = 'rgba(79,172,254,0.3)';
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(deskX + deskW + 55, floorY);
+            ctx.lineTo(deskX + deskW + 55, deskSY);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#4facfe';
+            ctx.fillText(deskSeatedH.toFixed(1) + '\"', deskX + deskW + 58, (floorY + deskSY) / 2);
+            
+            // Standing desk height
+            ctx.strokeStyle = 'rgba(0,242,254,0.3)';
+            ctx.setLineDash([4, 4]);
+            ctx.beginPath();
+            ctx.moveTo(sDeskX + sDeskW + 55, floorY);
+            ctx.lineTo(sDeskX + sDeskW + 55, deskY2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+            ctx.fillStyle = '#00f2fe';
+            ctx.fillText(deskStandH.toFixed(1) + '\"', sDeskX + sDeskW + 58, (floorY + deskY2) / 2);
+            
+            // Title
+            ctx.fillStyle = '#fff';
+            ctx.font = 'bold 12px Montserrat, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText('YOUR ERGONOMIC BLUEPRINT', W/2, 22);
+            ctx.fillStyle = 'rgba(255,255,255,0.5)';
+            ctx.font = '10px Inter, sans-serif';
+            ctx.fillText('Seated Position', cx, floorY + 16);
+            ctx.fillText('Standing Position', cxStand, floorY + 16);
+            ctx.textAlign = 'start';
         }
     </script>
 </body>
