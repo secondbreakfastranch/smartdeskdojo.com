@@ -187,12 +187,61 @@
                  recsHTML += "<div class='card'><h4>2-Stage Frame Spec</h4><p>Your standing focal height of " + deskStand + " inches is perfectly supported by standard, highly-stable 2-stage motorized dual-motor frames.</p><a href='https://www.amazon.com/s?k=dual+motor+standing+desk&tag=smartdeskdojo-20' target='_blank' rel='noopener sponsored' class='btn-sm'>View High-Stability Desks</a></div>";
             }
             
+            recsHTML += "</div>";  // close grid
+            
+            // Cable Slack Math
+            const cableSlack = (parseFloat(deskStand) - parseFloat(deskSeated) + 12).toFixed(0);
+            const deskType = deskStand >= 45 ? 'Uplift V3 (3-stage, 535 lb capacity)' : 'FlexiSpot E7 Pro (dual-motor, 2-stage)';
+            const chairType = w >= 260 ? 'Haworth Breck (heavy-duty, 12-year warranty)' : 'Haworth Breck (weight-activated recline, 12-year warranty)';
+            const armType = deskStand >= 45 ? 'Ergotron HX (42 lb capacity)' : 'HUANUO Dual Arm (gas-spring, USB)';
+            
+            recsHTML += "<div style='margin-top: 30px;'>";
+            recsHTML += "<h3>CABLE SLACK MATH FOR YOUR " + deskStand + "\" STANDING DESK</h3>";
+            recsHTML += "<p style='color: var(--subtext); font-size: 0.95em;'>Your desk travels " + cableSlack + "\" from seated to standing. Every cable needs at least that much managed slack.</p>";
+            recsHTML += "<table style='width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(255,255,255,0.02); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);'>";
+            recsHTML += "<tr style='background: rgba(0,242,254,0.1);'><th style='padding: 12px; text-align: left; color: var(--accent1); font-family: Montserrat, sans-serif; font-size: 0.85em;'>Cable</th><th style='padding: 12px; text-align: left; color: var(--accent1); font-family: Montserrat, sans-serif; font-size: 0.85em;'>Min Length</th></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05);'>Power strip to wall</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--accent1); font-weight: 600;'>" + (parseInt(cableSlack) + 30) + "\"</td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05);'>Monitor power + display</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--accent1); font-weight: 600;'>" + (parseInt(cableSlack) + 18) + "\"</td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05);'>PC power cord</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--accent1); font-weight: 600;'>" + (parseInt(cableSlack) + 24) + "\"</td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px;'>USB hub / dock</td><td style='padding: 10px 12px; color: var(--accent1); font-weight: 600;'>" + (parseInt(cableSlack) + 12) + "\"</td></tr>";
+            recsHTML += "</table></div>";
+            
+            // Hardware Recommendations Table
+            recsHTML += "<h3>YOUR RECOMMENDED BATTLE<span style='color: var(--accent1);'>STATION</span></h3>";
+            recsHTML += "<table style='width: 100%; border-collapse: collapse; margin: 20px 0; background: rgba(255,255,255,0.02); border-radius: 8px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05);'>";
+            recsHTML += "<tr style='background: rgba(0,242,254,0.1);'><th style='padding: 12px; text-align: left; color: var(--accent1); font-family: Montserrat, sans-serif; font-size: 0.85em;'>Component</th><th style='padding: 12px; text-align: left; color: var(--accent1); font-family: Montserrat, sans-serif; font-size: 0.85em;'>Best Match</th><th style='padding: 12px; text-align: center; color: var(--accent1); font-family: Montserrat, sans-serif; font-size: 0.85em;'>Action</th></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;'>Desk</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--subtext);'>" + deskType + "</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;'><a href='" + (deskStand >= 45 ? "https://www.amazon.com/s?k=uplift+v3+standing+desk&tag=smartdeskdojo-20" : "https://www.amazon.com/s?k=flexispot+e7+pro+standing+desk&tag=smartdeskdojo-20") + "' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;'>Chair</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--subtext);'>" + chairType + "</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;'><a href='" + (w >= 260 ? "https://www.amazon.com/s?k=heavy+duty+ergonomic+office+chair+400+lbs&tag=smartdeskdojo-20" : "https://www.amazon.com/s?k=haworth+breck+ergonomic+chair&tag=smartdeskdojo-20") + "' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;'>Monitor Arm</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--subtext);'>" + armType + "</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;'><a href='" + (deskStand >= 45 ? "https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20" : "https://www.amazon.com/s?k=huanuo+dual+monitor+arm&tag=smartdeskdojo-20") + "' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;'>Cable Mgmt</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--subtext);'>Steel under-desk tray + velcro ties</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;'><a href='https://www.amazon.com/s?k=under+desk+cable+tray+steel&tag=smartdeskdojo-20' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-weight: 600;'>Keyboard</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--subtext);'>Royal Kludge C98 Magnetic</td><td style='padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.05); text-align: center;'><a href='https://www.amazon.com/s?k=royal+kludge+c98+magnetic+keyboard&tag=smartdeskdojo-20' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "<tr><td style='padding: 10px 12px; font-weight: 600;'>Mouse</td><td style='padding: 10px 12px; color: var(--subtext);'>Logitech MX Master 3S</td><td style='padding: 10px 12px; text-align: center;'><a href='https://www.amazon.com/s?k=logitech+mx+master+3s&tag=smartdeskdojo-20' target='_blank' rel='noopener sponsored' style='display: inline-block; background: transparent; border: 2px solid var(--accent1); color: var(--text); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-weight: 700; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.75em;'>Check Price</a></td></tr>";
+            recsHTML += "</table>";
+            
+            // Depth Check
+            recsHTML += "<div style='background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--accent2); margin: 20px 0; border-radius: 0 8px 8px 0;'>";
+            recsHTML += "<strong style='color: var(--accent2); font-family: Montserrat, sans-serif;'>DEPTH CHECK</strong>";
+            recsHTML += "<p style='color: var(--subtext); margin: 8px 0 0; font-size: 0.95em;'>With a monitor at 20-28\" from your eyes, a standard 24\" desk is too shallow. You need at least <strong>30\" of depth</strong> if using a monitor arm, and 36\"+ with a stock stand. <a href='/articles/depth-dilemma-ultrawide-desks.html' style='color: var(--accent1);'>Full depth breakdown.</a></p>";
+            recsHTML += "</div>";
+            
+            // Tall warning
+            if (deskStand >= 45) {
+                recsHTML += "<div style='background: rgba(239,68,68,0.05); border: 1px solid rgba(239,68,68,0.2); border-radius: 8px; padding: 20px; margin: 20px 0;'>";
+                recsHTML += "<strong style='color: #f87171; font-family: Montserrat, sans-serif; text-transform: uppercase; font-size: 0.9em;'>⚠ Stability Warning</strong>";
+                recsHTML += "<p style='margin: 10px 0 0; color: var(--subtext); font-size: 0.95em;'>At " + deskStand + "\" standing height, a 2-stage desk will wobble during typing. You need a 3-stage frame with a crossbar. The Uplift V3 is the gold standard — 535 lb capacity, 15-year warranty.</p>";
+                recsHTML += "</div>";
+            }
+            
+            // Guide links
+            recsHTML += "<div style='text-align: center; margin-top: 20px;'>";
+            recsHTML += "<a href='/articles/standing-desk-revolution-2026.html' class='btn-sm'>Full Desk Guide</a> &nbsp;";
+            recsHTML += "<a href='/articles/best-ergonomic-chairs-under-500-2026.html' class='btn-sm'>Full Chair Guide</a>";
             recsHTML += "</div>";
             
             recsHTML += "<div style='text-align: center; margin-top: 30px; padding: 25px; background: rgba(0,242,254,0.05); border: 1px solid rgba(0,242,254,0.25); border-radius: 10px;'>";
-            recsHTML += "<p style='color: var(--accent1); font-family: Montserrat, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px;'>Get Your Full Breakdown</p>";
-            recsHTML += "<p style='color: var(--subtext); font-size: 0.95em; margin: 0 0 15px;'>See your personalized cable slack math, monitor arm positioning, optimal chair specs, and desk depth requirements.</p>";
-            recsHTML += "<a href='/setup-report.html?h=" + h + "&w=" + w + "' class='btn-sm' style='font-size: 1em; padding: 14px 28px;'>View Your Setup Report</a>";
+            recsHTML += "<p style='color: var(--accent1); font-family: Montserrat, sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin: 0 0 10px;'>Want This as a Shareable Report?</p>";
+            recsHTML += "<p style='color: var(--subtext); font-size: 0.95em; margin: 0 0 15px;'>Bookmark your personalized setup page with all these results.</p>";
+            recsHTML += "<a href='/setup-report.html?h=" + h + "&w=" + w + "' class='btn-sm' style='font-size: 1em; padding: 14px 28px;'>Open Shareable Report</a>";
             recsHTML += "</div>";
             
             document.getElementById('gearRecs').innerHTML = recsHTML;
