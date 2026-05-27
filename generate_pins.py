@@ -35,7 +35,7 @@ PINS = [
         "slug": "ergonomic-chairs-under-500",
         "image": os.path.join(REPO, "ergonomic-chair-hero.jpg"),
         "title": "Best Ergonomic\nChairs Under $500",
-        "subtitle": "2026 Roundup — 5 Chairs, 1 Winner",
+        "subtitle": "2026 Roundup: 5 Chairs, 1 Winner",
     },
     {
         "slug": "walking-pads",
@@ -53,7 +53,37 @@ PINS = [
         "slug": "magnus-vs-smartdesk",
         "image": "https://images.unsplash.com/photo-1598550476439-6847785fcea6?w=1200",
         "title": "Magnus Pro vs\nSmartDesk Core",
-        "subtitle": "Motorized Desk Showdown — Which Wins?",
+        "subtitle": "Motorized Desk Showdown: Which Wins?",
+    },
+    {
+        "slug": "monitor-arms",
+        "image": os.path.join(REPO, "monitor-arm-hero.jpg"),
+        "title": "Best Monitor\nArms 2026",
+        "subtitle": "6 Mounts Tested for Stability",
+    },
+    {
+        "slug": "pc-mounts",
+        "image": os.path.join(REPO, "pc-mount-hero.jpg"),
+        "title": "Under-Desk\nPC Mounts",
+        "subtitle": "Keep Your Tower Cool and Secure",
+    },
+    {
+        "slug": "hall-effect-keyboards",
+        "image": os.path.join(REPO, "hall-effect-keyboard-hero.jpg"),
+        "title": "Hall Effect\nKeyboards 2026",
+        "subtitle": "Magnetic Switches for Productivity",
+    },
+    {
+        "slug": "ai-mice",
+        "image": os.path.join(REPO, "ai-mouse-hero.jpg"),
+        "title": "AI Mice vs\nTraditional",
+        "subtitle": "Which Mouse Earns the Desk Space?",
+    },
+    {
+        "slug": "cable-management",
+        "image": "https://www.image2url.com/r2/default/images/1779644606536-ef5c0057-2a4a-4c32-ba9c-9ac7372c4458.jpg",
+        "title": "Standing Desk\nCable Management",
+        "subtitle": "From Zip Ties to Pro Raceways",
     },
 ]
 
