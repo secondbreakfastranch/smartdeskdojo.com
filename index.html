@@ -43,6 +43,23 @@
         .card:hover h3 { color: var(--accent1); }
         p.card-desc { color: var(--subtext); line-height: 1.6; margin: 0; font-size: 0.95em; font-family: 'Inter', sans-serif; text-transform: none; }
 
+        /* Editor's Picks - Featured Grid */
+        .featured-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-bottom: 60px; }
+        .featured-card { background: var(--surface); border-radius: 12px; overflow: hidden; border: 1px solid rgba(0, 242, 254, 0.15); transition: all 0.3s ease; display: flex; flex-direction: column; }
+        .featured-card:hover { transform: translateY(-4px); border-color: var(--accent1); box-shadow: 0 12px 35px rgba(0, 242, 254, 0.2); }
+        .featured-img { height: 200px; background-position: center; background-size: cover; }
+        .featured-content { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+        .featured-content h3 { margin: 0 0 10px 0; font-weight: 800; font-size: 1.3em; line-height: 1.3; }
+        .featured-content h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+        .featured-content h3 a:hover { color: var(--accent1); }
+        .featured-content p { color: var(--subtext); font-size: 0.95em; line-height: 1.6; margin: 0 0 18px 0; flex: 1; }
+        .featured-badge { display: inline-block; background: rgba(0, 242, 254, 0.12); color: var(--accent1); font-family: 'Montserrat', sans-serif; font-size: 0.7em; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; padding: 4px 12px; border-radius: 4px; margin-bottom: 12px; width: fit-content; }
+
+        /* Browse All CTA */
+        .browse-all { text-align: center; margin: 10px 0 60px; }
+        .btn-outline { display: inline-block; border: 2px solid rgba(0, 242, 254, 0.3); color: var(--accent1); padding: 14px 32px; text-decoration: none; border-radius: 6px; font-weight: 800; font-size: 0.95em; font-family: 'Montserrat', sans-serif; text-transform: uppercase; transition: all 0.2s; letter-spacing: 1px; }
+        .btn-outline:hover { border-color: var(--accent1); background: rgba(0, 242, 254, 0.08); box-shadow: 0 0 20px rgba(0, 242, 254, 0.15); }
+
         .table-wrapper { overflow-x: auto; margin-bottom: 60px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.05); background: var(--surface); }
         table { width: 100%; border-collapse: collapse; min-width: 600px; }
         th, td { padding: 15px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
@@ -71,6 +88,8 @@
             .pros-cons { flex-direction: column; }
             th, td { padding: 12px 10px !important; font-size: 0.85em; }
             .btn-table { padding: 8px 12px !important; font-size: 0.8em !important; }
+            .featured-grid { grid-template-columns: 1fr; }
+            .featured-img { height: 140px; }
         }
         @media (max-width: 480px) {
             nav > a:first-child span { font-size: 0.9em !important; }
@@ -125,7 +144,47 @@
             <a href="/calculator.html" class="btn-table" style="font-size: 1.1em; padding: 15px 30px;">LAUNCH CALCULATOR</a>
         </div>
 
-        <h2 class="section-title">LATEST INTEL</h2>
+        <h2 class="section-title">DOJO ESSENTIALS</h2>
+        <p style="color: var(--subtext); margin-bottom: 25px;">Start here. These are the pieces every battlestation builder should read — our most referenced, most shared, highest-impact work.</p>
+        <div class="featured-grid">
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('/ergonomic-chair-hero.jpg');"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">MOST POPULAR</span>
+                    <h3><a href="/articles/best-ergonomic-chairs-under-500-2026.html">Best Ergonomic Chairs Under $500</a></h3>
+                    <p>Seven chairs tested and ranked: Haworth Breck, Steelcase Series 1, Sihoo Doro C300 Pro. The budget buyer's guide that won't break your back or your wallet.</p>
+                    <a href="/articles/best-ergonomic-chairs-under-500-2026.html" class="btn-table">Read the Guide</a>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('/standing-desk-hero.jpg');"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">DEFINITIVE OVERVIEW</span>
+                    <h3><a href="/articles/standing-desk-revolution-2026.html">The Standing Desk Revolution</a></h3>
+                    <p>The market crossed $9.1B. 67% of Fortune 500 deploy sit-stand workstations. Here's the data, the science, and the 3 desks worth your money.</p>
+                    <a href="/articles/standing-desk-revolution-2026.html" class="btn-table">Read the Guide</a>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('/monitor-arm-hero.jpg');"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">STAFF PICK</span>
+                    <h3><a href="/articles/best-monitor-arms-2026.html">Best Monitor Arms of 2026</a></h3>
+                    <p>Amazon Basics vs HUANUO vs Ergotron LX vs monTEK: 6 arms tested for weight capacity, VESA compatibility, and real-world stability.</p>
+                    <a href="/articles/best-monitor-arms-2026.html" class="btn-table">Read the Guide</a>
+                </div>
+            </div>
+            <div class="featured-card">
+                <div class="featured-img" style="background-image: url('https://www.image2url.com/r2/default/images/1779644606536-ef5c0057-2a4a-4c32-ba9c-9ac7372c4458.jpg');"></div>
+                <div class="featured-content">
+                    <span class="featured-badge">HIGHEST UTILITY</span>
+                    <h3><a href="/articles/standing-desk-cable-management-guide-2026.html">Complete Cable Management Guide</a></h3>
+                    <p>From $5 zip ties to $150 enclosed raceway systems: hide every cable on your sit-stand desk with slack math so nothing disconnects at standing height.</p>
+                    <a href="/articles/standing-desk-cable-management-guide-2026.html" class="btn-table">Read the Guide</a>
+                </div>
+            </div>
+        </div>
+                <h2 class="section-title">LATEST INTEL</h2>
         <div class="grid">
             <a href="/articles/best-webcams-video-lighting-2026.html" class="card" aria-label="Read Best Webcams & Video Lighting 2026: Logitech MX Brio vs Insta360 Link 2 Pro vs Obsbot Tiny 3 Tested">
                 <div class="card-img" style="background-image: url('/webcam-lighting-hero.jpg');"></div>
@@ -169,79 +228,13 @@
                     <p class="card-desc">5 mounts tested for weight capacity, airflow clearance, and installation difficulty. The $25 VIVO handles 66 lbs — is the premium Dezctop's 360° swivel worth double the price?</p>
                 </div>
             </a>
-            <a href="/articles/hall-effect-keyboards-productivity-2026.html" class="card" aria-label="Read Hall Effect Keyboards for Productivity: Magnetic vs Mechanical Tested 2026">
-                <div class="card-img" style="background-image: url('/hall-effect-keyboard-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>HALL EFFECT KEYBOARDS FOR PRODUCTIVITY: MAGNETIC VS MECHANICAL TESTED</h3>
-                    <p class="card-desc">Wooting 60HE+ vs Royal Kludge C98 Magnetic vs Epomaker HE75: 6 keyboards tested for software quality, typing feel, and actual productivity gains. Can magnetic switches earn a spot on your work desk?</p>
-                </div>
-            </a>
-            <a href="/articles/best-monitor-arms-2026.html" class="card" aria-label="Read Best Monitor Arms of 2026: Single, Dual & Ultrawide Mounts Compared">
-                <div class="card-img" style="background-image: url('/monitor-arm-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST MONITOR ARMS OF 2026: SINGLE, DUAL & ULTRAWIDE COMPARED</h3>
-                    <p class="card-desc">Amazon Basics vs HUANUO vs Ergotron LX vs monTEK: 6 monitor arms tested for weight capacity, VESA compatibility, and real-world stability. The ergonomic upgrade every desk needs.</p>
-                </div>
-            </a>
-            <a href="/articles/ai-mice-vs-traditional-productivity-2026.html" class="card" aria-label="Read AI Mice vs Traditional Productivity Mice: 2026 Tested Comparison">
-                <div class="card-img" style="background-image: url('/ai-mouse-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>AI MICE VS TRADITIONAL: 2026 TESTED COMPARISON</h3>
-                    <p class="card-desc">AI Voice Mouse vs GQLQR vs Logitech MX Master 3S: 4 mice tested for voice accuracy, ergonomics, and real productivity. Which actually earns its desk space?</p>
-                </div>
-            </a>
-            <a href="/articles/laptop-screen-extenders-2026.html" class="card" aria-label="Read Laptop Screen Extenders 2026: Dual, Triple & Quad Portable Monitors Compared">
-                <div class="card-img" style="background-image: url('/screen-extender-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>LAPTOP SCREEN EXTENDERS 2026: DUAL, TRIPLE & QUAD COMPARED</h3>
-                    <p class="card-desc">Cybotioe vs Hyangin vs KYY X90G: 5 portable monitors tested for hinge durability, compatibility, and real-world remote work performance. The verdict on which extender actually survives daily use.</p>
-                </div>
-            </a>
-            <a href="/articles/best-ergonomic-chairs-under-500-2026.html" class="card" aria-label="Read Best Ergonomic Chairs Under $500: 2026 Buyer's Guide">
-                <div class="card-img" style="background-image: url('/ergonomic-chair-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST ERGONOMIC CHAIRS UNDER $500 (2026 BUYER'S GUIDE)</h3>
-                    <p class="card-desc">Seven chairs tested and ranked: Haworth Breck, Steelcase Series 1, Sihoo Doro C300 Pro, and more. The budget buyer's guide that won't break your back or your wallet.</p>
-                </div>
-            </a>
-            <a href="/articles/active-workstation-walking-pads-2026.html" class="card" aria-label="Read The Complete Active Workstation: Walking Pads & Under-Desk Treadmills 2026">
-                <div class="card-img" style="background-image: url('/walking-pad-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>THE COMPLETE ACTIVE WORKSTATION: BEST WALKING PADS & UNDER-DESK TREADMILLS</h3>
-                    <p class="card-desc">Which walking pad actually lasts? Goplus vs WalkingPad vs Yagud — data-driven comparison plus the 30-30-30 routine for your standing desk.</p>
-                </div>
-            </a>
-            <a href="/articles/standing-desk-revolution-2026.html" class="card" aria-label="Read The $9.1B Standing Desk Revolution: Why 2026 Killed the Sitting Desk">
-                <div class="card-img" style="background-image: url('/standing-desk-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>THE $9.1B STANDING DESK REVOLUTION: WHY 2026 KILLED THE SITTING DESK</h3>
-                    <p class="card-desc">The global standing desk market just crossed $9.1 billion. 67% of Fortune 500 now deploy sit-stand workstations. Here's the data, the science, and the 3 desks worth your money.</p>
-                </div>
-            </a>
-            <a href="/articles/standing-desk-cable-management-guide-2026.html" class="card" aria-label="Read Standing Desk Cable Management: The Complete Wire-Free Guide (2026)">
-                <div class="card-img" style="background-image: url('https://www.image2url.com/r2/default/images/1779644606536-ef5c0057-2a4a-4c32-ba9c-9ac7372c4458.jpg');"></div>
-                <div class="card-content">
-                    <h3>STANDING DESK CABLE MANAGEMENT: THE COMPLETE WIRE-FREE GUIDE</h3>
-                    <p class="card-desc">From $5 zip ties to $150 enclosed raceway systems: the definitive guide to hiding every cable on your sit-stand desk. Includes slack math so nothing disconnects at standing height.</p>
-                </div>
-            </a>
-            <a href="/articles/depth-dilemma-ultrawide-desks.html" class="card" aria-label="Read The Depth Dilemma: Why Your Desk Might Be Too Shallow for a 49-Inch Ultrawide">
-                <div class="card-img" style="background-image: url('/depth-dilemma-ultrawide.jpg');"></div>
-                <div class="card-content">
-                    <h3>THE DEPTH DILEMMA: WHY YOUR DESK IS TOO SHALLOW FOR AN ULTRAWIDE</h3>
-                    <p class="card-desc">Most owners realize too late that width isn't the issue—depth is the silent killer. Learn how to fix your focal depth for massive 49-inch panels.</p>
-                </div>
-            </a>
-            <a href="/articles/ultimate-ergonomic-desk-setup.html" class="card" aria-label="Read Secretlab Magnus Pro vs Autonomous SmartDesk review">
-                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=600&auto=format&fit=crop');"></div>
-                <div class="card-content">
-                    <h3>SECRETLAB MAGNUS PRO VS AUTONOMOUS SMARTDESK</h3>
-                    <p class="card-desc">We tear down the spec sheets, wobble-tests, and cable management systems to find the absolute best motorized desk for your battlestation.</p>
-                </div>
-            </a>
         </div>
 
-        <!-- Demoted Comparison Table -->
+        <div class="browse-all">
+            <a href="/reviews.html" class="btn-outline">Browse All Reviews &amp; Guides &#8594;</a>
+        </div>
+
+<!-- Demoted Comparison Table -->
         <h2 class="section-title">CURRENT META: TRUSTED HARDWARE</h2>
         <p style="color: var(--subtext); margin-bottom: 20px;">If you don't have time to read our deep-dives, here is the current hardware meta based on our internal stress-testing.</p>
         <div class="table-wrapper">
