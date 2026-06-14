@@ -124,6 +124,30 @@
             nav > a:first-child span { font-size: 0.9em !important; }
             h1.hero-title { font-size: 1.8em !important; }
         }
+            /* Search Bar */
+        #dojo-search { position: relative; min-width: 240px; max-width: 320px; width: 100%; }
+        .ds-wrap { display: flex; align-items: center; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0 12px; transition: border-color 0.2s; }
+        .ds-wrap:focus-within { border-color: var(--accent1); box-shadow: 0 0 12px rgba(0,242,254,0.12); }
+        .ds-icon { color: var(--subtext); flex-shrink: 0; opacity: 0.6; }
+        .ds-input { flex: 1; padding: 10px 8px; background: transparent; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9em; outline: none; }
+        .ds-input::placeholder { color: rgba(212,212,216,0.4); }
+        .ds-clear { display: none; align-items: center; justify-content: center; background: none; border: none; color: var(--subtext); font-size: 1.2em; cursor: pointer; padding: 0 4px; line-height: 1; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+        .ds-clear:hover { opacity: 1; color: var(--accent1); }
+        .ds-drop { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; max-height: 340px; overflow-y: auto; z-index: 1000; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        .ds-item { display: block; padding: 14px 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.12s; cursor: pointer; }
+        .ds-item:last-child { border-bottom: none; }
+        .ds-item:hover, .ds-sel { background: rgba(0,242,254,0.06); }
+        .ds-sel { border-left: 3px solid var(--accent1); padding-left: 13px; }
+        .ds-t { display: block; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+        .ds-item:hover .ds-t, .ds-sel .ds-t { color: var(--accent1); }
+        .ds-d { display: block; color: var(--subtext); font-size: 0.8em; line-height: 1.4; }
+        .ds-none { padding: 20px; text-align: center; color: var(--subtext); font-size: 0.85em; }
+        .ds-drop mark { background: rgba(0,242,254,0.2); color: var(--accent1); padding: 0 2px; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            #dojo-search { min-width: 0; max-width: none; width: 100%; order: 3; margin-top: 8px; }
+        }
+
     </style>
 
     <link rel="icon" type="image/png" href="/logo.png">
@@ -181,7 +205,7 @@
                 <th>Price</th>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=Topo+by+Ergodriven+comfort+mat&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Topo by Ergodriven</a></td>
+                <td><a href="https://www.flexispot.com/standing-desk-accessories/anti-fatigue-mats" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Topo by Ergodriven</a></td>
                 <td>Polyurethane Foam</td>
                 <td>26.2 × 29 × 2.5</td>
                 <td>$99</td>
@@ -229,7 +253,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=Topo+by+Ergodriven+comfort+mat&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Topo by Ergodriven on Amazon (Opens in a new tab)">CHECK TOPO ON AMAZON</a></p>
+        <p><a href="https://www.flexispot.com/standing-desk-accessories/anti-fatigue-mats" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Topo by Ergodriven on Amazon (Opens in a new tab)">CHECK TOPO ON AMAZON</a></p>
 
         <h2>03 // The $35-45 Tier: ComfiLife vs Sky Solutions</h2>
         <p>Most buyers land here and the ComfiLife is the default Amazon pick for good reason. Its high-density foam core compresses less over time than the Sky Solutions, which develops a visible foot-shaped depression after about six months. Both use a non-slip bottom that grips hardwood and low-pile carpet.</p>
@@ -369,7 +393,7 @@
 
         <p><strong>Best Under-Desk Footrest:</strong> <strong>Cushion Lab Ergonomic Footrest</strong> ($60–$80). Memory foam with a washable cover makes this the only footrest that feels like furniture rather than a plastic accessory. The <strong>HUANUO Adjustable</strong> ($30–$40) is the budget alternative if you want rocking motion and height adjustability over premium materials.</p>
 
-        <p style="margin-top: 30px;"><a href="https://www.amazon.com/s?k=Topo+by+Ergodriven+comfort+mat&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Shop Topo by Ergodriven on Amazon (Opens in a new tab)">SHOP TOP PICK: TOPO BY ERGODRIVEN</a></p>
+        <p style="margin-top: 30px;"><a href="https://www.flexispot.com/standing-desk-accessories/anti-fatigue-mats" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Shop Topo by Ergodriven on Amazon (Opens in a new tab)">SHOP TOP PICK: TOPO BY ERGODRIVEN</a></p>
 
     </main>
 <footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
@@ -399,5 +423,7 @@
     </form>
 </div>
 </footer>
+
+    <script src="/js/search.js"></script>
 </body>
 </html>

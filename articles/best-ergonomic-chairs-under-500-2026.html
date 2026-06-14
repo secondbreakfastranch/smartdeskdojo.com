@@ -220,6 +220,30 @@
             nav > a:first-child span { font-size: 0.9em !important; }
             h1.hero-title { font-size: 1.8em !important; }
         }
+            /* Search Bar */
+        #dojo-search { position: relative; min-width: 240px; max-width: 320px; width: 100%; }
+        .ds-wrap { display: flex; align-items: center; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0 12px; transition: border-color 0.2s; }
+        .ds-wrap:focus-within { border-color: var(--accent1); box-shadow: 0 0 12px rgba(0,242,254,0.12); }
+        .ds-icon { color: var(--subtext); flex-shrink: 0; opacity: 0.6; }
+        .ds-input { flex: 1; padding: 10px 8px; background: transparent; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9em; outline: none; }
+        .ds-input::placeholder { color: rgba(212,212,216,0.4); }
+        .ds-clear { display: none; align-items: center; justify-content: center; background: none; border: none; color: var(--subtext); font-size: 1.2em; cursor: pointer; padding: 0 4px; line-height: 1; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+        .ds-clear:hover { opacity: 1; color: var(--accent1); }
+        .ds-drop { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; max-height: 340px; overflow-y: auto; z-index: 1000; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        .ds-item { display: block; padding: 14px 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.12s; cursor: pointer; }
+        .ds-item:last-child { border-bottom: none; }
+        .ds-item:hover, .ds-sel { background: rgba(0,242,254,0.06); }
+        .ds-sel { border-left: 3px solid var(--accent1); padding-left: 13px; }
+        .ds-t { display: block; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+        .ds-item:hover .ds-t, .ds-sel .ds-t { color: var(--accent1); }
+        .ds-d { display: block; color: var(--subtext); font-size: 0.8em; line-height: 1.4; }
+        .ds-none { padding: 20px; text-align: center; color: var(--subtext); font-size: 0.85em; }
+        .ds-drop mark { background: rgba(0,242,254,0.2); color: var(--accent1); padding: 0 2px; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            #dojo-search { min-width: 0; max-width: none; width: 100%; order: 3; margin-top: 8px; }
+        }
+
     </style>
 
     <link rel="icon" type="image/png" href="/logo.png">
@@ -277,37 +301,37 @@
                 <th>Backrest Type</th>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=haworth+breck+office+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Haworth Breck</a></td>
+                <td><a href="https://store.haworth.com/products/breck" target="_blank" rel="noopener sponsored">Haworth Breck</a></td>
                 <td>$419 – $502</td>
                 <td>12 Years</td>
                 <td>Mesh / Upholstered options</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=steelcase+series+1+task+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Steelcase Series 1</a></td>
+                <td><a href="https://store.steelcase.com/seating/task-chairs/steelcase-series-1" target="_blank" rel="noopener sponsored">Steelcase Series 1</a></td>
                 <td>$499</td>
                 <td>12 Years</td>
                 <td>Mesh (3D Knit)</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=Sihoo+Doro+C300+Pro+ergonomic+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Sihoo Doro C300 Pro</a></td>
+                <td><a href="https://www.sihoo.com/products/doro-c300-pro" target="_blank" rel="noopener sponsored">Sihoo Doro C300 Pro</a></td>
                 <td>$350 (was $790)</td>
                 <td>5 Years</td>
                 <td>Mesh (full suspension)</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=steelcase+leap+v2+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Crandall Leap V2 (Reman.)</a></td>
+                <td><a href="https://store.steelcase.com/seating/task-chairs/steelcase-leap" target="_blank" rel="noopener sponsored">Crandall Leap V2 (Reman.)</a></td>
                 <td>~$500</td>
                 <td>12 Years</td>
                 <td>Upholstered foam</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=Eurotech+Vera+ergonomic+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Eurotech Vera</a></td>
+                <td><a href="https://www.eurotechseating.com/seating/vera" target="_blank" rel="noopener sponsored">Eurotech Vera</a></td>
                 <td>~$485</td>
                 <td>Lifetime</td>
                 <td>Mesh (3D knit)</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=Secretlab+Titan+Evo+2026+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored">Secretlab Titan Evo (2026)</a></td>
+                <td><a href="https://secretlab.co/collections/titan-evo" target="_blank" rel="noopener sponsored">Secretlab Titan Evo (2026)</a></td>
                 <td>~$450</td>
                 <td>5 Years</td>
                 <td>Cold-cure foam / NanoGen</td>
@@ -351,7 +375,7 @@
             </div>
         </div>
         
-        <p><a href="https://www.amazon.com/s?k=haworth+breck+office+chair&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Haworth Breck stock on Amazon (Opens in a new tab)">CHECK BRECK STOCK ON AMAZON</a></p>
+        <p><a href="https://store.haworth.com/products/breck" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Haworth Breck stock on Amazon (Opens in a new tab)">CHECK BRECK STOCK ON AMAZON</a></p>
 
         <h2>03 // Steelcase Series 1 — CNN Underscored's Overall Best Chair</h2>
         <p>CNN Underscored's 2026 chair test crowned the $499 Steelcase Series 1 "Best Office Chair" overall — beating competitors at twice the price. The Series 1 uses a 3D knit mesh back with LiveBack technology: flexible geometric ribs that mimic spinal curvature as you shift positions through the day.</p>
@@ -359,8 +383,8 @@
         <table>
             <tr>
                 <th>Specification</th>
-                <th><a href="https://www.amazon.com/s?k=haworth+breck+office+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Haworth Breck</a></th>
-                <th><a href="https://www.amazon.com/s?k=steelcase+series+1+task+chair&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Steelcase Series 1</a></th>
+                <th><a href="https://store.haworth.com/products/breck" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Haworth Breck</a></th>
+                <th><a href="https://store.steelcase.com/seating/task-chairs/steelcase-series-1" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Steelcase Series 1</a></th>
             </tr>
             <tr>
                 <td>Weight Capacity</td>
@@ -408,7 +432,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=steelcase+series+1+task+chair&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Steelcase Series 1 stock on Amazon (Opens in a new tab)">CHECK SERIES 1 STOCK ON AMAZON</a></p>
+        <p><a href="https://store.steelcase.com/seating/task-chairs/steelcase-series-1" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Steelcase Series 1 stock on Amazon (Opens in a new tab)">CHECK SERIES 1 STOCK ON AMAZON</a></p>
 
         <h2>04 // Mesh vs. Foam: The 2026 Decision Guide</h2>
         <p>Every major outlet's 2026 testing frames ergonomic chair selection as fundamentally a mesh-versus-foam decision. The choice affects thermal regulation, pressure distribution, and long-term durability. Here is how they compare at the $500 ceiling:</p>
@@ -470,7 +494,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=Sihoo+Doro+C300+Pro+ergonomic+chair&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Sihoo Doro C300 Pro stock on Amazon (Opens in a new tab)">CHECK DORO C300 PRO STOCK</a></p>
+        <p><a href="https://www.sihoo.com/products/doro-c300-pro" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Sihoo Doro C300 Pro stock on Amazon (Opens in a new tab)">CHECK DORO C300 PRO STOCK</a></p>
 
         <h2>06 // The BIFL Path: Crandall Remanufactured Leap V2</h2>
         <p>Here is the angle no other affiliate site covers: Crandall Office Furniture remanufactures used Steelcase Leap V2 chairs — the same chair that retails for $1,300+ — and sells them for approximately $500 with a 12-year warranty. Each unit arrives with new fabric, new foam, new arm pads, and a new gas cylinder.</p>
@@ -479,7 +503,7 @@
             <strong>Why This Matters:</strong> The Leap V2's LiveBack uses individually-articulating flexors that mimic vertebral movement with active resistance — you feel the chair adjusting to each segment of your spine. A remanufactured Leap at $500 is a genuine Buy-It-For-Life purchase.
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=steelcase+leap+v2+chair&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Browse Steelcase Leap V2 options on Amazon (Opens in a new tab)">BROWSE LEAP V2 OPTIONS</a></p>
+        <p><a href="https://store.steelcase.com/seating/task-chairs/steelcase-leap" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Browse Steelcase Leap V2 options on Amazon (Opens in a new tab)">BROWSE LEAP V2 OPTIONS</a></p>
 
         <h2>07 // Should You Wait for Memorial Day?</h2>
         <p>With Memorial Day weekend (May 23–25) roughly two weeks away, early deal signals are appearing. Herman Miller's Spring Sale (25% off through May 14) has the Sayl at $626 — slightly above our $500 ceiling but close. Steelcase and Haworth typically run 15–20% sitewide during Memorial Day, which could push the Breck below $400.</p>
@@ -492,7 +516,7 @@
             <a href="/calculator.html">LAUNCH ERGONOMIC CALCULATOR</a>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=ergonomic+office+chair+under+500&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Browse all ergonomic chairs under $500 on Amazon (Opens in a new tab)">BROWSE ALL CHAIRS UNDER $500</a></p>
+        <p><a href="https://www.flexispot.com/ergonomic-chairs" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Browse all ergonomic chairs under $500 on Amazon (Opens in a new tab)">BROWSE ALL CHAIRS UNDER $500</a></p>
 
         <h2>08 // The Final Verdict</h2>
         <p>If you want the chair that every major outlet agrees is the winner, buy the <strong>Haworth Breck</strong>. The adaptive recline justifies the $419–$502 price, and the 12-year warranty means this chair outlasts your next two desk upgrades.</p>
@@ -526,5 +550,7 @@
     </form>
 </div>
 </footer>
+
+    <script src="/js/search.js"></script>
 </body>
 </html>

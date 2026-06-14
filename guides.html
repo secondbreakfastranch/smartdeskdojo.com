@@ -33,6 +33,30 @@
             .guide-card { flex-direction: column; }
             .guide-card img { width: 100%; height: auto; }
         }
+            /* Search Bar */
+        #dojo-search { position: relative; min-width: 240px; max-width: 320px; width: 100%; }
+        .ds-wrap { display: flex; align-items: center; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0 12px; transition: border-color 0.2s; }
+        .ds-wrap:focus-within { border-color: var(--accent1); box-shadow: 0 0 12px rgba(0,242,254,0.12); }
+        .ds-icon { color: var(--subtext); flex-shrink: 0; opacity: 0.6; }
+        .ds-input { flex: 1; padding: 10px 8px; background: transparent; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9em; outline: none; }
+        .ds-input::placeholder { color: rgba(212,212,216,0.4); }
+        .ds-clear { display: none; align-items: center; justify-content: center; background: none; border: none; color: var(--subtext); font-size: 1.2em; cursor: pointer; padding: 0 4px; line-height: 1; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+        .ds-clear:hover { opacity: 1; color: var(--accent1); }
+        .ds-drop { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; max-height: 340px; overflow-y: auto; z-index: 1000; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        .ds-item { display: block; padding: 14px 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.12s; cursor: pointer; }
+        .ds-item:last-child { border-bottom: none; }
+        .ds-item:hover, .ds-sel { background: rgba(0,242,254,0.06); }
+        .ds-sel { border-left: 3px solid var(--accent1); padding-left: 13px; }
+        .ds-t { display: block; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+        .ds-item:hover .ds-t, .ds-sel .ds-t { color: var(--accent1); }
+        .ds-d { display: block; color: var(--subtext); font-size: 0.8em; line-height: 1.4; }
+        .ds-none { padding: 20px; text-align: center; color: var(--subtext); font-size: 0.85em; }
+        .ds-drop mark { background: rgba(0,242,254,0.2); color: var(--accent1); padding: 0 2px; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            #dojo-search { min-width: 0; max-width: none; width: 100%; order: 3; margin-top: 8px; }
+        }
+
     </style>
     <link rel="icon" type="image/png" href="/logo.png">
     <link rel="apple-touch-icon" href="/logo.png">
@@ -116,5 +140,7 @@
         <p style="margin-bottom: 8px;"><a href='https://nicheforgedigital.gumroad.com/subscribe' style='color: var(--accent1); text-decoration: none;'>AI Prompt Packs</a></p>
         <p>&copy; 2026 SmartDeskDojo. Built for the Grind. | <a href='/privacy.html' style='color: var(--accent1); text-decoration: none;'>Privacy Policy</a></p>
     </footer>
+
+    <script src="/js/search.js"></script>
 </body>
 </html>

@@ -132,6 +132,30 @@
             nav > a:first-child span { font-size: 0.9em !important; }
             h1.hero-title { font-size: 1.8em !important; }
         }
+            /* Search Bar */
+        #dojo-search { position: relative; min-width: 240px; max-width: 320px; width: 100%; }
+        .ds-wrap { display: flex; align-items: center; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0 12px; transition: border-color 0.2s; }
+        .ds-wrap:focus-within { border-color: var(--accent1); box-shadow: 0 0 12px rgba(0,242,254,0.12); }
+        .ds-icon { color: var(--subtext); flex-shrink: 0; opacity: 0.6; }
+        .ds-input { flex: 1; padding: 10px 8px; background: transparent; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9em; outline: none; }
+        .ds-input::placeholder { color: rgba(212,212,216,0.4); }
+        .ds-clear { display: none; align-items: center; justify-content: center; background: none; border: none; color: var(--subtext); font-size: 1.2em; cursor: pointer; padding: 0 4px; line-height: 1; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+        .ds-clear:hover { opacity: 1; color: var(--accent1); }
+        .ds-drop { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; max-height: 340px; overflow-y: auto; z-index: 1000; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        .ds-item { display: block; padding: 14px 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.12s; cursor: pointer; }
+        .ds-item:last-child { border-bottom: none; }
+        .ds-item:hover, .ds-sel { background: rgba(0,242,254,0.06); }
+        .ds-sel { border-left: 3px solid var(--accent1); padding-left: 13px; }
+        .ds-t { display: block; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+        .ds-item:hover .ds-t, .ds-sel .ds-t { color: var(--accent1); }
+        .ds-d { display: block; color: var(--subtext); font-size: 0.8em; line-height: 1.4; }
+        .ds-none { padding: 20px; text-align: center; color: var(--subtext); font-size: 0.85em; }
+        .ds-drop mark { background: rgba(0,242,254,0.2); color: var(--accent1); padding: 0 2px; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            #dojo-search { min-width: 0; max-width: none; width: 100%; order: 3; margin-top: 8px; }
+        }
+
     </style>
 
     <link rel="icon" type="image/png" href="/logo.png">
@@ -192,7 +216,7 @@
                 <th>Price</th>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=amazon+basics+single+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Amazon Basics Single</a></td>
+                <td><a href="https://www.amazon.com/dp/B07DHK5DHN" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Amazon Basics Single</a></td>
                 <td>25 lbs</td>
                 <td>Up to 32"</td>
                 <td>Clamp / Grommet</td>
@@ -206,7 +230,7 @@
                 <td>$50-70</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=ergotron+lx+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Ergotron LX</a></td>
+                <td><a href="https://www.ergotron.com/en-us/products/product-details/45-241" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Ergotron LX</a></td>
                 <td>25 lbs</td>
                 <td>Up to 34"</td>
                 <td>Clamp / Grommet</td>
@@ -220,7 +244,7 @@
                 <td>$75-110</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=vivo+quad+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">VIVO Quad Arm</a></td>
+                <td><a href="https://www.vivo-us.com/collections/monitor-mounts/products/stand-v004" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">VIVO Quad Arm</a></td>
                 <td>22 lbs/arm</td>
                 <td>13"-32"</td>
                 <td>C-Clamp / Freestanding</td>
@@ -258,7 +282,7 @@
             </div>
         </div>
         
-        <p><a href="https://www.amazon.com/s?k=amazon+basics+single+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Amazon Basics Monitor Arm on Amazon (Opens in a new tab)">CHECK AMAZON BASICS ARM ON AMAZON</a></p>
+        <p><a href="https://www.amazon.com/dp/B07DHK5DHN" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Amazon Basics Monitor Arm on Amazon (Opens in a new tab)">CHECK AMAZON BASICS ARM ON AMAZON</a></p>
 
         <h3>HUANUO Dual Monitor Arm</h3>
         <p>HUANUO's gas-spring dual arm is the bestseller sweet spot. Each arm holds 17.6 pounds independently with fingertip adjustment, and USB pass-through ports on the base are a thoughtful touch at this price. The single C-clamp center pole minimizes desk footprint. Note: a 34-inch ultrawide often exceeds 17 pounds without its stand, so check your panel's weight before buying.</p>
@@ -311,7 +335,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=ergotron+lx+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Ergotron LX Monitor Arm on Amazon (Opens in a new tab)">CHECK ERGOTRON LX ON AMAZON</a></p>
+        <p><a href="https://www.ergotron.com/en-us/products/product-details/45-241" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Ergotron LX Monitor Arm on Amazon (Opens in a new tab)">CHECK ERGOTRON LX ON AMAZON</a></p>
 
         <h3>monTEK Ultrawide Arm</h3>
         <p>Rated for 59.4 pounds and compatible with screens from 17 to 57 inches, the monTEK is the dark horse of this comparison. Trending on r/buildapcsales, it has become the go-to recommendation for Samsung Odyssey G9 and 49-inch ultrawide owners. Warning: the gas spring is tuned for heavy panels — lightweight 24-inch monitors will fight the mechanism.</p>
@@ -347,7 +371,7 @@
                 <th>Price</th>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=vivo+quad+monitor+arm&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">VIVO Quad</a></td>
+                <td><a href="https://www.vivo-us.com/collections/monitor-mounts/products/stand-v004" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">VIVO Quad</a></td>
                 <td>Traders, streamers, multi-monitor power users</td>
                 <td>4 × up to 32"</td>
                 <td>22 lbs</td>
@@ -367,7 +391,7 @@
         <img class="article-img" src="/monitor-arm-body-03.jpg" alt="Multi-monitor arm setup with laptop tray and external display side by side">
         <p class="article-img-caption">A laptop-and-monitor combo arm brings both screens to eye level — no more hunching over a 13-inch laptop screen.</p>
 
-        <p><a href="https://www.amazon.com/s?k=vivo+quad+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check VIVO Quad Monitor Arm on Amazon (Opens in a new tab)">CHECK VIVO QUAD ARM ON AMAZON</a></p>
+        <p><a href="https://www.vivo-us.com/collections/monitor-mounts/products/stand-v004" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check VIVO Quad Monitor Arm on Amazon (Opens in a new tab)">CHECK VIVO QUAD ARM ON AMAZON</a></p>
         <p><a href="https://www.amazon.com/s?k=wali+laptop+monitor+arm&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check WALI Laptop Monitor Arm on Amazon (Opens in a new tab)">CHECK WALI COMBO ARM ON AMAZON</a></p>
 
         <h2>06 // Clamp vs Grommet: How to Mount Without Destroying Your Desk</h2>
@@ -447,5 +471,7 @@
     </form>
 </div>
 </footer>
+
+    <script src="/js/search.js"></script>
 </body>
 </html>

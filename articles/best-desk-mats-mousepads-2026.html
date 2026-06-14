@@ -128,6 +128,30 @@
             nav > a:first-child span { font-size: 0.9em !important; }
             h1.hero-title { font-size: 1.8em !important; }
         }
+            /* Search Bar */
+        #dojo-search { position: relative; min-width: 240px; max-width: 320px; width: 100%; }
+        .ds-wrap { display: flex; align-items: center; background: var(--bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 8px; padding: 0 12px; transition: border-color 0.2s; }
+        .ds-wrap:focus-within { border-color: var(--accent1); box-shadow: 0 0 12px rgba(0,242,254,0.12); }
+        .ds-icon { color: var(--subtext); flex-shrink: 0; opacity: 0.6; }
+        .ds-input { flex: 1; padding: 10px 8px; background: transparent; border: none; color: var(--text); font-family: 'Inter', sans-serif; font-size: 0.9em; outline: none; }
+        .ds-input::placeholder { color: rgba(212,212,216,0.4); }
+        .ds-clear { display: none; align-items: center; justify-content: center; background: none; border: none; color: var(--subtext); font-size: 1.2em; cursor: pointer; padding: 0 4px; line-height: 1; opacity: 0.5; transition: opacity 0.15s; flex-shrink: 0; }
+        .ds-clear:hover { opacity: 1; color: var(--accent1); }
+        .ds-drop { display: none; position: absolute; top: calc(100% + 6px); left: 0; right: 0; background: var(--surface); border: 1px solid rgba(0,242,254,0.2); border-radius: 10px; max-height: 340px; overflow-y: auto; z-index: 1000; box-shadow: 0 12px 40px rgba(0,0,0,0.5); }
+        .ds-item { display: block; padding: 14px 16px; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.04); transition: background 0.12s; cursor: pointer; }
+        .ds-item:last-child { border-bottom: none; }
+        .ds-item:hover, .ds-sel { background: rgba(0,242,254,0.06); }
+        .ds-sel { border-left: 3px solid var(--accent1); padding-left: 13px; }
+        .ds-t { display: block; color: var(--text); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85em; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 3px; }
+        .ds-item:hover .ds-t, .ds-sel .ds-t { color: var(--accent1); }
+        .ds-d { display: block; color: var(--subtext); font-size: 0.8em; line-height: 1.4; }
+        .ds-none { padding: 20px; text-align: center; color: var(--subtext); font-size: 0.85em; }
+        .ds-drop mark { background: rgba(0,242,254,0.2); color: var(--accent1); padding: 0 2px; border-radius: 2px; }
+
+        @media (max-width: 768px) {
+            #dojo-search { min-width: 0; max-width: none; width: 100%; order: 3; margin-top: 8px; }
+        }
+
     </style>
 
     <link rel="icon" type="image/png" href="/logo.png">
@@ -185,37 +209,37 @@
                 <th>Price</th>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=grovemade+wool+felt+desk+pad&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Grovemade Wool Felt</a></td>
+                <td><a href="https://grovemade.com/product/desk-pad/" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Grovemade Wool Felt</a></td>
                 <td>Merino Wool Felt</td>
                 <td>36×12.5 (Medium)</td>
                 <td>$80–$120</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=orbitkey+desk+mat&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Orbitkey Desk Mat</a></td>
+                <td><a href="https://www.orbitkey.com/products/desk-mat" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Orbitkey Desk Mat</a></td>
                 <td>Vegan Leather + Felt</td>
                 <td>35.4×16.5</td>
                 <td>$60–$90</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=logitech+desk+mat+studio+series&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Logitech Desk Mat Studio</a></td>
+                <td><a href="https://www.logitech.com/en-us/products/mice/desk-mat-studio-series.html" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Logitech Desk Mat Studio</a></td>
                 <td>Cloth (Polyester)</td>
                 <td>27.6×11.8</td>
                 <td>$30–$50</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=razer+gigantus+v2+3xl&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Razer Gigantus V2 3XL</a></td>
+                <td><a href="https://www.razer.com/gaming-mouse-mats/razer-gigantus-v2" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Razer Gigantus V2 3XL</a></td>
                 <td>Textured Cloth</td>
                 <td>47.2×21.7</td>
                 <td>$25–$40</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=corsair+mm700+rgb+extended+mousepad&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Corsair MM700 RGB</a></td>
+                <td><a href="https://www.corsair.com/us/en/p/mouse-pads/ch-9110021-na/mm700-rgb-extended-mouse-pad" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Corsair MM700 RGB</a></td>
                 <td>Cloth (Micro-Weave)</td>
                 <td>36.6×15.8</td>
                 <td>$40–$60</td>
             </tr>
             <tr>
-                <td><a href="https://www.amazon.com/s?k=deltahub+minimalistic+felt+desk+pad&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Deltahub Felt Desk Pad</a></td>
+                <td><a href="https://deltahub.io/products/felt-desk-pad" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Deltahub Felt Desk Pad</a></td>
                 <td>Recycled Felt</td>
                 <td>31.5×11.8</td>
                 <td>$25–$35</td>
@@ -289,7 +313,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=grovemade+desk+pad&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Grovemade Desk Pad on Amazon (Opens in a new tab)">CHECK GROVEMADE ON AMAZON</a></p>
+        <p><a href="https://grovemade.com/product/desk-pad/" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Grovemade Desk Pad on Amazon (Opens in a new tab)">CHECK GROVEMADE ON AMAZON</a></p>
 
         <h2>04 // Mid-Tier: Logitech Studio vs Razer Gigantus V2</h2>
         <p>At $30–$50, you leave premium materials behind but gain surface area. The Logitech Desk Mat Studio is thin, tightly woven cloth that stays flat with zero edge curl out of the box. At 27.6×11.8 inches, it is too small for keyboard-plus-mouse coverage, but as a pure mouse surface it is flawless.</p>
@@ -313,7 +337,7 @@
             </div>
         </div>
 
-        <p><a href="https://www.amazon.com/s?k=razer+gigantus+v2+3xl&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Razer Gigantus V2 on Amazon (Opens in a new tab)">CHECK RAZER GIGANTUS V2 ON AMAZON</a></p>
+        <p><a href="https://www.razer.com/gaming-mouse-mats/razer-gigantus-v2" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Check Razer Gigantus V2 on Amazon (Opens in a new tab)">CHECK RAZER GIGANTUS V2 ON AMAZON</a></p>
 
         <h2>05 // RGB Meets Productivity: Corsair MM700</h2>
         <p>RGB desk mats have been gaming territory — but the MM700 changes that. Its edge lighting, set to static warm white at 30%, doubles as bias lighting that reduces eye strain in dark rooms. The micro-weave surface pairs well with <a href="/articles/ai-mice-vs-traditional-productivity-2026.html" style="color: var(--accent1);">productivity mice like the MX Master 3S</a>.</p>
@@ -333,7 +357,7 @@
         <table>
             <tr>
                 <th>Feature</th>
-                <th><a href="https://www.amazon.com/s?k=deltahub+felt+desk+pad&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Deltahub Felt</a></th>
+                <th><a href="https://deltahub.io/products/felt-desk-pad" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">Deltahub Felt</a></th>
                 <th><a href="https://www.amazon.com/s?k=firebee+extended+desk+pad&tag=smartdeskdojo-20" target="_blank" rel="noopener sponsored" style="color: var(--accent1);">FireBee Extended</a></th>
             </tr>
             <tr>
@@ -381,7 +405,7 @@
 
         <p><strong>Best RGB:</strong> <strong>Corsair MM700</strong> ($40–$60) earns its premium on features, not flash. The bias-lighting use case is real, and the micro-weave surface handles work and gaming mice without compromise.</p>
 
-        <p style="margin-top: 30px;"><a href="https://www.amazon.com/s?k=orbitkey+desk+mat&tag=smartdeskdojo-20" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Shop Orbitkey Desk Mat on Amazon (Opens in a new tab)">SHOP TOP PICK: ORBITKEY DESK MAT</a></p>
+        <p style="margin-top: 30px;"><a href="https://www.orbitkey.com/products/desk-mat" class="buy-btn" target="_blank" rel="noopener sponsored" aria-label="Shop Orbitkey Desk Mat on Amazon (Opens in a new tab)">SHOP TOP PICK: ORBITKEY DESK MAT</a></p>
 
     </main>
 <footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
@@ -411,5 +435,7 @@
     </form>
 </div>
 </footer>
+
+    <script src="/js/search.js"></script>
 </body>
 </html>
