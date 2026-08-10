@@ -1,120 +1,109 @@
-# Weekly Strategy — Week of July 20, 2026
-**Generated:** Sunday, July 20, 2026
-**Protocol:** J.A.R.V.I.S. Primary Intelligence Sweep
-**Sources:** Google News RSS (10 queries, 49-100 results each), DDG HTML (rate-limited), Reddit API (403 blocked), Tavily (401)
+# Weekly Strategy — Week of August 11, 2026
+
+**Generated:** Sunday, August 10, 2026
+**Protocol:** J.A.R.V.I.S. Primary Sweep
 
 ---
 
 ## Reconnaissance Summary
 
-**Signals (Google News RSS, 10 query sweeps):**
+**Reddit Pulse:** Blocked (403 VPS-range). Fallback to Google News RSS.
 
-| Category | Signal Strength | Publications |
-|---|---|---|
-| Desk Lamps / Task Lighting | **VERY HIGH** | Wirecutter, Business Insider, Good Housekeeping, Architectural Digest |
-| Desktop Speakers / WFH Audio | **HIGH** | Tom's Hardware, How-To Geek, Gear Patrol, Cult of Mac |
-| Split / Ergonomic Keyboards | **MEDIUM-HIGH** | RTINGS, Popular Mechanics, PCMag, TechPowerUp |
-| Ergonomic Chairs (mid-year roundups) | **HIGH but SATURATED** | WIRED, CNET, TechRadar, PCMag |
-| Power Strips / Surge Protectors | **MEDIUM** | MakeUseOf, CNN, Architectural Digest |
-| Desk Organization / "Desk-Scaping" | **MEDIUM** | Real Simple, Creative Bloq, The Spruce |
-| Wrist Rests | **LOW** | Scattered coverage, low-ticket category |
+**Tech News Signals:**
+- Vertical/ergonomic mice getting major 2026 roundup refreshes — Wirecutter, PCMag, RTINGS, The Gadgeteer all published updated guides in the last 90 days. Razer Pro Click V2 Vertical named PCMag Editor's Choice. Keychron M5 entering as a strong mid-range contender. YouTube reviewer ecosystem active with 4-month and 9-mouse comparison tests.
+- Surge protectors/power management seeing strong coverage — NYT/Wirecutter, Good Housekeeping, CNET all refreshed in 2026. Desk-clamp form factors (Tripp Lite TLP606DMUSB, Anker Nano Clamp) trending as the desk-specific angle separates from generic whole-home coverage.
+- Wrist rests have weak standalone signal — mostly piggyback on keyboard roundups. Skip.
+- Pegboards trending visually (IKEA Skadis, The Spruce) but weak affiliate potential. Skip.
 
-**Key intelligence:**
-- Desk lamps are having a media moment — Wirecutter, Business Insider, Good Housekeeping, and Architectural Digest all published fresh lamp/task lighting buyer guides within the past 2 weeks. SmartDeskDojo has monitor light bars but zero desk lamp coverage. These are complementary categories, not overlapping.
-- Desktop speakers are breaking into WFH coverage from major tech outlets. How-To Geek published "I finally ditched my $300 gaming headset—why desktop PC speakers are my best upgrade in years" — this signals a real buyer tension between headset fatigue and speaker setups. No dedicated comparison guide exists anywhere.
-- Split/ergonomic keyboards gaining editorial traction (RTINGS, Popular Mechanics, PCMag). SmartDeskDojo covers hall-effect but not split ergonomic. Worth monitoring for next week.
-- Ergonomic chairs are saturated — 5+ authority sites publishing mid-year roundups simultaneously. No edge for us to chase here.
+**Content Gap Analysis (29 articles published):**
+Last week's chair mats article shipped (long-tail format). Ergonomic keyboards appears to still be unpublished — no `best-ergonomic-keyboards-2026.html` on disk. Existing ergonomic mouse coverage is limited to "AI mice" (voice mice), a completely different category from vertical/ergonomic/trackball mice.
 
-**Content Gap Analysis (vs existing 25 articles):**
-
-Covered: walking pads, AI mice, anti-fatigue mats, desk mats, chairs, macropads, monitor arms, light bars, noise-canceling headphones, standing desk converters, PC mounts, docking stations, webcams/lighting, ultrawide desks, dual monitors, hall-effect keyboards, laptop screen extenders, cable management, standing desks (general), ultimate desk setup, walking pad 30-day data, seat cushions, standing desk wobble fixes, under-desk exercise, desk shelves/monitor risers, footrests.
-
-**NOT covered (ranked by editorial signal + affiliate potential):**
-- **Desk Lamps / Task Lighting** ← **#1 GAP** (Wirecutter + BI + GH + AD signal, separate from monitor light bars, $30-200 range)
-- **Desktop Speakers / WFH Audio** ← **#2 GAP** (Tom's Hardware + How-To Geek + Gear Patrol signal, $40-400 range, zero audio coverage on site)
-- Split/Ergonomic Keyboards ← #3 GAP (hall-effect covered, split not)
-- Power Strips / Surge Protectors ← #4 GAP (practical but low ticket $20-60)
-- Wrist Rests ← #5 GAP (low ticket $8-30, limited commission potential)
+| Gap | Search Intent | Price Range | Competition |
+|-----|--------------|-------------|-------------|
+| Vertical/Ergonomic Mice | High (wrist pain, RSI) | $25–$100 | Moderate |
+| Surge Protectors (desk-specific) | Utility | $20–$60 | Low |
+| Wrist Rests (standalone) | Utility | $10–$40 | Low (skip) |
+| Pegboards/Wall Organization | Visual | $20–$80 | Low (skip) |
 
 ---
 
-## Monday Topic (July 21): Desk Lamps & Task Lighting
+## Selected Topics
 
-### Best Desk Lamps and Task Lighting for Home Office (2026)
+### MONDAY (August 11): Best Vertical & Ergonomic Mice 2026: Fix Wrist Pain
 
-**Why:** Wirecutter, Business Insider, Good Housekeeping, and Architectural Digest all published fresh desk lamp buyer guides in the past 2 weeks — this validates strong category demand. SmartDeskDojo has a monitor light bar article but zero desk lamp coverage. These are complementary products (light bars illuminate the monitor area; desk lamps illuminate the desk surface and documents). Price range $30-200 creates meaningful affiliate commissions on premium LED architect lamps. Zero competition on-site.
+**Rationale:** High buyer intent. Every desk worker with wrist pain searches this category. Strong 2026 refresh signals from every major publication. Natural complement to existing keyboard and AI mice articles — different category, no cannibalization. The Gadgeteer's May 2026 roundup and PCMag's Editor's Choice Razer Pro Click V2 confirm this category is hot.
 
-**Article type:** Head-term comparison ("Best Desk Lamps & Task Lighting 2026")
+**Target Products:**
+- Logitech MX Vertical (~$75) — industry standard, 57° natural handshake angle, USB-C, Flow multi-device
+- Logitech Lift (~$70) — smaller-hand variant, quiet clicks, 4 color options
+- Razer Pro Click V2 Vertical ($80-100) — PCMag Editor's Choice 2026, 71.7° aggressive angle, 16K DPI sensor
+- Keychron M5 (~$50) — newest contender, dual-mode wireless, ergo thumb rest
+- Anker 2.4G Wireless Vertical (~$25) — budget king, 5-button, 3 DPI levels
+- ProtoArc EM11 (~$40) — distinctive "oven mitt" shape, silent clicks, LED flair
 
-**Primary affiliate targets (Amazon search links, tag=smartdeskdojo-20):**
+**Affiliate Target:** `tag=smartdeskdojo-20` Amazon search links
 
-| Product | Price Range | Amazon Search |
-|---|---|---|
-| TaoTronics LED Desk Lamp | $35-50 | `TaoTronics+LED+desk+lamp+eye+care` |
-| BenQ ScreenBar (already in light bar article) | N/A — reference only | link to existing article |
-| BenQ e-Reading LED Desk Lamp | $180-230 | `BenQ+e-reading+LED+desk+lamp+swing+arm` |
-| LEPOWER Metal Desk Lamp | $25-35 | `LEPOWER+metal+desk+lamp+architect` |
-| OttLite LED Desk Lamp | $50-80 | `OttLite+LED+desk+lamp+natural+daylight` |
-| Globe Electric Architect Lamp | $40-65 | `Globe+Electric+architect+desk+lamp+LED` |
-| Philips Hue Go / Desk Lamp | $60-90 | `Philips+Hue+desk+lamp+smart+LED` |
+**Cross-Links:** hall-effect keyboards, AI mice, ergonomic chairs, desk mats, wrist rests, calculator
 
-**Key differentiators to cover:** LED vs halogen, color temperature (2700K-6500K), brightness (lumens), CRI (color rendering index), adjustable arm vs fixed, clamp-mount vs base, smart features (app control, schedules), eye-care certifications, dimming levels, USB charging ports
-
-**Cross-linking opportunities:** Monitor light bars article (complementary), ergonomic desk setup, dual monitor setup, standing desk, calculator, cable management
+**Article Type:** Head-term comparison ("Best X 2026")
 
 ---
 
-## Thursday Topic (July 24): Desktop Speakers vs Headphones for WFH
+### THURSDAY (August 14): Best Surge Protectors & Desk Power Management 2026
 
-### Desktop Speakers or Headphones: The WFH Audio Decision Nobody Talks About
+**Rationale:** Zero coverage. Every desk with $2K+ of electronics needs one. Desk-specific angle (clamp-mount, USB-C PD, under-desk routing) avoids competing with generic whole-home surge protector roundups from Wirecutter/NYT. Low competition for the "desk power strip" long-tail. Wirecutter specifically calls out the Tripp Lite desk-clamp model as their top desk pick. Opportunity to position as "protect your standing desk investment."
 
-**Why:** How-To Geek's "I finally ditched my $300 gaming headset — why desktop PC speakers are my best upgrade in years" hit a nerve. Most WFH setups default to headphones/headsets, but all-day ear fatigue is real. Desktop speakers solve this but introduce shared-space sound concerns. Nobody publishes a dedicated comparison guide — the decision tree is scattered across gaming headset reviews and audiophile speaker roundups. This is a pure long-tail problem-solution article answering a specific buyer question. Low competition, high user intent, strong cross-linking into the noise-canceling headphones article.
+**Target Products:**
+- Tripp Lite TLP606DMUSB (~$35) — Wirecutter desk-clamp pick, 6 outlets + 2 USB-A, lifetime warranty
+- Belkin PivotPlug 12-Outlet (~$35) — Good Housekeeping "best value," rotating outlets, 3,940J protection
+- APC SurgeArrest Performance (~$30) — 11 outlets, trusted enterprise brand, $150K equipment warranty
+- Anker Power Strip Surge Protector (~$29) — CNET pick, 12 outlets + USB-C, slim design
+- Tessan Desk Clamp Power Strip (~$25) — desk-edge mount with USB-C + USB-A, low-profile
 
-**Article type:** Long-tail problem-solution (NO "Best X 2026" title)
+**Affiliate Target:** `tag=smartdeskdojo-20` Amazon search links
 
-**Title:** Desktop Speakers or Headphones: The WFH Audio Decision Nobody Talks About
+**Cross-Links:** standing desk revolution, cable management, docking stations, desk shelves, calculator
 
-**Primary affiliate targets (Amazon search links, tag=smartdeskdojo-20):**
-
-| Product | Price Range | Amazon Search |
-|---|---|---|
-| Creative Pebble V3 Desktop Speakers | $40-50 | `Creative+Pebble+V3+desktop+speakers+USB-C` |
-| Edifier R1280T Powered Bookshelf | $100-120 | `Edifier+R1280T+powered+bookshelf+speakers` |
-| Audioengine A2+ Wireless | $270-300 | `Audioengine+A2+wireless+desktop+speakers` |
-| Klipsch ProMedia 2.1 THX | $100-130 | `Klipsch+ProMedia+2.1+THX+computer+speakers` |
-| Logitech Z407 Bluetooth Speakers | $70-90 | `Logitech+Z407+Bluetooth+computer+speakers` |
-
-**Also referenced (link to existing article):** Best noise-canceling headphones WFH 2026
-
-**Key angles:** all-day ear fatigue vs open-ear comfort, shared space / background noise concerns, audio quality for calls vs music, wired vs Bluetooth latency for video calls, desk space tradeoff, headset mic quality vs separate mic, hybrid approach (headset for calls + speakers for focused work), budget sweet spots
-
-**Cross-linking opportunities:** Noise-canceling headphones article, docking stations, monitor arms, desk setup, calculator, dual monitors
+**Article Type:** Long-tail problem-solution (cadence alternation — Monday head-term, Thursday long-tail)
 
 ---
 
-## Grok Imagine Prompts — Topic 1 Thumbnail (Desk Lamps)
+## Grok Imagine Prompts — Topic 1 (Vertical/Ergonomic Mice)
 
-Generate 16:9 thumbnails. Dark battlestation aesthetic. Mood: sleek, cinematic, cyber-noir ambiance.
+Three distinct thumbnail variations. 16:9 aspect ratio. All three must look different at 200×120px card size.
 
-### Variation A — The Architect Lamp Hero
-> A dark minimalist home office at night. A brushed-metal architect desk lamp with articulated swing arms dominates the foreground, casting a warm 4000K pool of light across a dark wood desk surface. The lamp head is angled down toward a mechanical keyboard and notepad. In the blurred background, dual monitors glow with cyan and purple ambient light. Cables hidden. The lamp's metal finish catches subtle edge highlights. Photorealistic, 16:9, moody cinematic lighting, battlestation aesthetic.
+### Prompt 1: Dark Battlestation — Hand-On-Mouse (Moody/Cinematic)
+```
+A dark battlestation desk scene with a vertical ergonomic mouse centered in the foreground, a hand gripping it in the natural handshake position, subtle cyan and purple RGB underglow reflecting off the matte desk surface, mechanical keyboard visible out of focus in the background, dramatic side lighting casting long shadows, moody home office at night, 16:9, photorealistic, cinematic color grade, black and blue color palette
+```
 
-### Variation B — Light Quality Comparison
-> Split-frame composition of the same dark desk setup. Left side: a desk lamp casting warm amber light (3000K) across the workspace. Right side: the same lamp adjusted to cool daylight (5000K), creating a crisp blue-white illumination. The keyboard, mouse, and monitor glow anchor the center. The transition between warm and cool light creates a subtle gradient across the desk surface. Photorealistic, 16:9, product photography style with depth.
+### Prompt 2: Bright Minimalist — Product-Only (Clean/Editorial)
+```
+A bright minimalist product shot of a white vertical ergonomic mouse on a light oak wood desk surface, natural morning sunlight streaming through a window creating soft diffused shadows, a small succulent plant and ceramic coffee cup out of focus in the background, clean modern aesthetic, airy and fresh, 16:9, photorealistic, warm natural tones, editorial product photography
+```
 
-### Variation C — The Whole-Workspace Glow
-> Wide shot of a complete dark-themed battlestation at night. A clamp-mounted LED desk lamp extends from the left monitor arm, casting controlled task light onto the desk surface. Monitor light bar adds bias lighting behind the screens. RGB strip outlines desk edge in subtle cyan. The lamp is the intentional light source — everything else is ambient. An ergonomic chair sits in the foreground. Clean, organized, intentional lighting design. Photorealistic, 16:9, architectural photography style, moody atmosphere.
+### Prompt 3: Overhead Flat-Lay — Wrist Relief Angle (Dramatic/Editorial)
+```
+Overhead flat-lay shot of a vertical ergonomic mouse centered on a dark gray felt desk mat, surrounded by a coiled USB-C cable, a small notebook, and a mechanical pencil, the mouse casting a crisp shadow downward, dramatic top-down studio lighting emphasizing the vertical grip angle, a human hand visible at the top edge of the frame reaching toward the mouse, dark background, 16:9, high contrast, editorial product photography, texture detail on the mouse grip surface
+```
+
+**Variation strategy:** Prompt 1 = hand-using + dark/moody; Prompt 2 = product-only + bright/clean; Prompt 3 = overhead-angle + dramatic/flat-lay. Each differs in lighting context, composition, and angle — they will not look identical at thumbnail size.
 
 ---
 
-## Publishing Notes
+## Publishing Calendar
 
-- **Monday publish:** `articles/best-desk-lamps-task-lighting-2026.html`
-- **Thursday publish:** `articles/desktop-speakers-vs-headphones-wfh-audio.html`
-- Monday: head-term comparison format (3+ comparison tables, 2-3 product deep-dives, FAQPage schema, canonical, 4+ internal cross-links)
-- Thursday: long-tail problem-solution format (see `references/long-tail-content-strategy.md` in jarvis-publisher skill — NO "Best X 2026" title, answers a specific buyer question, comparison tables can be lighter, more decision-framework structure)
-- Images sourced via Unsplash download redirect (primary): for desk lamps use `site:unsplash.com desk lamp architect task lighting dark home office` via web_search. For speakers use `site:unsplash.com desktop speakers desk setup minimal`. See jarvis-publisher skill Pitfalls for exact curl command with Chrome User-Agent + Accept headers.
-- Amazon 405 across the board (July 2026) — structural verification only (search links can't 404, tag verification via grep)
-- Monday article connects to lighting/monitor ecosystem. Thursday article connects to audio/headphone ecosystem.
-- Both articles require: index.html card injection, sitemap.xml update, js/search.js index entry, git add/commit/push
-- Thursday is 2nd consecutive long-tail article (following July 17 wobble fixes). Next week should return to Monday head-term + optionally a second head-term or skip Thursday depending on cadence.
+| Date | Article | Type | Primary Products |
+|------|---------|------|-----------------|
+| Mon Aug 11 | Best Vertical & Ergonomic Mice 2026 | Head-term | Logitech MX Vertical, Logitech Lift, Razer Pro Click V2, Keychron M5, Anker Vertical, ProtoArc EM11 |
+| Thu Aug 14 | Best Surge Protectors & Desk Power Management 2026 | Long-tail | Tripp Lite TLP606DMUSB, Belkin PivotPlug, APC SurgeArrest, Anker Power Strip, Tessan Desk Clamp |
+
+---
+
+## Notes for Justin
+
+- **Grok thumbnails needed:** 3 variations for the vertical mouse article (prompts above). Prompt 2 (bright/product-only) is the safest single-generation bet. Prompt 1 needs a realistic hand — Grok sometimes struggles with hands, so if the hand looks mangled, fall back to Prompt 2 or 3. Prompt 3 with the partial-hand-at-edge is a safer hand-in-frame composition.
+- **Ergonomic keyboards status:** Last week's Monday topic (ergonomic keyboards) does not appear to have been published — no `best-ergonomic-keyboards-2026.html` on disk. If the article was written but not deployed, check `git status` for untracked files.
+- **Surge protector article** is Thursday — low urgency on images. Product photography for power strips is hard to make interesting. A clean desk-edge shot showing a clamp-mounted power strip with cables neatly routed works better than a product-on-white shot.
+- **Next week candidate topics:** Pegboards/wall organization (visual, low affiliate), ergonomic footrests (deeper standalone dive), desktop organizers/drawers.
+- **Cadence note:** 29 articles live. Monday head-term + Thursday long-tail alternation continues per the sandbox diversification strategy.
