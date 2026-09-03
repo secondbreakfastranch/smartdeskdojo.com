@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://smartdeskdojo.com/about.html</loc>
-    <lastmod>2026-08-16</lastmod>
+    <loc>https://smartdeskdojo.com/</loc>
+    <lastmod>2026-09-03</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://smartdeskdojo.com/articles/ai-video-generators-2026-reality-check.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://smartdeskdojo.com/articles/best-ai-coding-assistants-2026.html</loc>
@@ -24,13 +30,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://smartdeskdojo.com/articles/ai-video-generators-2026-reality-check.html</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <url>
     <loc>https://smartdeskdojo.com/articles/best-anti-fatigue-mats-footrests-2026.html</loc>
     <lastmod>2026-08-16</lastmod>
@@ -224,16 +223,16 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://smartdeskdojo.com/guides.html</loc>
+    <loc>https://smartdeskdojo.com/about.html</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://smartdeskdojo.com/</loc>
+    <loc>https://smartdeskdojo.com/guides.html</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://smartdeskdojo.com/privacy.html</loc>
