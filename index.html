@@ -143,6 +143,27 @@
             .hw-header { padding: 13px 16px; font-size: 0.82em; }
             .hw-panel-inner { padding: 0 12px 14px; grid-template-columns: 1fr; }
         }
+
+        /* Hero CTAs */
+        .hero-ctas { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 36px; flex-wrap: wrap; }
+        .hero-ctas .btn-table { font-size: 1em; padding: 16px 28px; }
+        .hero-ctas .btn-outline { background: rgba(9, 9, 11, 0.45); }
+        #dojo-essentials, #latest-intel { scroll-margin-top: 24px; }
+
+        /* Latest Intel filters */
+        .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; }
+        .filter-chip { appearance: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.12); color: var(--subtext); font-family: 'Montserrat', sans-serif; font-size: 0.72em; font-weight: 800; letter-spacing: 0.8px; text-transform: uppercase; padding: 8px 14px; border-radius: 999px; cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s; }
+        .filter-chip:hover { border-color: var(--accent1); color: var(--accent1); }
+        .filter-chip.active { background: rgba(0, 242, 254, 0.12); border-color: var(--accent1); color: var(--accent1); box-shadow: 0 0 16px rgba(0, 242, 254, 0.15); }
+        .filter-chip:focus-visible { outline: 2px solid var(--accent1); outline-offset: 2px; }
+        .grid .card.is-hidden { display: none; }
+        .intel-empty { color: var(--subtext); text-align: center; margin: 0 0 40px; }
+        .intel-empty[hidden] { display: none; }
+
+        @media (max-width: 480px) {
+            .hero-ctas { flex-direction: column; align-items: stretch; width: 100%; max-width: 320px; margin-left: auto; margin-right: auto; }
+            .hero-ctas .btn-table, .hero-ctas .btn-outline { text-align: center; }
+        }
     </style>
 
     <!-- Favicon -->
@@ -220,16 +241,13 @@
             <div class="badge" tabindex="0" aria-label="Independent Research"><svg width="18" height="18" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> UNBIASED TESTS</div>
             <div class="badge" tabindex="0" aria-label="Data Driven"><svg width="18" height="18" aria-hidden="true" fill="currentColor" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg> DATA DRIVEN</div>
         </div>
+        <div class="hero-ctas">
+            <a href="#dojo-essentials" class="btn-table">Top Gear Picks</a>
+            <a href="/calculator.html" class="btn-outline">Ergonomics Calculator</a>
+        </div>
     </header>
     <main>
-        <!-- Elevated Calculator CTA -->
-        <div class="calc-promo">
-            <h2>DIAL IN YOUR OPTIMAL LOADOUT</h2>
-            <p>A $1,000 chair is useless if your desk is three inches too high. Use the <strong>Battlestation Ergonomic Calculator</strong> to find your mathematically perfect chair, desk, and monitor distance. Stop guessing; start building.</p>
-            <a href="/calculator.html" class="btn-table" style="font-size: 1.1em; padding: 15px 30px;">LAUNCH CALCULATOR</a>
-        </div>
-
-        <h2 class="section-title">DOJO ESSENTIALS</h2>
+        <h2 class="section-title" id="dojo-essentials">DOJO ESSENTIALS</h2>
         <p style="color: var(--subtext); margin-bottom: 25px;">Start here. These are the pieces every battlestation builder should read ,  our most referenced, most shared, highest-impact work.</p>
         <div class="featured-grid">
             <div class="featured-card">
@@ -269,38 +287,26 @@
                 </div>
             </div>
         </div>
-                <h2 class="section-title">LATEST INTEL</h2>
-        <div class="grid">
-            <a href="/articles/best-usb-mics-boom-arms-2026.html" class="card" aria-label="Read Best USB Mics & Boom Arms for WFH 2026: Your Webcam Is Fine. Your Laptop Mic Isn't.">
+        <h2 class="section-title" id="latest-intel">LATEST INTEL</h2>
+        <div class="filter-bar" role="toolbar" aria-label="Filter guides by category">
+            <button type="button" class="filter-chip active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-chip" data-filter="chairs" aria-pressed="false">Chairs</button>
+            <button type="button" class="filter-chip" data-filter="desks" aria-pressed="false">Desks</button>
+            <button type="button" class="filter-chip" data-filter="monitors" aria-pressed="false">Monitors &amp; Arms</button>
+            <button type="button" class="filter-chip" data-filter="audio" aria-pressed="false">Audio &amp; Mics</button>
+            <button type="button" class="filter-chip" data-filter="keyboards" aria-pressed="false">Keyboards &amp; Mice</button>
+            <button type="button" class="filter-chip" data-filter="lighting" aria-pressed="false">Lighting &amp; Cables</button>
+        </div>
+        <div class="grid" id="intel-grid">
+            <a href="/articles/best-usb-mics-boom-arms-2026.html" class="card" data-category="audio" aria-label="Read Best USB Mics & Boom Arms for WFH 2026: Your Webcam Is Fine. Your Laptop Mic Isn't.">
                 <div class="card-img" style="background-image: url('/usb-mic-boom-arm-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST USB MICS &amp; BOOM ARMS FOR WFH 2026: YOUR WEBCAM IS FINE. YOUR LAPTOP MIC ISN'T.</h3>
                     <p class="card-desc">A $200 4K webcam still sounds like a laptop if the mic is in the keyboard. Shure MV7+ vs R&Oslash;DE PodMic USB vs Elgato Wave:3 MK.2 vs HyperX QuadCast 2, plus the boom arms that keep them out of frame.</p>
                 </div>
             </a>
-            <a href="/articles/best-ai-productivity-tools-2026.html" class="card" aria-label="Read Best AI Productivity Tools 2026: 7 Tools Compared for Desk Workers">
-                <div class="card-img" style="background-image: url('/ai-productivity-tools-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST AI PRODUCTIVITY TOOLS 2026: 7 TOOLS COMPARED FOR DESK WORKERS</h3>
-                    <p class="card-desc">Notion AI vs Motion vs Trevor AI vs Reclaim.ai vs Taskade vs ClickUp Brain vs Zapier Central: 7 AI productivity tools tested for real desk-work workflows. Which one actually saves time?</p>
-                </div>
-            </a>
-            <a href="/articles/ai-video-generators-2026-reality-check.html" class="card" aria-label="Read AI Video Generators 2026: 8 Tools Tested - Only 3 Worth the Money">
-                <div class="card-img" style="background-image: url('/ai-video-editing-dark-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>AI VIDEO GENERATORS 2026: 8 TOOLS TESTED - ONLY 3 WORTH YOUR MONEY</h3>
-                    <p class="card-desc">Runway vs Pika vs Pictory vs Freebeat vs Luma vs InVideo: 8 AI video generators tested. Which ones actually deliver, and which waste your money?</p>
-                </div>
-            </a>
-<a href="/articles/best-ai-coding-assistants-2026.html" class="card" aria-label="Read Best AI Coding Assistants 2026: Claude Code vs Cursor vs Windsurf vs Codex vs OpenCode">
-                <div class="card-img" style="background-image: url('/ai-coding-assistants-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST AI CODING ASSISTANTS 2026: CLAUDE CODE VS CURSOR VS WINDSURF VS CODEX VS OPENCODE</h3>
-                    <p class="card-desc">Claude Code vs Cursor vs Windsurf vs Codex vs OpenCode: 5 AI coding assistants tested for real workflows. Trust dropped to 33% — which tool actually ships faster?</p>
-                </div>
-            </a>
 
-            <a href="/articles/under-desk-keyboard-trays-guide.html" class="card" aria-label="Read Under-Desk Keyboard Trays: Fix Your Standing Desk Height, Kill the Arm Pain">
+            <a href="/articles/under-desk-keyboard-trays-guide.html" class="card" data-category="keyboards" aria-label="Read Under-Desk Keyboard Trays: Fix Your Standing Desk Height, Kill the Arm Pain">
                 <div class="card-img" style="background-image: url('/keyboard-tray-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>UNDER-DESK KEYBOARD TRAYS: FIX YOUR STANDING DESK HEIGHT, KILL THE ARM PAIN</h3>
@@ -308,7 +314,7 @@
                 </div>
             </a>
 
-            <a href="/articles/best-ergonomic-keyboards-2026.html" class="card" aria-label="Read Best Ergonomic Keyboards 2026: Split, Wave and Wireless">
+            <a href="/articles/best-ergonomic-keyboards-2026.html" class="card" data-category="keyboards" aria-label="Read Best Ergonomic Keyboards 2026: Split, Wave and Wireless">
                 <div class="card-img" style="background-image: url('/ergonomic-keyboard-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST ERGONOMIC KEYBOARDS 2026: SPLIT, WAVE AND WIRELESS</h3>
@@ -316,224 +322,196 @@
                 </div>
             </a>
 
-            <a href="/articles/desk-power-management-guide.html" class="card" aria-label="Read Desk Power Management: Mount Your Power and Kill the Cable Clutter">
+            <a href="/articles/desk-power-management-guide.html" class="card" data-category="lighting" aria-label="Read Desk Power Management: Mount Your Power and Kill the Cable Clutter">
                 <div class="card-img" style="background-image: url('/desk-power-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>DESK POWER MANAGEMENT: MOUNT YOUR POWER AND KILL THE CABLE CLUTTER</h3>
                     <p class="card-desc">Mount your power strip at the desk edge instead of the floor. Anker Nano clamp vs Tessan vs Tripp Lite: desk-clamp power, joule ratings, cable routing.</p>
                 </div>
             </a>
-            <a href="/articles/best-vertical-ergonomic-mice-2026.html" class="card" aria-label="Read Best Ergonomic Mice 2026: Vertical Mouse Comparison">
+            <a href="/articles/best-vertical-ergonomic-mice-2026.html" class="card" data-category="keyboards" aria-label="Read Best Ergonomic Mice 2026: Vertical Mouse Comparison">
                 <div class="card-img" style="background-image: url('/ergonomic-mouse-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST ERGONOMIC MICE 2026: VERTICAL MOUSE COMPARISON</h3>
                     <p class="card-desc">Logitech MX Vertical vs Lift vs Razer Pro Click V2 vs Keychron M5 vs Anker: 6 ergonomic mice tested for wrist pain relief. From $25 to $100.</p>
                 </div>
             </a>
-            <a href="/articles/office-chair-mats-hardwood-vs-carpet-guide.html" class="card" aria-label="Read Office Chair Mats: Hardwood vs Carpet &mdash; What Actually Protects Your Floor">
+            <a href="/articles/office-chair-mats-hardwood-vs-carpet-guide.html" class="card" data-category="chairs" aria-label="Read Office Chair Mats: Hardwood vs Carpet &mdash; What Actually Protects Your Floor">
                 <div class="card-img" style="background-image: url('/chair-mat-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>OFFICE CHAIR MATS: HARDWOOD VS CARPET &mdash; WHAT ACTUALLY PROTECTS YOUR FLOOR</h3>
                     <p class="card-desc">Hardwood floors need polycarbonate. Carpet needs studded vinyl. Polycarbonate vs PVC, sizing, thickness, and what actually protects your floor.</p>
                 </div>
             </a>
-            <a href="/articles/monitor-arm-weight-capacity-guide.html" class="card" aria-label="Read Monitor Arm Weight Limits: Will Your Arm Hold That Ultrawide?">
+            <a href="/articles/monitor-arm-weight-capacity-guide.html" class="card" data-category="monitors" aria-label="Read Monitor Arm Weight Limits: Will Your Arm Hold That Ultrawide?">
                 <div class="card-img" style="background-image: url('/monitor-arm-weight-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>MONITOR ARM WEIGHT LIMITS: WILL YOUR ARM HOLD THAT ULTRAWIDE?</h3>
                     <p class="card-desc">Rated for 17 lbs but sagging at 15? Real-world weight capacity guide covering VESA standards, actual monitor weights by size, and why rated limits don't tell the full story.</p>
                 </div>
             </a>
-            <a href="/articles/desktop-speakers-vs-headphones-wfh-audio.html" class="card" aria-label="Read Desktop Speakers or Headphones: The WFH Audio Decision Nobody Talks About">
+            <a href="/articles/desktop-speakers-vs-headphones-wfh-audio.html" class="card" data-category="audio" aria-label="Read Desktop Speakers or Headphones: The WFH Audio Decision Nobody Talks About">
                 <div class="card-img" style="background-image: url('/speaker-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>DESKTOP SPEAKERS OR HEADPHONES: THE WFH AUDIO DECISION</h3>
                     <p class="card-desc">Headset fatigue is real. Creative Pebble vs Edifier R1280T vs Klipsch ProMedia: which desktop speakers replace your headphones at moderate volume.</p>
                 </div>
             </a>
-            <a href="/articles/best-desk-lamps-task-lighting-2026.html" class="card" aria-label="Read Best Desk Lamps & Task Lighting 2026: TaoTronics vs BenQ vs LEPOWER Tested">
+            <a href="/articles/best-desk-lamps-task-lighting-2026.html" class="card" data-category="lighting" aria-label="Read Best Desk Lamps & Task Lighting 2026: TaoTronics vs BenQ vs LEPOWER Tested">
                 <div class="card-img" style="background-image: url('/desk-lamp-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST DESK LAMPS &amp; TASK LIGHTING 2026: TAOTRONICS VS BENQ VS LEPOWER</h3>
                     <p class="card-desc">TaoTronics vs BenQ vs LEPOWER vs OttLite: 6 LED desk lamps tested for CRI accuracy, color temp range, and all-day eye comfort. From $25 to $230.</p>
                 </div>
             </a>
-            <a href="/articles/standing-desk-wobble-stability-fixes.html" class="card" aria-label="Read Standing Desk Wobble: 7 Stability Fixes That Actually Work (Carpet, Hardwood, and Tile)">
+            <a href="/articles/standing-desk-wobble-stability-fixes.html" class="card" data-category="desks" aria-label="Read Standing Desk Wobble: 7 Stability Fixes That Actually Work (Carpet, Hardwood, and Tile)">
                 <div class="card-img" style="background-image: url('/wobble-fix-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>STANDING DESK WOBBLE: 7 STABILITY FIXES THAT ACTUALLY WORK</h3>
                     <p class="card-desc">Your desk shakes at max height? 7 fixes ranked by cost and floor type. Leveling feet, crossbars, wall anchors, and when to replace the whole desk.</p>
                 </div>
             </a>
-            <a href="/articles/best-seat-cushions-lumbar-support-2026.html" class="card" aria-label="Read Best Seat Cushions & Lumbar Supports 2026: Cushion Lab vs Everlasting Comfort vs ComfiLife Tested">
+            <a href="/articles/best-seat-cushions-lumbar-support-2026.html" class="card" data-category="chairs" aria-label="Read Best Seat Cushions & Lumbar Supports 2026: Cushion Lab vs Everlasting Comfort vs ComfiLife Tested">
                 <div class="card-img" style="background-image: url('/seat-cushion-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST SEAT CUSHIONS & LUMBAR SUPPORTS 2026: CUSHION LAB VS EVERLASTING COMFORT VS COMFILIFE</h3>
                     <p class="card-desc">Cushion Lab vs Everlasting Comfort vs ComfiLife vs Purple Double: 6 seat cushions tested for coccyx relief, heat retention, density, and chair strap fit. From $25 to $80.</p>
                 </div>
             </a>
-            <a href="/articles/best-desk-shelves-monitor-risers-2026.html" class="card" aria-label="Read Best Desk Shelves & Monitor Risers 2026: Grovemade vs Aothia vs ErGear Tested">
+            <a href="/articles/best-desk-shelves-monitor-risers-2026.html" class="card" data-category="monitors" aria-label="Read Best Desk Shelves & Monitor Risers 2026: Grovemade vs Aothia vs ErGear Tested">
                 <div class="card-img" style="background-image: url('/desk-shelf-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST DESK SHELVES & MONITOR RISERS 2026: GROVEMADE VS AOTHIA VS ERGEAR</h3>
                     <p class="card-desc">Grovemade vs Aothia vs ErGear: 6 desk shelves tested for weight capacity, cable management, and build quality. No $1,200 standing desk required.</p>
                 </div>
             </a>
-            <a href="/articles/best-under-desk-exercise-equipment-2026.html" class="card" aria-label="Read Best Under-Desk Bikes & Ellipticals 2026: DeskCycle 2 vs Cubii Move vs FlexCycle Plus Tested">
+            <a href="/articles/best-under-desk-exercise-equipment-2026.html" class="card" data-category="desks" aria-label="Read Best Under-Desk Bikes & Ellipticals 2026: DeskCycle 2 vs Cubii Move vs FlexCycle Plus Tested">
                 <div class="card-img" style="background-image: url('/under-desk-exercise-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST UNDER-DESK BIKES & ELLIPTICALS 2026: STAY ACTIVE DURING MEETINGS</h3>
                     <p class="card-desc">DeskCycle 2 vs Cubii Move vs FlexCycle Plus vs Yosuda: magnetic vs friction resistance, real noise levels during Zoom calls, and which under-desk exerciser you'll actually use daily.</p>
                 </div>
             </a>
-                        <a href="/articles/best-standing-desk-converters-2026.html" class="card" aria-label="Read Best Standing Desk Converters 2026: FlexiSpot M2B vs VariDesk vs VIVO vs Ergotron WorkFit-T Tested">
+                        <a href="/articles/best-standing-desk-converters-2026.html" class="card" data-category="desks" aria-label="Read Best Standing Desk Converters 2026: FlexiSpot M2B vs VariDesk vs VIVO vs Ergotron WorkFit-T Tested">
                 <div class="card-img" style="background-image: url('/standing-desk-converter-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST STANDING DESK CONVERTERS 2026: TURN ANY DESK INTO A SIT-STAND WORKSTATION</h3>
                     <p class="card-desc">FlexiSpot M2B vs VariDesk Pro Plus 36 vs VIVO vs Ergotron WorkFit-T: which desk converter fits your desk, your height, and your wallet? 6 risers tested ,  including keyboard tray depth the competition ignores.</p>
                 </div>
             </a>
-            <a href="/articles/walking-pad-30-day-data-results.html" class="card" aria-label="Read Walking Pad 30-Day Results: Real Steps, Calories & Noise">
+            <a href="/articles/walking-pad-30-day-data-results.html" class="card" data-category="desks" aria-label="Read Walking Pad 30-Day Results: Real Steps, Calories & Noise">
                 <div class="card-img" style="background-image: url('/walking-pad-30day-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>WALKING PAD 30-DAY RESULTS: REAL STEPS, CALORIES &amp; NOISE</h3>
                     <p class="card-desc">30 days on a walking pad: 186,402 steps, 6,800 calories, real noise data on calls, and what nobody tells you about belt tracking and the novelty cliff.</p>
                 </div>
             </a>
-            <a href="/articles/best-noise-canceling-headphones-wfh-2026.html" class="card" aria-label="Read Best Noise-Canceling Headphones for WFH 2026: Sony XM6 vs Bose vs AirPods Max 2">
+            <a href="/articles/best-noise-canceling-headphones-wfh-2026.html" class="card" data-category="audio" aria-label="Read Best Noise-Canceling Headphones for WFH 2026: Sony XM6 vs Bose vs AirPods Max 2">
                 <div class="card-img" style="background-image: url('/headphones-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST NOISE-CANCELING HEADPHONES FOR WFH 2026: SONY XM6 VS BOSE VS AIRPODS MAX 2</h3>
                     <p class="card-desc">Sony WH-1000XM6 vs Bose QC Ultra 2 vs AirPods Max 2 vs Momentum 5: which ANC headphones crush leaf blowers, kids, and construction noise? Prime Day deal targets inside.</p>
                 </div>
             </a>
-            <a href="/articles/best-usb-c-docking-stations-thunderbolt-2026.html" class="card" aria-label="Read Best USB-C Docking Stations & Thunderbolt Hubs 2026: TB5 Has Arrived">
+            <a href="/articles/best-usb-c-docking-stations-thunderbolt-2026.html" class="card" data-category="lighting" aria-label="Read Best USB-C Docking Stations & Thunderbolt Hubs 2026: TB5 Has Arrived">
                 <div class="card-img" style="background-image: url('/docking-station-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST USB-C DOCKING STATIONS & THUNDERBOLT HUBS 2026: TB5 HAS ARRIVED</h3>
                     <p class="card-desc">CalDigit TS5 vs Kensington TB5 vs Anker PowerExpand: Thunderbolt 5 docking stations have arrived ,  but do you need one? Best USB-C and Thunderbolt docks for WFH 2026, all price tiers.</p>
                 </div>
             </a>
-            <a href="/articles/dual-monitor-setup-measurements-ergonomics.html" class="card" aria-label="Read Dual Monitor Setup: Exact Measurements for 24, 27, and 32-inch Screens">
+            <a href="/articles/dual-monitor-setup-measurements-ergonomics.html" class="card" data-category="monitors" aria-label="Read Dual Monitor Setup: Exact Measurements for 24, 27, and 32-inch Screens">
                 <div class="card-img" style="background-image: url('/dual-monitor-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>DUAL MONITOR SETUP: EXACT MEASUREMENTS FOR ERGONOMICS</h3>
                     <p class="card-desc">Stop guessing at arm's length. Exact dual monitor specs for 24, 27, and 32-inch screens: viewing distance, screen angle, desk depth minimums, and the monitor arms that make it all work.</p>
                 </div>
             </a>
-            <a href="/articles/best-webcams-video-lighting-2026.html" class="card" aria-label="Read Best Webcams & Video Lighting 2026: Logitech MX Brio vs Insta360 Link 2 Pro vs Obsbot Tiny 3 Tested">
+            <a href="/articles/best-webcams-video-lighting-2026.html" class="card" data-category="lighting" aria-label="Read Best Webcams & Video Lighting 2026: Logitech MX Brio vs Insta360 Link 2 Pro vs Obsbot Tiny 3 Tested">
                 <div class="card-img" style="background-image: url('/webcam-lighting-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST WEBCAMS & VIDEO LIGHTING 2026: LOOK SHARP ON EVERY ZOOM</h3>
                     <p class="card-desc">Logitech MX Brio vs Insta360 Link 2 Pro vs Obsbot Tiny 3: 8 webcams and 6 lights tested. Which combo actually makes you look professional on camera?</p>
                 </div>
             </a>
-            <a href="/articles/best-anti-fatigue-mats-footrests-2026.html" class="card" aria-label="Read Best Anti-Fatigue Mats & Footrests 2026: Topo vs ComfiLife vs Cushion Lab Tested">
+            <a href="/articles/best-anti-fatigue-mats-footrests-2026.html" class="card" data-category="desks" aria-label="Read Best Anti-Fatigue Mats & Footrests 2026: Topo vs ComfiLife vs Cushion Lab Tested">
                 <div class="card-img" style="background-image: url('/anti-fatigue-mat-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST ANTI-FATIGUE MATS & FOOTRESTS 2026: TOPO VS COMFILIFE VS CUSHION LAB</h3>
                     <p class="card-desc">Seven mats and footrests tested. The Topo's contoured terrain justifies its $99 price for all-day standing ,  the $35 ComfiLife is the budget pick that actually lasts.</p>
                 </div>
             </a>
-            <a href="/articles/best-macropads-stream-decks-2026.html" class="card" aria-label="Read Best Macropads & Stream Decks 2026: Elgato vs Mountain vs QMK Tested">
+            <a href="/articles/best-macropads-stream-decks-2026.html" class="card" data-category="keyboards" aria-label="Read Best Macropads & Stream Decks 2026: Elgato vs Mountain vs QMK Tested">
                 <div class="card-img" style="background-image: url('/macropad-stream-deck-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST MACROPADS & STREAM DECKS 2026: ELGATO VS MOUNTAIN VS QMK</h3>
                     <p class="card-desc">Seven devices tested: Elgato Stream Deck MK.2 vs Mountain DisplayPad vs Megalodon vs DOIO. LCD screens or mechanical switches ,  which macropad earns your desk space?</p>
                 </div>
             </a>
-            <a href="/articles/best-desk-mats-mousepads-2026.html" class="card" aria-label="Read Best Desk Mats & Mousepads 2026: Grovemade, Orbitkey, Logitech Tested">
+            <a href="/articles/best-desk-mats-mousepads-2026.html" class="card" data-category="keyboards" aria-label="Read Best Desk Mats & Mousepads 2026: Grovemade, Orbitkey, Logitech Tested">
                 <div class="card-img" style="background-image: url('/desk-mat-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST DESK MATS & MOUSEPADS 2026: GROVEMADE, ORBITKEY, LOGITECH TESTED</h3>
                     <p class="card-desc">Seven mats tested across felt, leather, cloth, and RGB. The $13 FireBee embarrassed two $40 competitors and the Orbitkey's vegan leather won the premium crown.</p>
                 </div>
             </a>
-            <a href="/articles/best-monitor-light-bars-2026.html" class="card" aria-label="Read Best Monitor Light Bars 2026: BenQ Halo 2 vs Quntis vs Every Budget">
+            <a href="/articles/best-monitor-light-bars-2026.html" class="card" data-category="lighting" aria-label="Read Best Monitor Light Bars 2026: BenQ Halo 2 vs Quntis vs Every Budget">
                 <div class="card-img" style="background-image: url('/monitor-light-bar-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST MONITOR LIGHT BARS 2026: BENQ HALO 2 VS QUNTIS VS EVERY BUDGET</h3>
                     <p class="card-desc">Seven light bars tested for CRI, color temp, and asymmetric lighting. The $40 Quntis ScreenLinear Pro matches the $150 BenQ Halo 2 on color accuracy ,  is the premium worth it?</p>
                 </div>
             </a>
-            <a href="/articles/best-under-desk-pc-mounts-2026.html" class="card" aria-label="Read Best Under-Desk PC Mounts 2026: VIVO vs Dezctop vs Kendall Howard Compared">
+            <a href="/articles/best-under-desk-pc-mounts-2026.html" class="card" data-category="desks" aria-label="Read Best Under-Desk PC Mounts 2026: VIVO vs Dezctop vs Kendall Howard Compared">
                 <div class="card-img" style="background-image: url('/pc-mount-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>BEST UNDER-DESK PC MOUNTS 2026: VIVO VS DEZCTOP VS KENDALL HOWARD</h3>
-                    <p class="card-desc">5 mounts tested for weight capacity, airflow clearance, and installation difficulty. The $25 VIVO handles 66 lbs ,  is the premium Dezctop's 360° swivel worth double the price?</p>
+                    <p class="card-desc">5 mounts tested for weight capacity, airflow clearance, and installation difficulty. The $25 VIVO MOUNT-PC01 holds 22 lbs ,  is the premium Dezctop's 360° swivel worth double the price?</p>
                 </div>
             </a>
-            <a href="/articles/active-workstation-walking-pads-2026.html" class="card" aria-label="Read ACTIVE WORKSTATIONS & WALKING PADS 2026: WALK WHILE YOU WORK">
+            <a href="/articles/active-workstation-walking-pads-2026.html" class="card" data-category="desks" aria-label="Read ACTIVE WORKSTATIONS & WALKING PADS 2026: WALK WHILE YOU WORK">
                 <div class="card-img" style="background-image: url('/walking-pad-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>ACTIVE WORKSTATIONS & WALKING PADS 2026: WALK WHILE YOU WORK</h3>
                     <p class="card-desc">WalkingPad A1 Pro vs LifeSpan TR1200 vs Egofit Walker Pro: best under-desk treadmills tested for office noise, belt durability, and desk compatibility.</p>
                 </div>
             </a>
-            <a href="/articles/ai-mice-vs-traditional-productivity-2026.html" class="card" aria-label="Read AI MICE VS TRADITIONAL: DO SMART MICE ACTUALLY SAVE TIME?">
+            <a href="/articles/ai-mice-vs-traditional-productivity-2026.html" class="card" data-category="keyboards" aria-label="Read AI MICE VS TRADITIONAL: DO SMART MICE ACTUALLY SAVE TIME?">
                 <div class="card-img" style="background-image: url('/ai-mouse-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>AI MICE VS TRADITIONAL: DO SMART MICE ACTUALLY SAVE TIME?</h3>
                     <p class="card-desc">Logitech Signature AI vs traditional productivity mice: voice dictation, translation, and smart actions tested. Is the AI premium worth it?</p>
                 </div>
             </a>
-            <a href="/articles/depth-dilemma-ultrawide-desks.html" class="card" aria-label="Read THE DEPTH DILEMMA: DESK DEPTH FOR ULTRAWIDE DISPLAYS">
+            <a href="/articles/depth-dilemma-ultrawide-desks.html" class="card" data-category="desks" aria-label="Read THE DEPTH DILEMMA: DESK DEPTH FOR ULTRAWIDE DISPLAYS">
                 <div class="card-img" style="background-image: url('/depth-dilemma-ultrawide.jpg');"></div>
                 <div class="card-content">
                     <h3>THE DEPTH DILEMMA: DESK DEPTH FOR ULTRAWIDE DISPLAYS</h3>
                     <p class="card-desc">Ultrawide and dual-monitor setups need more desk depth than you think. Exact minimums for 34", 38", and 49" ultrawide displays.</p>
                 </div>
             </a>
-            <a href="/articles/hall-effect-keyboards-productivity-2026.html" class="card" aria-label="Read HALL EFFECT KEYBOARDS FOR PRODUCTIVITY 2026: MAGNETIC SWITCHES EXPLAINED">
+            <a href="/articles/hall-effect-keyboards-productivity-2026.html" class="card" data-category="keyboards" aria-label="Read HALL EFFECT KEYBOARDS FOR PRODUCTIVITY 2026: MAGNETIC SWITCHES EXPLAINED">
                 <div class="card-img" style="background-image: url('/hall-effect-keyboard-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>HALL EFFECT KEYBOARDS FOR PRODUCTIVITY 2026: MAGNETIC SWITCHES EXPLAINED</h3>
                     <p class="card-desc">Wooting 80HE vs Keychron Q1 HE vs NuPhy Air60 HE: Hall Effect keyboards tested for typing and productivity ,  not just gaming.</p>
                 </div>
             </a>
-            <a href="/articles/laptop-screen-extenders-2026.html" class="card" aria-label="Read LAPTOP SCREEN EXTENDERS 2026: TRIPLE YOUR DISPLAY ON THE GO">
+            <a href="/articles/laptop-screen-extenders-2026.html" class="card" data-category="monitors" aria-label="Read LAPTOP SCREEN EXTENDERS 2026: TRIPLE YOUR DISPLAY ON THE GO">
                 <div class="card-img" style="background-image: url('/screen-extender-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>LAPTOP SCREEN EXTENDERS 2026: TRIPLE YOUR DISPLAY ON THE GO</h3>
                     <p class="card-desc">BoYata Laptop Extender vs Limink AlumiPAD vs Duex Float: portable dual and triple screen extenders tested for remote work and digital nomads.</p>
                 </div>
             </a>
-            <a href="/articles/ultimate-ergonomic-desk-setup.html" class="card" aria-label="Read THE ULTIMATE ERGONOMIC DESK SETUP: EVERY COMPONENT, EVERY BUDGET">
+            <a href="/articles/ultimate-ergonomic-desk-setup.html" class="card" data-category="desks" aria-label="Read THE ULTIMATE ERGONOMIC DESK SETUP: EVERY COMPONENT, EVERY BUDGET">
                 <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1598550476439-6847785fcea6?q=80&w=1200&auto=format&fit=crop');"></div>
                 <div class="card-content">
                     <h3>THE ULTIMATE ERGONOMIC DESK SETUP: EVERY COMPONENT, EVERY BUDGET</h3>
                     <p class="card-desc">Complete ergonomic desk build guide: chair, desk, monitor arm, lighting, mats, and cable management at $500, $1,000, and $2,000 budgets.</p>
                 </div>
             </a>
-            <a href="/articles/best-ergonomic-chairs-under-500-2026.html" class="card" aria-label="Read Best Ergonomic Chairs Under $500: 2026 Guide">
-                <div class="card-img" style="background-image: url('/ergonomic-chair-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST ERGONOMIC CHAIRS UNDER $500: 2026 GUIDE</h3>
-                    <p class="card-desc">Haworth Breck vs Steelcase Series 1 vs Sihoo Doro C300 Pro: 7 best ergonomic chairs under $500 tested and ranked for 2026.</p>
-                </div>
-            </a>
-            <a href="/articles/best-monitor-arms-2026.html" class="card" aria-label="Read Best Monitor Arms 2026: 6 Mounts Tested">
-                <div class="card-img" style="background-image: url('/monitor-arm-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST MONITOR ARMS 2026: 6 MOUNTS TESTED</h3>
-                    <p class="card-desc">Amazon Basics vs HUANUO vs Ergotron LX: 6 monitor arms tested for weight capacity, VESA compatibility, and real-world stability.</p>
-                </div>
-            </a>
-            <a href="/articles/standing-desk-cable-management-guide-2026.html" class="card" aria-label="Read Standing Desk Cable Management 2026 Guide">
-                <div class="card-img" style="background-image: url('https://www.image2url.com/r2/default/images/1779644606536-ef5c0057-2a4a-4c32-ba9c-9ac7372c4458.jpg');"></div>
-                <div class="card-content">
-                    <h3>STANDING DESK CABLE MANAGEMENT 2026 GUIDE</h3>
-                    <p class="card-desc">From $5 zip ties to $150 raceways: standing desk cable management guide with slack math, product tiers, and install tips.</p>
-                </div>
-            </a>
-            <a href="/articles/standing-desk-revolution-2026.html" class="card" aria-label="Read Best Standing Desks 2026: Top 3 Picks Tested">
-                <div class="card-img" style="background-image: url('/standing-desk-hero.jpg');"></div>
-                <div class="card-content">
-                    <h3>BEST STANDING DESKS 2026: TOP 3 PICKS TESTED</h3>
-                    <p class="card-desc">Standing desk market hit $9.1B in 2026. Uplift V3 vs FlexiSpot E7 Pro vs Branch Duo: specs, pricing, which motorized desk wins.</p>
-                </div>
-            </a>
-            <a href="/articles/under-desk-treadmills-walking-pads-standing-desk.html" class="card" aria-label="Read Under-Desk Treadmills & Walking Pads: Standing Desk Clearance Guide 2026">
+            <a href="/articles/under-desk-treadmills-walking-pads-standing-desk.html" class="card" data-category="desks" aria-label="Read Under-Desk Treadmills & Walking Pads: Standing Desk Clearance Guide 2026">
                 <div class="card-img" style="background-image: url('/walking-pad-under-desk-hero.jpg');"></div>
                 <div class="card-content">
                     <h3>UNDER-DESK TREADMILLS &amp; WALKING PADS: STANDING DESK CLEARANCE GUIDE 2026</h3>
@@ -542,155 +520,10 @@
             </a>
         </div>
 
+        <p id="intel-empty" class="intel-empty" hidden>Nothing in this category yet. Pick another filter to keep browsing.</p>
+
         <div class="browse-all">
             <a href="/reviews.html" class="btn-outline">Browse All Reviews &amp; Guides &#8594;</a>
-        </div>
-
-<h2 class="section-title">CURRENT META: TRUSTED HARDWARE</h2>
-        <p style="color: var(--subtext); margin-bottom: 20px;">If you don't have time to read our deep-dives, here is the current hardware meta based on our internal stress-testing. Click any category to expand.</p>
-
-        <div class="hw-accordion">
-
-            <!-- Standing Desks -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Standing Desks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Uplift V3</p><p class="hw-card-adv">15-Year Warranty, 535-lb Lift Capacity, 48" Curved Bamboo Top. Our #1 pick for heavy builds.</p><a href="https://www.amazon.com/s?k=uplift+v3+standing+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">FlexiSpot E7 Pro</p><p class="hw-card-adv">Dual-Motor, 355-lb Lift, 3-Stage Legs, 48-72" Range. Best value under $600 with 15-year motor warranty.</p><a href="https://www.amazon.com/s?k=flexispot+e7+pro+standing+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Branch Duo</p><p class="hw-card-adv">275-lb Capacity, 4 Memory Presets, 48x30" Desktop. The best sub-$500 sit-stand desk with zero wobble at max height.</p><a href="https://www.amazon.com/s?k=branch+duo+standing+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Ergonomic Chairs -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Ergonomic Chairs <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Haworth Breck</p><p class="hw-card-adv">Weight-Activated Recline, 12-Year Warranty, 4D Armrests. The chair that adapts to your body, not the other way around.</p><a href="https://www.amazon.com/s?k=haworth+breck+ergonomic+chair&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Steelcase Series 1</p><p class="hw-card-adv">LiveBack Flexor System, 4D Adjustable Arms, 400-lb Rated. Entry-level Steelcase quality at $450 -- unmatched for the price.</p><a href="https://www.amazon.com/s?k=steelcase+series+1+ergonomic+chair&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Sihoo Doro C300 Pro</p><p class="hw-card-adv">Auto-Adaptive Lumbar, Mesh/Foam Hybrid Seat, 330-lb Capacity. Chinese engineering that rivals chairs twice the price.</p><a href="https://www.amazon.com/s?k=sihoo+doro+c300+pro+ergonomic+chair&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Walking Pads -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Walking Pads <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Goplus 2-in-1</p><p class="hw-card-adv">Wirecutter #1, 2.25 HP Motor, 265-lb Capacity, Foldable Rails. The gold standard under-desk treadmill.</p><a href="https://www.amazon.com/s?k=goplus+2+in+1+under+desk+treadmill&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">WalkingPad A1 Pro</p><p class="hw-card-adv">Foldable Design, Brushless Motor, 220-lb Capacity, 0.5-6 km/h. Quietest motor we tested -- 48 dB at walking speed.</p><a href="https://www.amazon.com/s?k=walkingpad+a1+pro+under+desk+treadmill&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">LifeSpan TR1200-DT3</p><p class="hw-card-adv">Commercial Grade, 350-lb Capacity, Console + Bluetooth. Built for 6+ hours of daily use in office environments.</p><a href="https://www.amazon.com/s?k=lifespan+tr1200+dt3+under+desk+treadmill&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Laptop Screen Extenders -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Laptop Screen Extenders <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Hyangin Triple 14"</p><p class="hw-card-adv">Metal-Core Hinges, 13.3-17.3" Universal Fit, 1080p IPS. Best-selling extender on Amazon for a reason.</p><a href="https://www.amazon.com/s?k=hyangin+triple+laptop+screen+extender&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">BoYata Laptop Extender</p><p class="hw-card-adv">Dual 14" 1080p, USB-C/HDMI, 360deg Rotation, Anti-Glare. The lightest extender at 2.3 lbs per panel.</p><a href="https://www.amazon.com/s?k=boyata+laptop+screen+extender+dual&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Limink AlumiPAD</p><p class="hw-card-adv">Triple 15.6" 1080p, Aluminum Frame, USB-C Single Cable. Largest screens in the portable extender category.</p><a href="https://www.amazon.com/s?k=limink+alumipad+triple+laptop+extender&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Monitor Arms -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Monitor Arms <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Ergotron HX</p><p class="hw-card-adv">42-lb Capacity, 12" Depth Recovery, 10-Year Warranty. The only arm that handles 49" super ultrawides without sag.</p><a href="https://www.amazon.com/s?k=ergotron+hx+monitor+arm&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Amazon Basics Premium</p><p class="hw-card-adv">25-lb Capacity, Gas Spring, Under $100, 13" Lift Range. Rebadged Ergotron LX at half the price.</p><a href="https://www.amazon.com/s?k=amazon+basics+premium+monitor+arm&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">HUANUO Single Arm</p><p class="hw-card-adv">17.6-lb Capacity, USB Ports, Gas Spring, $40. Best budget arm with integrated cable management.</p><a href="https://www.amazon.com/s?k=huanuo+single+monitor+arm+gas+spring&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Macropads -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Macropads & Stream Decks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Elgato Stream Deck MK.2</p><p class="hw-card-adv">15 LCD Keys, Thousands of Plugins, Drag-and-Drop Software. The undisputed king -- every streamer and power user owns one.</p><a href="https://www.amazon.com/s?k=elgato+stream+deck+mk.2&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Loupedeck Live S</p><p class="hw-card-adv">4 LCD Keys + 2 Dials + Touch Strip, Adobe/DaVinci Native. Built for creatives who split time between editing and streaming.</p><a href="https://www.amazon.com/s?k=loupedeck+live+s&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Mountain DisplayPad</p><p class="hw-card-adv">12 Hot-Swappable LCD Keys, Mechanical Switches, Per-Key RGB. The enthusiast's macropad -- tactile switches under every screen.</p><a href="https://www.amazon.com/s?k=mountain+displaypad+macropad&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Cable-Managed Desks -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Integrated-Cable Desks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Secretlab Magnus Pro</p><p class="hw-card-adv">Integrated Cable Column, Full-Length Magnetic Ecosystem. The only desk where cable management is the primary design goal.</p><a href="https://www.amazon.com/s?k=secretlab+magnus+pro&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Uplift V3 + Cable Kit</p><p class="hw-card-adv">Built-in Wire Management Tray, Modular Add-On Rails, 535-lb Lift. The heavy-lift desk with cable routing built in.</p><a href="https://www.amazon.com/s?k=uplift+v3+standing+desk+cable+management&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">FlexiSpot E7 Pro + Spine</p><p class="hw-card-adv">Dual-Motor, Vertical Cable Spine, Under-Desk Clamp Tray. Cleanest cable path at any desk height.</p><a href="https://www.amazon.com/s?k=flexispot+e7+pro+cable+spine&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Productivity Mice -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Productivity Mice <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Logitech MX Master 3S</p><p class="hw-card-adv">8K DPI, MagSpeed Electromagnetic Scroll, 70-Day Battery. Quiet clicks, scrolls through 1,000 lines per second.</p><a href="https://www.amazon.com/s?k=logitech+mx+master+3s&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Razer Pro Click Mini</p><p class="hw-card-adv">Silent Mechanical Switches, 4-Way Tilt Scroll, Multi-Device BT. Office-safe noise levels with gaming-grade sensor.</p><a href="https://www.amazon.com/s?k=razer+pro+click+mini&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Logitech MX Vertical</p><p class="hw-card-adv">57deg Natural Handshake Angle, 4-Month Battery, 4K DPI. Eliminates wrist pronation -- best ergo shape we tested.</p><a href="https://www.amazon.com/s?k=logitech+mx+vertical+ergonomic+mouse&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Hall Effect Keyboards -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Hall Effect Keyboards <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Wooting 80HE</p><p class="hw-card-adv">Rapid Trigger, Adjustable 0.1-4.0mm Actuation, PBT Keycaps. The keyboard that invented the category and still leads it.</p><a href="https://www.amazon.com/s?k=wooting+80he+hall+effect+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Keychron Q1 HE</p><p class="hw-card-adv">Gateron Double-Rail Magnetic, Full Aluminum Frame, QMK/VIA. Custom mechanical feel with Hall Effect precision.</p><a href="https://www.amazon.com/s?k=keychron+q1+he+hall+effect+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Royal Kludge C98 Magnetic</p><p class="hw-card-adv">Magnetic Switches, 98-Key Layout, Tri-Mode Wireless. Best value Hall Effect board with a full numpad.</p><a href="https://www.amazon.com/s?k=royal+kludge+c98+magnetic+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Ergonomic Keyboards -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Ergonomic Keyboards <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Logitech Ergo K860</p><p class="hw-card-adv">Split-Wave Curve, Integrated Memory Foam Rest, Negative Tilt. The industry-standard ergonomic keyboard.</p><a href="https://www.amazon.com/s?k=logitech+ergo+k860&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Logitech Wave Keys</p><p class="hw-card-adv">Wave Curve, Compact 75% Layout, 36-Month Battery. Budget ergonomics under $50.</p><a href="https://www.amazon.com/s?k=logitech+wave+keys&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Keychron Q11</p><p class="hw-card-adv">Fully Split Mechanical, QMK/VIA, Hot-Swap Switches. Enthusiast split with halves that snap together.</p><a href="https://www.amazon.com/s?k=keychron+q11+split+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Keyboard Trays -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Keyboard Trays <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">VIVO Clamp-On</p><p class="hw-card-adv">No-Drill C-Clamp, 27x11 Platform, Adjustable Tilt. The consensus #1 and Amazon bestseller.</p><a href="https://www.amazon.com/s?k=VIVO+clamp+on+keyboard+tray+under+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">HUANUO Under-Desk Tray</p><p class="hw-card-adv">Sliding Track, Wrist Rest Included, High Review Count. Best budget track-mount under $60.</p><a href="https://www.amazon.com/s?k=HUANUO+under+desk+keyboard+tray+sliding&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Fellowes Office Suites</p><p class="hw-card-adv">Sliding Drawer, Integrated Mouse Platform, 3-Height Adjustment. The office staple with a mouse tray built in.</p><a href="https://www.amazon.com/s?k=Fellowes+office+suites+under+desk+keyboard+drawer&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Desk Mats -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Desk Mats & Mousepads <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Orbitkey Desk Mat</p><p class="hw-card-adv">Vegan Leather + Felt, Magnetic Cable Organizer, 4 Sizes. Premium materials, integrated cable channel, no fraying edges.</p><a href="https://www.amazon.com/s?k=orbitkey+desk+mat&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Grovemade Wool Desk Pad</p><p class="hw-card-adv">Merino Wool Surface, Natural Cork Base, 4 Sizes, USA Made. The desk pad that looks better after 2 years of patina.</p><a href="https://www.amazon.com/s?k=grovemade+wool+desk+pad&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Logitech Desk Mat Studio</p><p class="hw-card-adv">Spill-Resistant, Anti-Slip Rubber Base, 3 Colorways, 27.5x11.8". The practical daily driver that handles coffee spills.</p><a href="https://www.amazon.com/s?k=logitech+desk+mat+studio+series&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Cable Management -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Cable Management <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Steel Under-Desk Tray (16")</p><p class="hw-card-adv">Hides Power Strip + Excess Slack, Bolts to Underside, 16"x6". The industrial solution -- holds 10 lbs of cables and bricks.</p><a href="https://www.amazon.com/s?k=under+desk+cable+tray+steel+16+inch&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">J Channel Cable Raceway (2-Pack)</p><p class="hw-card-adv">Adhesive Mount, 15.7" Each, Paintable, Snap-Open Lid. Easiest install -- peel, stick, route cables, snap lid closed.</p><a href="https://www.amazon.com/s?k=j+channel+cable+raceway+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">IKEA Signum Cable Tray</p><p class="hw-card-adv">27.5" Horizontal Tray, $15, Fits IKEA + Standard Desks. Dirt cheap and holds more cable slack than anything at the price.</p><a href="https://www.amazon.com/s?k=ikea+signum+cable+management+tray&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Under-Desk PC Mounts -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Under-Desk PC Mounts <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">VIVO MOUNT-PC01</p><p class="hw-card-adv">66-lb Capacity, Tool-Free Width Adjustment, Clamp Install. Fits towers 8.5-21" wide, installs in 10 minutes.</p><a href="https://www.amazon.com/s?k=vivo+under+desk+pc+mount+mount-pc01&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Dezctop Bifrost</p><p class="hw-card-adv">360deg Swivel, 44-lb Capacity, Ventilated Base Plate. Rotate your case for cable access without unmounting.</p><a href="https://www.amazon.com/s?k=dezctop+bifrost+under+desk+pc+mount&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Kendall Howard PC Mount</p><p class="hw-card-adv">50-lb Capacity, Industrial Steel, Lockable Slide Rails. Rack-mount grade steel -- built for full-tower workstations.</p><a href="https://www.amazon.com/s?k=kendall+howard+under+desk+pc+mount&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Monitor Light Bars -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Monitor Light Bars <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">BenQ ScreenBar Halo 2</p><p class="hw-card-adv">Wireless Dial, Auto-Dimming, Tri-Zone Backlight, 2700-6500K. The gold standard -- zero screen glare, even on curved displays.</p><a href="https://www.amazon.com/s?k=benq+screenbar+halo+2&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Xiaomi Mi Light Bar</p><p class="hw-card-adv">Wireless Knob Remote, 2700-6500K, Ra95 CRI, $68. BenQ-level features at a third of the price. The value king.</p><a href="https://www.amazon.com/s?k=xiaomi+mi+computer+monitor+light+bar&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Quntis ScreenLinear Pro</p><p class="hw-card-adv">95+ CRI, Auto-Dimming, Wireless Puck, 2700-6500K, $40. Best sub-$50 light bar -- matches the Halo on color accuracy.</p><a href="https://www.amazon.com/s?k=quntis+screenlinear+pro+monitor+light+bar&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Anti-Fatigue Mats -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Anti-Fatigue Mats <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Topo by Ergodriven</p><p class="hw-card-adv">Contoured Terrain, Promotes Micro-Movements, 2.5" Foam. Wirecutter's #1 pick -- the only mat that fights stationary fatigue actively.</p><a href="https://www.amazon.com/s?k=topo+by+ergodriven+comfort+mat&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">ComfiLife Anti-Fatigue Mat</p><p class="hw-card-adv">Flat Design, Lifetime Warranty, Non-Slip Bottom, $35. Best budget mat. Loses points for sock slipperiness but unbeatable value.</p><a href="https://www.amazon.com/s?k=comfilife+anti+fatigue+floor+mat&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">House of Noa Nama Mat</p><p class="hw-card-adv">Designer Patterns, 3/4" High-Density Core, Phthalate-Free. The mat that actually looks good in a designer home office.</p><a href="https://www.amazon.com/s?k=house+of+noa+nama+standing+desk+mat&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Seat Cushions -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Seat Cushions & Lumbar <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Everlasting Comfort</p><p class="hw-card-adv">Coccyx Cutout, Non-Slip Base, Bundled Lumbar Strap, Memory Foam. The Amazon #1 with 80,000+ reviews for a reason.</p><a href="https://www.amazon.com/s?k=everlasting+comfort+seat+cushion+lumbar&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Cushion Lab Pressure Relief</p><p class="hw-card-adv">Contoured Memory Foam, Ergonomic Strap, Breathable Cover. Designed by a physical therapist -- contours match actual spine curve.</p><a href="https://www.amazon.com/s?k=cushion+lab+pressure+relief+seat+cushion&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">ComfiLife Gel Enhanced</p><p class="hw-card-adv">Cooling Gel Layer, Non-Slip Bottom, Machine Washable Cover. Best for hot seaters -- gel layer drops surface temp 3-5 degrees.</p><a href="https://www.amazon.com/s?k=comfilife+gel+enhanced+seat+cushion&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Webcams -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Webcams <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Logitech MX Brio</p><p class="hw-card-adv">4K/30fps, RightLight 5 Auto-Exposure, Show Mode, Magnetic Shutter. The premium king -- handles backlit windows without blowing out.</p><a href="https://www.amazon.com/s?k=logitech+mx+brio+4k+webcam&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Insta360 Link 2 Pro</p><p class="hw-card-adv">4K, AI Tracking 3-Axis Gimbal, Gesture Control, HDR. Follows you around the room -- best for presenters who move.</p><a href="https://www.amazon.com/s?k=insta360+link+2+pro+webcam&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Obsbot Tiny 3</p><p class="hw-card-adv">4K/60fps, AI Auto-Framing, 2-Axis PTZ Gimbal, Beauty Mode. 60fps at 4K under $300 -- unmatched framerate at the price.</p><a href="https://www.amazon.com/s?k=obsbot+tiny+3+4k+webcam&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Desk Shelves -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Desk Shelves & Risers <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">Grovemade Desk Shelf</p><p class="hw-card-adv">Solid Walnut, Integrated Cable Channel, 4 Sizes, 9 Finishes. The heirloom-quality shelf -- 15-ply walnut, hand-finished.</p><a href="https://www.amazon.com/s?k=grovemade+desk+shelf+wood+walnut&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">Aothia Dual Monitor Riser</p><p class="hw-card-adv">Solid Wood, Eco Cork Legs, Weighted Base, $40. Grovemade aesthetic at a tenth of the price. 4.7 stars, 15,000+ reviews.</p><a href="https://www.amazon.com/s?k=aothia+dual+monitor+stand+riser+wood&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">ErGear Monitor Stand</p><p class="hw-card-adv">2-Tier Ventilated Steel, 44-lb Capacity, 17" Wide. The industrial option -- stack monitors and a laptop, no flex.</p><a href="https://www.amazon.com/s?k=ergear+monitor+stand+riser+steel&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
-            <!-- Standing Desk Converters -->
-            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Standing Desk Converters <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
-                <div class="hw-card"><p class="hw-card-name">FlexiSpot M2B</p><p class="hw-card-adv">35" Wide, Spring-Assisted Lift, Most-Reviewed Converter on Amazon. The standard -- lifts 35 lbs with one hand, no electricity.</p><a href="https://www.amazon.com/s?k=flexispot+m2b+standing+desk+converter&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">VariDesk Pro Plus 36</p><p class="hw-card-adv">11 Height Settings, No Assembly, 35-lb Lift, 36" Wide. Pull it out of the box and start standing. Heavy, but built like a tank.</p><a href="https://www.amazon.com/s?k=varidesk+pro+plus+36+standing+desk+converter&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-                <div class="hw-card"><p class="hw-card-name">VIVO Height Adjustable 36"</p><p class="hw-card-adv">Gas Spring Assist, Removable Keyboard Tray, 33 lbs, $170. Best value converter with a full-size keyboard deck.</p><a href="https://www.amazon.com/s?k=vivo+height+adjustable+standing+desk+converter+36&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
-            </div></div></div>
-
         </div>
 
         <!-- Email Signup -->
@@ -716,12 +549,159 @@
             </form>
             <p style="color: var(--subtext); font-size: 0.75em; margin: 15px 0 0;">We respect your privacy. Unsubscribe at any time.</p>
         </div>
+
+<h2 class="section-title">CURRENT META: TRUSTED HARDWARE</h2>
+        <p style="color: var(--subtext); margin-bottom: 20px;">If you don't have time to read our deep-dives, here is the current hardware meta based on our internal stress-testing. Click any category to expand.</p>
+
+        <div class="hw-accordion">
+
+            <!-- Standing Desks -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Standing Desks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Uplift V3</p><p class="hw-card-adv">15-Year Warranty, 535-lb Lift Capacity, 48" Curved Bamboo Top. Our #1 pick for heavy builds.</p><a href="https://www.amazon.com/dp/B07RVD52XW?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">FlexiSpot E7 Pro</p><p class="hw-card-adv">Dual-Motor, 355-lb Lift, 3-Stage Legs, 48-72" Range. Best value under $600 with 15-year motor warranty.</p><a href="https://www.amazon.com/s?k=flexispot+e7+pro+standing+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Branch Duo</p><p class="hw-card-adv">275-lb Capacity, 4 Memory Presets, 48x30" Desktop. The best sub-$500 sit-stand desk with zero wobble at max height.</p><a href="https://www.amazon.com/dp/B0C3WSWB2K?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Ergonomic Chairs -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Ergonomic Chairs <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Haworth Breck</p><p class="hw-card-adv">Weight-Activated Recline, 12-Year Warranty, 4D Armrests. The chair that adapts to your body, not the other way around.</p><a href="https://www.amazon.com/dp/B0D9HYZ2TG?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Steelcase Series 1</p><p class="hw-card-adv">LiveBack Flexor System, 4D Adjustable Arms, 400-lb Rated. Entry-level Steelcase quality at $450 -- unmatched for the price.</p><a href="https://www.amazon.com/dp/B095MR9M99?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Sihoo Doro C300 Pro</p><p class="hw-card-adv">Auto-Adaptive Lumbar, Mesh/Foam Hybrid Seat, 330-lb Capacity. Chinese engineering that rivals chairs twice the price.</p><a href="https://www.amazon.com/dp/B0FQ5KDNHQ?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Walking Pads -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Walking Pads <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Goplus 2-in-1</p><p class="hw-card-adv">Wirecutter #1, 2.25 HP Motor, 265-lb Capacity, Foldable Rails. The gold standard under-desk treadmill.</p><a href="https://www.amazon.com/dp/B0GT9KLRNW?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">WalkingPad A1 Pro</p><p class="hw-card-adv">Foldable Design, Brushless Motor, 220-lb Capacity, 0.5-6 km/h. Quietest motor we tested -- 48 dB at walking speed.</p><a href="https://www.amazon.com/dp/B0H6WJ2ZVN?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">LifeSpan TR1200-DT3</p><p class="hw-card-adv">Commercial Grade, 350-lb Capacity, Console + Bluetooth. Built for 6+ hours of daily use in office environments.</p><a href="https://www.amazon.com/dp/B009QHLWUK?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Laptop Screen Extenders -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Laptop Screen Extenders <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Hyangin Triple 14"</p><p class="hw-card-adv">Metal-Core Hinges, 13.3-17.3" Universal Fit, 1080p IPS. Best-selling extender on Amazon for a reason.</p><a href="https://www.amazon.com/dp/B0FDB1CZDT?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">BoYata Laptop Extender</p><p class="hw-card-adv">Dual 14" 1080p, USB-C/HDMI, 360deg Rotation, Anti-Glare. The lightest extender at 2.3 lbs per panel.</p><a href="https://www.amazon.com/s?k=boyata+laptop+screen+extender+dual&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Limink AlumiPAD</p><p class="hw-card-adv">Triple 15.6" 1080p, Aluminum Frame, USB-C Single Cable. Largest screens in the portable extender category.</p><a href="https://www.amazon.com/dp/B0D62TB4LH?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Monitor Arms -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Monitor Arms <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Ergotron HX</p><p class="hw-card-adv">42-lb Capacity, 12" Depth Recovery, 10-Year Warranty. The only arm that handles 49" super ultrawides without sag.</p><a href="https://www.amazon.com/dp/B0959D7XDM?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Amazon Basics Premium</p><p class="hw-card-adv">25-lb Capacity, Gas Spring, Under $100, 13" Lift Range. Rebadged Ergotron LX at half the price.</p><a href="https://www.amazon.com/dp/B00MIBN16O?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">HUANUO Single Arm</p><p class="hw-card-adv">17.6-lb Capacity, USB Ports, Gas Spring, $40. Best budget arm with integrated cable management.</p><a href="https://www.amazon.com/dp/B09Z3ZK6N2?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Macropads -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Macropads & Stream Decks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Elgato Stream Deck MK.2</p><p class="hw-card-adv">15 LCD Keys, Thousands of Plugins, Drag-and-Drop Software. The undisputed king -- every streamer and power user owns one.</p><a href="https://www.amazon.com/dp/B09738CV2G?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Loupedeck Live S</p><p class="hw-card-adv">4 LCD Keys + 2 Dials + Touch Strip, Adobe/DaVinci Native. Built for creatives who split time between editing and streaming.</p><a href="https://www.amazon.com/s?k=loupedeck+live+s&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Mountain DisplayPad</p><p class="hw-card-adv">12 Hot-Swappable LCD Keys, Mechanical Switches, Per-Key RGB. The enthusiast's macropad -- tactile switches under every screen.</p><a href="https://www.amazon.com/dp/B0BG1X8JGV?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Cable-Managed Desks -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Integrated-Cable Desks <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Secretlab Magnus Pro</p><p class="hw-card-adv">Integrated Cable Column, Full-Length Magnetic Ecosystem. The only desk where cable management is the primary design goal.</p><a href="https://www.amazon.com/dp/B0G1S75G2K?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Uplift V3 + Cable Kit</p><p class="hw-card-adv">Built-in Wire Management Tray, Modular Add-On Rails, 535-lb Lift. The heavy-lift desk with cable routing built in.</p><a href="https://www.amazon.com/s?k=uplift+v3+standing+desk+cable+management&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">FlexiSpot E7 Pro + Spine</p><p class="hw-card-adv">Dual-Motor, Vertical Cable Spine, Under-Desk Clamp Tray. Cleanest cable path at any desk height.</p><a href="https://www.amazon.com/s?k=flexispot+e7+pro+cable+spine&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Productivity Mice -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Productivity Mice <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Logitech MX Master 3S</p><p class="hw-card-adv">8K DPI, MagSpeed Electromagnetic Scroll, 70-Day Battery. Quiet clicks, scrolls through 1,000 lines per second.</p><a href="https://www.amazon.com/dp/B09HM94VDS?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Razer Pro Click Mini</p><p class="hw-card-adv">Silent Mechanical Switches, 4-Way Tilt Scroll, Multi-Device BT. Office-safe noise levels with gaming-grade sensor.</p><a href="https://www.amazon.com/s?k=razer+pro+click+mini&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Logitech MX Vertical</p><p class="hw-card-adv">57deg Natural Handshake Angle, 4-Month Battery, 4K DPI. Eliminates wrist pronation -- best ergo shape we tested.</p><a href="https://www.amazon.com/dp/B07FNJB8TT?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Hall Effect Keyboards -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Hall Effect Keyboards <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Wooting 80HE</p><p class="hw-card-adv">Rapid Trigger, Adjustable 0.1-4.0mm Actuation, PBT Keycaps. The keyboard that invented the category and still leads it.</p><a href="https://www.amazon.com/s?k=wooting+80he+hall+effect+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Keychron Q1 HE</p><p class="hw-card-adv">Gateron Double-Rail Magnetic, Full Aluminum Frame, QMK/VIA. Custom mechanical feel with Hall Effect precision.</p><a href="https://www.amazon.com/dp/B0D4Y3LY4H?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Royal Kludge C98 Magnetic</p><p class="hw-card-adv">Magnetic Switches, 98-Key Layout, Tri-Mode Wireless. Best value Hall Effect board with a full numpad.</p><a href="https://www.amazon.com/s?k=royal+kludge+c98+magnetic+keyboard&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Ergonomic Keyboards -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Ergonomic Keyboards <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Logitech Ergo K860</p><p class="hw-card-adv">Split-Wave Curve, Integrated Memory Foam Rest, Negative Tilt. The industry-standard ergonomic keyboard.</p><a href="https://www.amazon.com/dp/B07ZWK2TQT?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Logitech Wave Keys</p><p class="hw-card-adv">Wave Curve, Compact 75% Layout, 36-Month Battery. Budget ergonomics under $50.</p><a href="https://www.amazon.com/dp/B0BTNY72VD?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Keychron Q11</p><p class="hw-card-adv">Fully Split Mechanical, QMK/VIA, Hot-Swap Switches. Enthusiast split with halves that snap together.</p><a href="https://www.amazon.com/dp/B0C9Q7S8CB?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Keyboard Trays -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Keyboard Trays <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">VIVO Clamp-On</p><p class="hw-card-adv">No-Drill C-Clamp, 27x11 Platform, Adjustable Tilt. The consensus #1 and Amazon bestseller.</p><a href="https://www.amazon.com/dp/B09YKMDYZF?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">HUANUO Under-Desk Tray</p><p class="hw-card-adv">Sliding Track, Wrist Rest Included, High Review Count. Best budget track-mount under $60.</p><a href="https://www.amazon.com/dp/B08CZGWGW9?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Fellowes Office Suites</p><p class="hw-card-adv">Sliding Drawer, Integrated Mouse Platform, 3-Height Adjustment. The office staple with a mouse tray built in.</p><a href="https://www.amazon.com/dp/B00L4EDLHA?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Desk Mats -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Desk Mats & Mousepads <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Orbitkey Desk Mat</p><p class="hw-card-adv">Vegan Leather + Felt, Magnetic Cable Organizer, 4 Sizes. Premium materials, integrated cable channel, no fraying edges.</p><a href="https://www.amazon.com/dp/B08T6SZ37R?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Grovemade Wool Desk Pad</p><p class="hw-card-adv">Merino Wool Surface, Natural Cork Base, 4 Sizes, USA Made. The desk pad that looks better after 2 years of patina.</p><a href="https://www.amazon.com/s?k=grovemade+wool+desk+pad&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Logitech Desk Mat Studio</p><p class="hw-card-adv">Spill-Resistant, Anti-Slip Rubber Base, 3 Colorways, 27.5x11.8". The practical daily driver that handles coffee spills.</p><a href="https://www.amazon.com/dp/B0DT9ZT13R?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Cable Management -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Cable Management <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Steel Under-Desk Tray (16")</p><p class="hw-card-adv">Hides Power Strip + Excess Slack, Bolts to Underside, 16"x6". The industrial solution -- holds 10 lbs of cables and bricks.</p><a href="https://www.amazon.com/s?k=under+desk+cable+tray+steel+16+inch&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">J Channel Cable Raceway (2-Pack)</p><p class="hw-card-adv">Adhesive Mount, 15.7" Each, Paintable, Snap-Open Lid. Easiest install -- peel, stick, route cables, snap lid closed.</p><a href="https://www.amazon.com/s?k=j+channel+cable+raceway+desk&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">IKEA Signum Cable Tray</p><p class="hw-card-adv">27.5" Horizontal Tray, $15, Fits IKEA + Standard Desks. Dirt cheap and holds more cable slack than anything at the price.</p><a href="https://www.amazon.com/s?k=ikea+signum+cable+management+tray&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Under-Desk PC Mounts -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Under-Desk PC Mounts <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">VIVO MOUNT-PC01</p><p class="hw-card-adv">22-lb Capacity, Tool-Free Width Adjustment, Clamp Install. Fits towers 8.5-21" wide, installs in 10 minutes.</p><a href="https://www.amazon.com/dp/B01MEDE9WO?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Dezctop Bifrost</p><p class="hw-card-adv">360deg Swivel, 44-lb Capacity, Ventilated Base Plate. Rotate your case for cable access without unmounting.</p><a href="https://www.amazon.com/s?k=dezctop+bifrost+under+desk+pc+mount&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Kendall Howard PC Mount</p><p class="hw-card-adv">50-lb Capacity, Industrial Steel, Lockable Slide Rails. Rack-mount grade steel -- built for full-tower workstations.</p><a href="https://www.amazon.com/s?k=kendall+howard+under+desk+pc+mount&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Monitor Light Bars -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Monitor Light Bars <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">BenQ ScreenBar Halo 2</p><p class="hw-card-adv">Wireless Dial, Auto-Dimming, Tri-Zone Backlight, 2700-6500K. The gold standard -- zero screen glare, even on curved displays.</p><a href="https://www.amazon.com/dp/B0DK59YKRS?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Xiaomi Mi Light Bar</p><p class="hw-card-adv">Wireless Knob Remote, 2700-6500K, Ra95 CRI, $68. BenQ-level features at a third of the price. The value king.</p><a href="https://www.amazon.com/dp/B0BTVY9MBM?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Quntis ScreenLinear Pro</p><p class="hw-card-adv">95+ CRI, Auto-Dimming, Wireless Puck, 2700-6500K, $40. Best sub-$50 light bar -- matches the Halo on color accuracy.</p><a href="https://www.amazon.com/dp/B08DKQ3JG1?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Anti-Fatigue Mats -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Anti-Fatigue Mats <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Topo by Ergodriven</p><p class="hw-card-adv">Contoured Terrain, Promotes Micro-Movements, 2.5" Foam. Wirecutter's #1 pick -- the only mat that fights stationary fatigue actively.</p><a href="https://www.amazon.com/dp/B00V3TO9HW?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">ComfiLife Anti-Fatigue Mat</p><p class="hw-card-adv">Flat Design, Lifetime Warranty, Non-Slip Bottom, $35. Best budget mat. Loses points for sock slipperiness but unbeatable value.</p><a href="https://www.amazon.com/dp/B0797Q5HL7?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">House of Noa Nama Mat</p><p class="hw-card-adv">Designer Patterns, 3/4" High-Density Core, Phthalate-Free. The mat that actually looks good in a designer home office.</p><a href="https://www.amazon.com/dp/B0DLLGDR43?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Seat Cushions -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Seat Cushions & Lumbar <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Everlasting Comfort</p><p class="hw-card-adv">Coccyx Cutout, Non-Slip Base, Bundled Lumbar Strap, Memory Foam. The Amazon #1 with 80,000+ reviews for a reason.</p><a href="https://www.amazon.com/dp/B0F8D38TJK?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Cushion Lab Pressure Relief</p><p class="hw-card-adv">Contoured Memory Foam, Ergonomic Strap, Breathable Cover. Designed by a physical therapist -- contours match actual spine curve.</p><a href="https://www.amazon.com/dp/B08CGZGJ58?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">ComfiLife Gel Enhanced</p><p class="hw-card-adv">Cooling Gel Layer, Non-Slip Bottom, Machine Washable Cover. Best for hot seaters -- gel layer drops surface temp 3-5 degrees.</p><a href="https://www.amazon.com/dp/B014F18ZGU?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Webcams -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Webcams <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Logitech MX Brio</p><p class="hw-card-adv">4K/30fps, RightLight 5 Auto-Exposure, Show Mode, Magnetic Shutter. The premium king -- handles backlit windows without blowing out.</p><a href="https://www.amazon.com/dp/B0BFJ4CRKD?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Insta360 Link 2 Pro</p><p class="hw-card-adv">4K, AI Tracking 3-Axis Gimbal, Gesture Control, HDR. Follows you around the room -- best for presenters who move.</p><a href="https://www.amazon.com/dp/B0G3T1QKWL?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Obsbot Tiny 3</p><p class="hw-card-adv">4K/60fps, AI Auto-Framing, 2-Axis PTZ Gimbal, Beauty Mode. 60fps at 4K under $300 -- unmatched framerate at the price.</p><a href="https://www.amazon.com/dp/B0G636CXQM?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Desk Shelves -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Desk Shelves & Risers <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">Grovemade Desk Shelf</p><p class="hw-card-adv">Solid Walnut, Integrated Cable Channel, 4 Sizes, 9 Finishes. The heirloom-quality shelf -- 15-ply walnut, hand-finished.</p><a href="https://www.amazon.com/s?k=grovemade+desk+shelf+wood+walnut&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">Aothia Dual Monitor Riser</p><p class="hw-card-adv">Solid Wood, Eco Cork Legs, Weighted Base, $40. Grovemade aesthetic at a tenth of the price. 4.7 stars, 15,000+ reviews.</p><a href="https://www.amazon.com/dp/B08P1V75GB?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">ErGear Monitor Stand</p><p class="hw-card-adv">2-Tier Ventilated Steel, 44-lb Capacity, 17" Wide. The industrial option -- stack monitors and a laptop, no flex.</p><a href="https://www.amazon.com/s?k=ergear+monitor+stand+riser+steel&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+            <!-- Standing Desk Converters -->
+            <div class="hw-item"><button class="hw-header" aria-expanded="false"><span class="hw-header-left">Standing Desk Converters <span class="hw-count">3</span></span><span class="hw-chevron">&#9660;</span></button><div class="hw-panel"><div class="hw-panel-inner">
+                <div class="hw-card"><p class="hw-card-name">FlexiSpot M2B</p><p class="hw-card-adv">35" Wide, Spring-Assisted Lift, Most-Reviewed Converter on Amazon. The standard -- lifts 35 lbs with one hand, no electricity.</p><a href="https://www.amazon.com/s?k=flexispot+m2b+standing+desk+converter&tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">VariDesk Pro Plus 36</p><p class="hw-card-adv">11 Height Settings, No Assembly, 35-lb Lift, 36" Wide. Pull it out of the box and start standing. Heavy, but built like a tank.</p><a href="https://www.amazon.com/dp/B00JI6NCCK?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+                <div class="hw-card"><p class="hw-card-name">VIVO Height Adjustable 36"</p><p class="hw-card-adv">Gas Spring Assist, Removable Keyboard Tray, 33 lbs, $170. Best value converter with a full-size keyboard deck.</p><a href="https://www.amazon.com/dp/B095XK7HYR?tag=smartdeskdojo-20" class="btn-table" target="_blank" rel="noopener sponsored">Check Price</a></div>
+            </div></div></div>
+
+        </div>
+
     </main>
     <footer style="background: var(--surface); padding: 40px 20px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px;">
     <p style="color: var(--subtext); font-size: 0.9em; max-width: 800px; margin: 0 auto 20px; line-height: 1.6;">
         <strong>Affiliate Disclosure:</strong> SmartDeskDojo.com is a participant in the Amazon Services LLC Associates Program. As an Amazon Associate, we earn from qualifying purchases. We also participate in other affiliate programs and are compensated for referring traffic and business to these companies.
     </p>
-    <p style="color: var(--subtext); font-size: 0.85em; margin: 0 0 8px;"><a href='https://nicheforgedigital.gumroad.com/subscribe' style='color: var(--accent1); text-decoration: none;'>AI Prompt Packs</a></p>
     <p style="color: var(--subtext); font-size: 0.85em; margin: 0;">&copy; 2026 SmartDeskDojo. Built for the Grind. | <a href='/privacy.html' style='color: var(--accent1); text-decoration: none;'>Privacy Policy</a></p>
 </footer>
     <script src="/js/search.js"></script>
@@ -741,6 +721,37 @@
                     panel.style.maxHeight = panel.scrollHeight + 'px';
                     btn.setAttribute('aria-expanded','true');
                 }
+            });
+        });
+    })();
+    </script>
+    <script>
+    (function () {
+        var bar = document.querySelector('.filter-bar');
+        var grid = document.getElementById('intel-grid');
+        var empty = document.getElementById('intel-empty');
+        if (!bar || !grid) return;
+        var chips = bar.querySelectorAll('.filter-chip');
+        var cards = grid.querySelectorAll('.card');
+
+        function apply(cat) {
+            var shown = 0;
+            cards.forEach(function (card) {
+                var ok = cat === 'all' || card.getAttribute('data-category') === cat;
+                card.classList.toggle('is-hidden', !ok);
+                if (ok) shown += 1;
+            });
+            if (empty) empty.hidden = shown !== 0;
+            chips.forEach(function (chip) {
+                var on = chip.getAttribute('data-filter') === cat;
+                chip.classList.toggle('active', on);
+                chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+            });
+        }
+
+        chips.forEach(function (chip) {
+            chip.addEventListener('click', function () {
+                apply(chip.getAttribute('data-filter'));
             });
         });
     })();
