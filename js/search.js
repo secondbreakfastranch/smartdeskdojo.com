@@ -72,6 +72,20 @@
     input.addEventListener('focus', function() { if (input.value) filter(); });
     clearBtn.addEventListener('click', function() { input.value = ''; query = ''; filter(); input.focus(); });
     document.addEventListener('click', function(e) { if (!container.contains(e.target)) hide(); });
+
+    var initial = '';
+    try {
+      initial = new URLSearchParams(window.location.search).get('s') || '';
+    } catch (err) {
+      initial = '';
+    }
+    initial = initial.replace(/\s+/g, ' ').trim();
+    if (initial) {
+      input.value = initial;
+      query = initial.toLowerCase();
+      clearBtn.style.display = 'flex';
+      filter(true);
+    }
   }
 
   function onInput() {
@@ -82,9 +96,9 @@
     filter();
   }
 
-  function filter() {
+  function filter(allowShort) {
     visible = [];
-    if (query.length < 2) { hide(); return; }
+    if (!query || (!allowShort && query.length < 2)) { hide(); return; }
     var qs = query.split(/\s+/);
     for (var i = 0; i < idx.length; i++) {
       var hay = (idx[i].t + ' ' + idx[i].d + ' ' + idx[i].k).toLowerCase();
